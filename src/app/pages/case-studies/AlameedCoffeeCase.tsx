@@ -1,0 +1,95 @@
+import { CaseStudyTemplate } from '../CaseStudyTemplate';
+import { Coffee, Globe, ShoppingCart, Package, Star, TrendingUp } from 'lucide-react';
+import alameedLogo from '@/assets/images/80dc81d774432062c407dfc3f766ed3469e783b8.png';
+import alameedHero from '@/assets/images/11ff710d0f40fddb3e5ca1ea9c75fd8271156070.png';
+
+const alameedData = {
+  title: 'Alameed Coffee',
+  subtitle: 'Premium Arabian coffee e-commerce excellence',
+  category: 'E-Commerce',
+  client: 'Alameed Coffee',
+  duration: '5 months',
+  tags: ['Next.js', 'E-commerce', 'Payment Gateway', 'i18n', 'SEO'],
+  heroImage: alameedHero,
+  logo: alameedLogo,
+  url: 'https://alameedcoffee.com/ar',
+  overview: 'Alameed Coffee is a premium e-commerce platform showcasing authentic Middle Eastern coffee blends. We created a sophisticated online shopping experience with multilingual support, seamless payment processing, and rich storytelling to connect customers with traditional coffee culture.',
+  challenge: {
+    title: 'The Challenge',
+    description: 'Alameed needed a digital presence that honored their 60-year heritage while providing a modern e-commerce experience for international customers.',
+    points: [
+      'Present rich coffee heritage and storytelling alongside products',
+      'Support Arabic and English with proper RTL implementation',
+      'Handle international shipping with complex pricing rules',
+      'Create an immersive brand experience that reflects quality',
+      'Optimize for search engines in multiple languages'
+    ]
+  },
+  solution: {
+    title: 'Our Solution',
+    description: 'We built a Next.js-powered e-commerce platform with focus on performance, SEO, and cultural authenticity, featuring stunning product photography and compelling brand storytelling.',
+    points: [
+      'Bilingual experience with seamless Arabic/English switching',
+      'Rich product pages with brewing guides and tasting notes',
+      'International shipping calculator with real-time rates',
+      'High-performance image optimization for product galleries',
+      'SEO optimization for both Arabic and English markets',
+      'Custom checkout flow with multiple payment options'
+    ]
+  },
+  features: {
+    title: 'Features that celebrate coffee culture',
+    items: [
+      {
+        title: 'Coffee Heritage',
+        description: 'Rich storytelling pages showcasing 60 years of coffee expertise and tradition.',
+        icon: Coffee
+      },
+      {
+        title: 'Bilingual Platform',
+        description: 'Fully localized Arabic and English experiences with RTL support and culturally adapted content.',
+        icon: Globe
+      },
+      {
+        title: 'Smart Shopping',
+        description: 'Personalized recommendations, subscription options, and gift packaging.',
+        icon: ShoppingCart
+      },
+      {
+        title: 'Shipping Solutions',
+        description: 'International shipping with real-time tracking and customs documentation.',
+        icon: Package
+      },
+      {
+        title: 'Premium Experience',
+        description: 'High-quality imagery, video content, and immersive product presentations.',
+        icon: Star
+      },
+      {
+        title: 'Performance Optimized',
+        description: 'Lightning-fast load times with Next.js SSR and image optimization.',
+        icon: TrendingUp
+      }
+    ]
+  },
+  results: {
+    title: 'Brewing Success',
+    metrics: [
+      { value: '180%', label: 'Sales Increase' },
+      { value: '65%', label: 'International Orders' },
+      { value: '4.5x', label: 'Higher Engagement' }
+    ],
+    description: 'The platform successfully expanded Alameed\'s reach to international markets while maintaining their authentic heritage.'
+  },
+  images: [
+    'https://images.unsplash.com/photo-1734221040684-7d5e181fd273?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMHByZW1pdW18ZW58MXx8fHwxNzY4Njc0NDE0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    'https://images.unsplash.com/photo-1672851613221-c56f31efce8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMHByb2R1Y3Rpb258ZW58MXx8fHwxNzY4NzU4NDUyfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    'https://images.unsplash.com/photo-1723705027411-9bfc3c99c2e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBzaG9wcGluZyUyMGludGVyZmFjZXxlbnwxfHx8fDE3Njg3MTkyNjR8MA&ixlib=rb-4.1.0&q=80&w=1080'
+  ],
+  technologies: ['Next.js', 'React', 'Stripe', 'Sanity CMS', 'Tailwind CSS', 'Vercel', 'i18next'],
+  gradient: 'from-amber-600 to-orange-600'
+};
+
+export function AlameedCoffeeCase() {
+  return <CaseStudyTemplate data={alameedData} />;
+}

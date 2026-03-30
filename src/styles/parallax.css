@@ -1,0 +1,318 @@
+/* ============================================
+   PARALLAX EFFECTS CSS
+   ============================================ */
+
+/* Smooth Scrolling for Parallax */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hardware Acceleration for Parallax Elements */
+.parallax-layer {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 3D Perspective Container */
+.parallax-3d {
+  perspective: 1000px;
+  perspective-origin: center;
+}
+
+/* Layered Depth Classes */
+.depth-layer-1 {
+  transform: translateZ(10px) scale(0.99);
+}
+
+.depth-layer-2 {
+  transform: translateZ(20px) scale(0.98);
+}
+
+.depth-layer-3 {
+  transform: translateZ(30px) scale(0.97);
+}
+
+.depth-layer-4 {
+  transform: translateZ(40px) scale(0.96);
+}
+
+/* Mouse Parallax Container */
+.mouse-parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Smooth Transform Transitions */
+.smooth-transform {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Scroll-triggered Parallax */
+@supports (animation-timeline: scroll()) {
+  .scroll-parallax {
+    animation: scroll-parallax linear;
+    animation-timeline: scroll();
+  }
+
+  @keyframes scroll-parallax {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-30%);
+    }
+  }
+}
+
+/* Tilt Effect Base */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.tilt-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59, 130, 246, 0.2), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.tilt-card:hover::before {
+  opacity: 1;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(5px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-animation-slow {
+  animation: float 10s ease-in-out infinite;
+}
+
+.float-animation-fast {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Parallax Background Layers */
+.parallax-bg-layer-1 {
+  transform: translateZ(0) translateY(calc(var(--scroll-y, 0) * -0.2px));
+}
+
+.parallax-bg-layer-2 {
+  transform: translateZ(0) translateY(calc(var(--scroll-y, 0) * -0.4px));
+}
+
+.parallax-bg-layer-3 {
+  transform: translateZ(0) translateY(calc(var(--scroll-y, 0) * -0.6px));
+}
+
+/* Depth Blur Effect */
+.depth-blur-far {
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
+.depth-blur-mid {
+  filter: blur(1px);
+  opacity: 0.85;
+}
+
+.depth-blur-near {
+  filter: blur(0);
+  opacity: 1;
+}
+
+/* Interactive Glow on Mouse Position */
+.interactive-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-glow::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(59, 130, 246, 0.15) 0%,
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.interactive-glow:hover::after {
+  opacity: 1;
+}
+
+/* Layered Shadow for Depth */
+.depth-shadow-1 {
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.depth-shadow-2 {
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.depth-shadow-3 {
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.12),
+    0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Smooth Scale on Scroll */
+.scale-on-scroll {
+  transform: scale(var(--scale, 1));
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Rotating Border Effect */
+@keyframes rotate-border {
+  from {
+    --gradient-angle: 0deg;
+  }
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+.rotating-border {
+  --gradient-angle: 0deg;
+  position: relative;
+  border-radius: inherit;
+}
+
+.rotating-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    #3b82f6,
+    #8b5cf6,
+    #06b6d4,
+    #3b82f6
+  );
+  border-radius: inherit;
+  animation: rotate-border 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.rotating-border:hover::before {
+  opacity: 1;
+}
+
+/* Multi-layer Parallax Container */
+.multi-layer-parallax {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.multi-layer-parallax > * {
+  transform-style: preserve-3d;
+}
+
+/* Depth Indicator (for debugging) */
+.depth-indicator {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #3b82f6;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Perspective on Hover */
+.hover-perspective {
+  transition: transform 0.3s ease;
+}
+
+.hover-perspective:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
+}
+
+/* Parallax Text Reveal */
+@keyframes parallax-text-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.parallax-text-reveal {
+  animation: parallax-text-reveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Stagger children for parallax reveal */
+.stagger-children > * {
+  opacity: 0;
+  animation: parallax-text-reveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* GPU Acceleration Hint */
+.gpu-accelerated {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Smooth Opacity Transition */
+.opacity-transition {
+  transition: opacity 0.3s ease;
+}
+
+/* Background Attachment for Parallax */
+.parallax-bg-fixed {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

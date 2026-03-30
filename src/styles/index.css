@@ -1,0 +1,18 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+@import './glass.css';
+@import './hover-effects.css';
+@import './parallax.css';
+@import './gsap-effects.css';
+
+/* Global styles */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

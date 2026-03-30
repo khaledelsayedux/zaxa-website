@@ -1,0 +1,155 @@
+/* RTL Support for Arabic */
+
+/* Base RTL styles */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Flip horizontal spacing */
+[dir="rtl"] .space-x-1 > * + *,
+[dir="rtl"] .space-x-2 > * + *,
+[dir="rtl"] .space-x-3 > * + *,
+[dir="rtl"] .space-x-4 > * + *,
+[dir="rtl"] .space-x-5 > * + *,
+[dir="rtl"] .space-x-6 > * + * {
+  margin-right: var(--tw-space-x-reverse);
+  margin-left: calc(var(--tw-space-x-reverse) * 0);
+}
+
+/* Flip padding and margins */
+[dir="rtl"] .ml-auto {
+  margin-right: auto;
+  margin-left: unset;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-left: auto;
+  margin-right: unset;
+}
+
+/* Transform translate for center positioning */
+[dir="rtl"] .left-1\/2 {
+  right: 50%;
+  left: unset;
+}
+
+[dir="rtl"] .-translate-x-1\/2 {
+  transform: translateX(50%);
+}
+
+/* Flip horizontal transforms */
+[dir="rtl"] .translate-x-0 {
+  transform: translateX(0);
+}
+
+/* Fix flex direction for RTL */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Text alignment */
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* Border radius for RTL */
+[dir="rtl"] .rounded-l,
+[dir="rtl"] .rounded-tl,
+[dir="rtl"] .rounded-bl {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: var(--tw-rounded);
+  border-bottom-right-radius: var(--tw-rounded);
+}
+
+[dir="rtl"] .rounded-r,
+[dir="rtl"] .rounded-tr,
+[dir="rtl"] .rounded-br {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: var(--tw-rounded);
+  border-bottom-left-radius: var(--tw-rounded);
+}
+
+/* Icons and arrows - flip horizontally */
+[dir="rtl"] .lucide-arrow-right {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .lucide-chevron-right {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .lucide-chevron-left {
+  transform: scaleX(-1);
+}
+
+/* Arabic font improvements */
+[dir="rtl"] * {
+  font-family: 'Cairo', 'Noto Sans Arabic', system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Ensure proper Arabic text rendering */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Fix animation directions for RTL */
+[dir="rtl"] @keyframes slideInFromLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+[dir="rtl"] @keyframes slideInFromRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Proper spacing for Arabic text */
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] div {
+  word-spacing: 0.05em;
+}
+
+/* Navigation adjustments for RTL */
+[dir="rtl"] nav a {
+  text-align: center;
+}
+
+/* Form elements RTL support */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Gradient directions for RTL */
+[dir="rtl"] .bg-gradient-to-r {
+  background-image: linear-gradient(to left, var(--tw-gradient-stops));
+}
+
+[dir="rtl"] .bg-gradient-to-l {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}

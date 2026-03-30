@@ -1,0 +1,100 @@
+import { CaseStudyTemplate } from '../CaseStudyTemplate';
+import { Home, MapPin, Camera, Search, Star, TrendingUp } from 'lucide-react';
+import dreamCairoLogo from '@/assets/images/29266ea4c20e125f1f55578c5ba3bdb1e1b79448.png';
+import dreamCairoHero from '@/assets/images/3aca096c5bcb1f1384ef946ef569e1243ff53833.png';
+
+const dreamCairoData = {
+  title: 'Dream Cairo',
+  subtitle: 'Premium real estate platform for luxury properties',
+  category: 'Real Estate',
+  client: 'Dream Cairo',
+  duration: '7 months',
+  tags: ['Next.js', 'React', 'Maps API', 'CMS', 'Virtual Tours'],
+  heroImage: dreamCairoHero,
+  logo: dreamCairoLogo,
+  url: 'https://dreamcairo.com/home?lan=en',
+  overview: 'Dream Cairo is a premium real estate platform showcasing luxury properties in Cairo with immersive virtual tours, advanced search capabilities, and comprehensive property information.',
+  challenge: {
+    title: 'The Challenge',
+    description: 'The luxury real estate market demanded a sophisticated platform that could showcase properties with stunning visuals while providing powerful search and filtering capabilities.',
+    points: [
+      'Present high-end properties with professional photography and virtual tours',
+      'Implement advanced search with multiple filters and map integration',
+      'Handle large media files efficiently for fast loading',
+      'Provide detailed property information and neighborhood insights',
+      'Create an elegant, luxury-focused user experience'
+    ]
+  },
+  solution: {
+    title: 'Our Solution',
+    description: 'We developed a Next.js-powered platform with integrated Google Maps API, virtual tour capabilities, and a headless CMS for easy property management.',
+    points: [
+      'Interactive map search with property markers and clustering',
+      'Immersive 360° virtual tours and high-resolution galleries',
+      'Advanced filtering by price, location, type, and amenities',
+      'Optimized image delivery with lazy loading and CDN',
+      'Neighborhood guides with local amenities and attractions',
+      'Lead generation system with inquiry tracking'
+    ]
+  },
+  features: {
+    title: 'Luxury features for premium properties',
+    items: [
+      {
+        title: 'Virtual Tours',
+        description: 'Immersive 360° virtual tours allowing potential buyers to explore properties remotely.',
+        icon: Camera
+      },
+      {
+        title: 'Map Search',
+        description: 'Interactive map with property locations, nearby amenities, and neighborhood information.',
+        icon: MapPin
+      },
+      {
+        title: 'Advanced Search',
+        description: 'Powerful filtering system with saved searches and property recommendations.',
+        icon: Search
+      },
+      {
+        title: 'Premium Listings',
+        description: 'Featured properties with enhanced visibility and detailed descriptions.',
+        icon: Star
+      },
+      {
+        title: 'Property Analytics',
+        description: 'Market trends, price history, and investment potential analysis.',
+        icon: TrendingUp
+      },
+      {
+        title: 'Luxury Experience',
+        description: 'Elegant design with high-quality imagery and smooth animations.',
+        icon: Home
+      }
+    ]
+  },
+  results: {
+    title: 'Outstanding Results',
+    metrics: [
+      { value: '450+', label: 'Luxury Listings' },
+      { value: '65%', label: 'Increase in Inquiries' },
+      { value: '8mins', label: 'Avg. Session Time' }
+    ],
+    description: 'Dream Cairo has become the premier platform for luxury real estate in Cairo, attracting high-value clients and generating quality leads.'
+  },
+  images: [
+    'https://images.unsplash.com/photo-1697582718102-bd0e67cdf7ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWlybyUyMGVneXB0JTIwbHV4dXJ5JTIwcmVhbCUyMGVzdGF0ZXxlbnwxfHx8fDE3Njg3NTQ2NTV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    'https://images.unsplash.com/photo-1760144371378-00391533c293?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWlybyUyMGFyY2hpdGVjdHVyZSUyMG1vZGVybnxlbnwxfHx8fDE3Njg3NTg2NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    'https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZWFsJTIwZXN0YXRlfGVufDF8fHx8MTc2ODcyNTk1M3ww&ixlib=rb-4.1.0&q=80&w=1080'
+  ],
+  technologies: ['Next.js', 'React', 'Google Maps API', 'Strapi CMS', 'Cloudinary', 'Tailwind CSS', 'Vercel'],
+  testimonial: {
+    quote: 'Dream Cairo has completely elevated our online presence. The virtual tours and map integration have significantly increased buyer engagement.',
+    author: 'Mohamed Elsayed',
+    role: 'CEO, Dream Cairo Real Estate'
+  },
+  gradient: 'from-amber-500 to-orange-500'
+};
+
+export function DreamCairoCase() {
+  return <CaseStudyTemplate data={dreamCairoData} />;
+}

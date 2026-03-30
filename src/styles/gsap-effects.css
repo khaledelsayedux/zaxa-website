@@ -1,0 +1,384 @@
+/* ============================================
+   GSAP ANIMATION EFFECTS
+   ============================================ */
+
+/* Cursor Trail Effect */
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: screen;
+}
+
+/* 3D Hover Container */
+.hover-3d-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-3d-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Shine effect on 3D hover */
+.hover-3d-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--shine-x, 50%) var(--shine-y, 50%),
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.hover-3d-container:hover::before {
+  opacity: 1;
+}
+
+/* Magnetic Button Base Styles */
+.magnetic-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.magnetic-button::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Text Character Animation */
+.char {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Smooth Cursor Movement */
+.smooth-cursor {
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* GSAP Scroll Animation Ready */
+.gsap-scroll-element {
+  will-change: transform, opacity;
+}
+
+/* Elastic Bounce */
+@keyframes elastic-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Magnetic Field Indicator (debug) */
+.magnetic-field {
+  position: absolute;
+  border: 1px dashed rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Custom Cursor States */
+.cursor-link {
+  transform: scale(2.5);
+  background: rgba(59, 130, 246, 0.2);
+  border-color: #3b82f6;
+}
+
+.cursor-button {
+  transform: scale(3);
+  border-color: #06b6d4;
+}
+
+.cursor-drag {
+  transform: scale(2) rotate(45deg);
+  border-style: dashed;
+  border-color: #22d3ee;
+}
+
+.cursor-expand {
+  transform: scale(4);
+  background: rgba(168, 85, 247, 0.1);
+  border-color: #a855f7;
+}
+
+/* Ripple Animation */
+@keyframes ripple {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(30);
+    opacity: 0;
+  }
+}
+
+/* Glow Pulse Animation */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(59, 130, 246, 0.4),
+      0 0 40px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(59, 130, 246, 0.6),
+      0 0 60px rgba(59, 130, 246, 0.4),
+      0 0 90px rgba(59, 130, 246, 0.3);
+  }
+}
+
+/* Morphing Shapes */
+.morph-shape {
+  transition: border-radius 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.morph-shape:hover {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+/* Elastic Scale */
+.elastic-scale {
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.elastic-scale:hover {
+  transform: scale(1.1);
+}
+
+/* Smooth Transform for GSAP */
+.gsap-transform {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Text Reveal Wrapper */
+.text-reveal-wrapper {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.text-reveal-inner {
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+/* Stagger Animation Container */
+.stagger-container > * {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Parallax Scroll Layer */
+.parallax-scroll-layer {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Magnetic Attraction Zones */
+.magnetic-zone {
+  position: relative;
+}
+
+.magnetic-zone::before {
+  content: '';
+  position: absolute;
+  inset: -50px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Cursor Following Element */
+.cursor-follow {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+/* Smooth Easing Classes */
+.ease-elastic {
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.ease-bounce {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ease-smooth {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover Lift with Shadow */
+.gsap-hover-lift {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gsap-hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Interactive Card Glow */
+.interactive-card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.2) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.interactive-card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Perspective Container */
+.perspective-container {
+  perspective: 1000px;
+  perspective-origin: center;
+}
+
+/* 3D Transform Layers */
+.layer-3d {
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+}
+
+.layer-3d-1 {
+  transform: translateZ(10px);
+}
+
+.layer-3d-2 {
+  transform: translateZ(20px);
+}
+
+.layer-3d-3 {
+  transform: translateZ(30px);
+}
+
+/* Magnetic Button Ripple */
+.magnetic-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.3);
+  transform: scale(0);
+  pointer-events: none;
+}
+
+/* Text Split Characters */
+.split-char {
+  display: inline-block;
+  transform-origin: center bottom;
+}
+
+/* Hover Wave Effect */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.wave-char {
+  display: inline-block;
+  animation: wave 0.6s ease-in-out;
+}
+
+/* Smooth Color Transition */
+.smooth-color {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* GPU Acceleration Hint */
+.gpu-hint {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Cursor Pointer Override */
+.gsap-interactive {
+  cursor: none;
+}
+
+/* Hide Default Cursor on Desktop */
+@media (min-width: 1024px) {
+  body.custom-cursor {
+    cursor: none;
+  }
+  
+  body.custom-cursor * {
+    cursor: none;
+  }
+}
+
+/* Loading State for GSAP */
+.gsap-loading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gsap-loaded {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Smooth Scroll Container */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Performance Optimization */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.will-change-all {
+  will-change: transform, opacity;
+}
+
+/* Anti-aliasing for smooth text */
+.smooth-text {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
