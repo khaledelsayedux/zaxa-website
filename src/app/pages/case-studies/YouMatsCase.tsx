@@ -1,8 +1,6 @@
 import { CaseStudyTemplate } from '../CaseStudyTemplate';
 import { Smartphone, CreditCard, TrendingUp, Bell, Shield, Zap } from 'lucide-react';
-import youmatsLogo from '@/assets/images/e851e9aaeca185caca637134e7c05080d8f43aac.png';
-import youmatsScreenshot from '@/assets/images/675d18e682f7235cc52573b6f642971348abd2a1.png';
-import youmatsCover from '@/assets/images/33ed9c68ebc1dc13c9dfe96773085cc866247e91.png';
+import { youmatsLogo, youmatsScreenshot, youmatsCover } from '@/assets/images';
 
 const youmatsData = {
   title: 'YouMats.com',

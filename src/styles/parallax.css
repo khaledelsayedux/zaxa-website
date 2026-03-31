@@ -316,3 +316,44 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* Lightweight grid drift for global parallax background (CSS vs JS rAF) */
+@keyframes parallax-bg-grid-drift {
+  0%,
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(2deg) rotateY(-1deg);
+  }
+}
+
+.parallax-bg-grid-drift {
+  animation: parallax-bg-grid-drift 20s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-bg-grid-drift {
+    animation: none;
+  }
+}
+
+@keyframes cta-arrow-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+.cta-arrow-nudge {
+  animation: cta-arrow-nudge 1.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-arrow-nudge {
+    animation: none;
+  }
+}

@@ -263,15 +263,15 @@
 /* Advanced Glass Morphism Effects */
 .glass {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .glass-dark {
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
-  backdrop-filter: blur(20px) saturate(200%);
-  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -280,8 +280,8 @@
     rgba(29, 205, 159, 0.08) 0%, 
     rgba(22, 153, 118, 0.05) 50%,
     rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(29, 205, 159, 0.2);
 }
@@ -291,8 +291,8 @@
     rgba(29, 205, 159, 0.12) 0%, 
     rgba(22, 153, 118, 0.08) 50%,
     rgba(255, 255, 255, 0.04) 100%);
-  backdrop-filter: blur(28px) saturate(200%);
-  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
   border: 1px solid rgba(29, 205, 159, 0.3);
   box-shadow: 0 8px 32px 0 rgba(29, 205, 159, 0.25);
 }
@@ -303,8 +303,8 @@
     rgba(22, 153, 118, 0.08) 25%,
     rgba(16, 185, 129, 0.08) 75%,
     rgba(255, 255, 255, 0.03) 100%);
-  backdrop-filter: blur(32px) saturate(200%) contrast(120%);
-  -webkit-backdrop-filter: blur(32px) saturate(200%) contrast(120%);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(29, 205, 159, 0.25);
 }
@@ -312,8 +312,8 @@
 /* Frosted Glass Variants */
 .glass-frosted {
   background: rgba(24, 24, 27, 0.6);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 
     0 8px 32px rgba(29, 205, 159, 0.2),
@@ -418,4 +418,334 @@
 
 .animate-glow-pulse {
   animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Route transition (replaces App-level AnimatePresence + motion) */
+@keyframes route-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.route-page-enter-active,
+.route-page-enter {
+  animation: route-page-enter 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-page-enter-active,
+  .route-page-enter {
+    animation: none;
+  }
+}
+
+/* Navigation shell (slide in once) */
+@keyframes nav-shell-enter {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.nav-shell-enter {
+  animation: nav-shell-enter 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-shell-enter {
+    animation: none;
+  }
+}
+
+@keyframes spin-slow-cw {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow-cw {
+  animation: spin-slow-cw 6s linear infinite;
+}
+
+@keyframes spin-slow-ccw {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-slow-ccw {
+  animation: spin-slow-ccw 40s linear infinite;
+}
+
+@keyframes spin-slow-ccw-alt {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-slow-ccw-alt {
+  animation: spin-slow-ccw-alt 60s linear infinite;
+}
+
+/* Floating contact FAB */
+@keyframes float-fab-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-fab-enter {
+  animation: float-fab-enter 0.45s ease-out 0.5s both;
+}
+
+@keyframes float-fab-shimmer {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-fab-shimmer {
+  animation: float-fab-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes float-fab-mail {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-float-fab-mail {
+  animation: float-fab-mail 2s ease-in-out infinite;
+}
+
+@keyframes float-fab-glow-ring {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-float-fab-glow-ring {
+  animation: float-fab-glow-ring 2s ease-in-out infinite;
+}
+
+/* Footer ambient */
+@keyframes footer-orb-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+.animate-footer-orb-8s {
+  animation: footer-orb-breathe 8s ease-in-out infinite;
+}
+
+.animate-footer-orb-10s {
+  animation: footer-orb-breathe 10s ease-in-out infinite 1s;
+}
+
+.animate-footer-orb-12s {
+  animation: footer-orb-breathe 12s ease-in-out infinite 2s;
+}
+
+@keyframes footer-line-reveal {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-footer-top-line {
+  animation: footer-line-reveal 1.2s ease-out 0.3s both;
+  transform-origin: center left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-footer-top-line {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+/* Error boundary ambient */
+@keyframes error-orb-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.15;
+  }
+}
+
+.animate-error-orb {
+  animation: error-orb-pulse 8s ease-in-out infinite;
+}
+
+@keyframes error-icon-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+.animate-error-icon-glow {
+  animation: error-icon-glow 2s ease-in-out infinite;
+}
+
+@keyframes error-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-error-fade-up {
+  animation: error-fade-up 0.6s ease both;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes error-hero-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-error-hero-scale {
+  animation: error-hero-scale 0.6s ease both;
+  animation-delay: 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes error-fade-in-only {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-error-fade-only {
+  animation: error-fade-in-only 0.6s ease both;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Footer scroll reveals (replaces whileInView motion) */
+.footer-reveal-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.footer-reveal-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-reveal-line {
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 1s ease;
+}
+
+.footer-reveal-line.is-visible {
+  transform: scaleX(1);
+}
+
+.footer-reveal-fade {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.footer-reveal-fade.is-visible {
+  opacity: 1;
+}
+
+.footer-service-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.footer-services.is-visible .footer-service-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-reveal-fade-up,
+  .footer-reveal-line,
+  .footer-reveal-fade,
+  .footer-service-item {
+    transition: none;
+  }
+
+  .footer-reveal-fade-up,
+  .footer-service-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  .footer-reveal-line {
+    transform: scaleX(1);
+  }
+
+  .footer-reveal-fade {
+    opacity: 1;
+  }
 }

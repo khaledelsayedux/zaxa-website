@@ -1,7 +1,6 @@
 import { CaseStudyTemplate } from '../CaseStudyTemplate';
 import { Home, MapPin, Camera, Search, Star, TrendingUp } from 'lucide-react';
-import dreamCairoLogo from '@/assets/images/29266ea4c20e125f1f55578c5ba3bdb1e1b79448.png';
-import dreamCairoHero from '@/assets/images/3aca096c5bcb1f1384ef946ef569e1243ff53833.png';
+import { dreamCairoLogo, dreamCairoHero } from '@/assets/images';
 
 const dreamCairoData = {
   title: 'Dream Cairo',

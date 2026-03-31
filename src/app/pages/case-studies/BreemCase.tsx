@@ -1,7 +1,6 @@
 import { CaseStudyTemplate } from '../CaseStudyTemplate';
 import { Briefcase, Globe, Users, Zap, Shield, TrendingUp } from 'lucide-react';
-import breemLogo from '@/assets/images/7037f5d4a7994f256eb47ce99b499a4495fddca5.png';
-import breemHero from '@/assets/images/cb7c18c4fdd4d6aad6452d328fcfd1330a8ad56f.png';
+import { breemLogo, breemHero } from '@/assets/images';
 
 const breemData = {
   title: 'Breem Platform',

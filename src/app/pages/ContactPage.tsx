@@ -4,11 +4,13 @@ import { Button } from '../components/Button';
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/app/contexts/ThemeContext';
 import { HeroBackground } from '../components/HeroBackground';
-import linkedinIcon from '@/assets/images/9e01a83703a50b555e3a4297fdc2284f5a04f654.png';
-import facebookIcon from '@/assets/images/a50ae61a94988e6c1da2a7a47707c3b6c08f50c9.png';
-import instagramIcon from '@/assets/images/33cf6f93a96acb11b051433f76a5ee59f7a87a8f.png';
-import xIcon from '@/assets/images/cdb84874018c2658ab07e35ee24aecd7cb132810.png';
-import threadsIcon from '@/assets/images/723b0a4187d07fbc06057581e2bb44b9ca59c3f7.png';
+import {
+  socialLinkedin as linkedinIcon,
+  socialFacebook as facebookIcon,
+  socialInstagram as instagramIcon,
+  socialX as xIcon,
+  socialThreads as threadsIcon,
+} from '@/assets/images';
 
 const contactInfo = [
   {
@@ -285,7 +287,7 @@ export function ContactPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ x: 8, scale: 1.02 }}
-                    className={`group relative flex items-center gap-5 p-6 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-2xl ${item.hoverColor} hover:bg-white/[0.05] transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] ${item.href ? 'cursor-pointer' : 'cursor-default'}`}
+                    className={`group relative flex items-center gap-5 p-6 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl ${item.hoverColor} hover:bg-white/[0.05] transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] ${item.href ? 'cursor-pointer' : 'cursor-default'}`}
                   >
                     {/* Glass reflection effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
@@ -356,7 +358,7 @@ export function ContactPage() {
                       
                       {social.isImage ? (
                         typeof social.icon === 'string' ? (
-                          <img src={social.icon} alt={social.label} className="relative z-10 w-5 h-5 object-contain" />
+                          <img src={social.icon} alt={social.label} className="relative z-10 w-5 h-5 object-contain" loading="lazy" decoding="async" />
                         ) : (
                           <div className="relative z-10 w-3 h-3 flex items-center justify-center">
                             <div className="w-3 h-3">
@@ -381,7 +383,7 @@ export function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="group relative p-10 lg:p-12 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-teal-500/50 hover:bg-white/[0.05] transition-all duration-500 shadow-[0_4px_16px_0_rgba(29,205,159,0.12)]">
+              <div className="group relative p-10 lg:p-12 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden hover:border-teal-500/50 hover:bg-white/[0.05] transition-all duration-500 shadow-[0_4px_16px_0_rgba(29,205,159,0.12)]">
                 {/* Glass reflection effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
                 
@@ -391,8 +393,8 @@ export function ContactPage() {
                 />
 
                 {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#1DCD9F]/5 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#169976]/5 rounded-full blur-3xl" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#1DCD9F]/5 rounded-full blur-2xl transform-gpu" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#169976]/5 rounded-full blur-2xl transform-gpu" />
 
                 <form onSubmit={handleSubmit} className="relative space-y-8">
                   <div>

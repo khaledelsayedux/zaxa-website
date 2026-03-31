@@ -11,7 +11,7 @@ import { ParallaxBackground } from '../components/ParallaxBackground';
 import { ParallaxSection, ParallaxElement } from '../components/ParallaxSection';
 import { useTheme } from '@/app/contexts/ThemeContext';
 import { HeroBackground } from '../components/HeroBackground';
-import valuesBackground from '@/assets/images/fca242fa6e39be770d973abc6c495373c0607675.png';
+import { aboutValuesBackground as valuesBackground } from '@/assets/images';
 
 const values = [
   {
@@ -719,7 +719,7 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="group relative p-8 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl hover:border-teal-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
+              className="group relative p-8 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl hover:border-teal-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
             >
               {/* Glass reflection effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
@@ -743,7 +743,7 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="group relative p-8 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl hover:border-emerald-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
+              className="group relative p-8 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl hover:border-emerald-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
             >
               {/* Glass reflection effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
@@ -767,7 +767,7 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="group relative p-8 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl hover:border-teal-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
+              className="group relative p-8 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl hover:border-teal-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
             >
               {/* Glass reflection effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
@@ -915,7 +915,7 @@ export function AboutPage() {
               className="inline-block mb-8"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-2xl blur-xl opacity-50" />
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-2xl blur-lg opacity-50 transform-gpu" />
                 
               </div>
             </motion.div>
@@ -1094,7 +1094,7 @@ export function AboutPage() {
 
             {/* Animated glow orbs */}
             <motion.div
-              className="absolute top-0 right-0 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              className="absolute top-0 right-0 w-64 h-64 bg-teal-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform-gpu"
               animate={{
                 scale: [1, 1.2, 1],
                 rotate: [0, 90, 0],
@@ -1106,7 +1106,7 @@ export function AboutPage() {
               }}
             />
             <motion.div
-              className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform-gpu"
               animate={{
                 scale: [1, 1.3, 1],
                 rotate: [0, -90, 0],
@@ -1228,7 +1228,7 @@ export function AboutPage() {
           y: showBackToTop ? 0 : 20
         }}
         transition={{ duration: 0.3 }}
-        className={`group fixed bottom-24 right-8 z-[60] w-14 h-14 rounded-2xl bg-white/[0.08] backdrop-blur-xl border border-white/20 flex items-center justify-center shadow-[0_4px_16px_0_rgba(29,205,159,0.15)] hover:scale-110 transition-all duration-300 overflow-hidden ${
+        className={`group fixed bottom-24 right-8 z-[60] w-14 h-14 rounded-2xl bg-white/[0.08] backdrop-blur-md border border-white/20 flex items-center justify-center shadow-[0_4px_16px_0_rgba(29,205,159,0.15)] hover:scale-110 transition-all duration-300 overflow-hidden ${
           !showBackToTop && 'pointer-events-none'
         }`}
         whileHover={{ y: -4 }}
@@ -1247,11 +1247,11 @@ export function AboutPage() {
         
         {/* Glow ring */}
         <motion.div
-          className="absolute -inset-1 bg-gradient-to-r from-[#1DCD9F] to-[#169976] rounded-2xl blur-lg opacity-0 group-hover:opacity-60 -z-10"
+          className="absolute -inset-1 bg-gradient-to-r from-[#1DCD9F] to-[#169976] rounded-2xl blur-md opacity-0 group-hover:opacity-60 -z-10 transform-gpu"
         />
 
         {/* Tooltip */}
-        <div className="absolute right-full mr-3 px-3 py-1.5 bg-[#0A111F]/90 backdrop-blur-xl border border-white/10 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <div className="absolute right-full mr-3 px-3 py-1.5 bg-[#0A111F]/90 backdrop-blur-md border border-white/10 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           <span className="text-xs text-white/90">Back to Top</span>
         </div>
       </motion.button>

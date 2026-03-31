@@ -1,22 +1,6 @@
-/* Import font families for ZAXA Studio */
+/* Fonts load from index.html (one stylesheet + preconnect) — avoids render-blocking CSS @import chains. */
 
-/* Headlines (H1): Using Space Grotesk as alternative to PP Neue Montreal (Bold, All Caps) */
-/* If you have PP Neue Montreal license, replace the Space Grotesk import with your custom font */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-
-/* Sub-headlines: Outfit (Medium) */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
-
-/* Body Text & UX Writing: Inter (Regular) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-/* Inter Tight for Service Headers */
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&display=swap');
-
-/* Optional: JetBrains Mono for code snippets */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-
-/* 
+/*
 FONT USAGE GUIDE:
 - Headlines (H1): Space Grotesk Bold + All Caps (or PP Neue Montreal if you have license)
 - Sub-headlines (H2-H6): Outfit Medium/Semibold

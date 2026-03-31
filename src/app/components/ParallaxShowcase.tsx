@@ -233,7 +233,7 @@ export function ParallaxShowcase() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  className="p-16 bg-gradient-to-br from-zinc-900/90 to-zinc-800/90 backdrop-blur-xl border border-zinc-700/50 rounded-3xl"
+                  className="p-16 bg-gradient-to-br from-zinc-900/90 to-zinc-800/90 backdrop-blur-md border border-zinc-700/50 rounded-3xl"
                 >
                   <div className="text-center">
                     <h3 className="text-4xl mb-6">

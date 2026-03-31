@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { motion } from 'framer-motion';
 
 export function AdvancedGSAPCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -412,7 +411,7 @@ export function AdvancedGSAPCursor() {
   return (
     <>
       {/* Main cursor dot */}
-      <motion.div
+      <div
         ref={cursorRef}
         className="fixed top-0 left-0 w-3 h-3 bg-[#1DCD9F] rounded-full pointer-events-none z-[10000] mix-blend-screen hidden lg:block opacity-0 shadow-[0_0_20px_rgba(29,205,159,0.6)]"
         style={{ willChange: 'transform' }}
@@ -432,7 +431,7 @@ export function AdvancedGSAPCursor() {
         style={{ willChange: 'transform' }}
       >
         <div className="relative">
-          <div className="absolute top-6 left-0 px-4 py-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full text-white text-sm font-semibold whitespace-nowrap shadow-lg shadow-teal-500/50 backdrop-blur-sm">
+          <div className="absolute top-6 left-0 px-4 py-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full text-white text-sm font-semibold whitespace-nowrap shadow-md shadow-teal-500/40">
             {cursorText}
           </div>
         </div>

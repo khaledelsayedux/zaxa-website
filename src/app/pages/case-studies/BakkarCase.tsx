@@ -1,7 +1,6 @@
 import { CaseStudyTemplate } from '../CaseStudyTemplate';
 import { Smartphone, MapPin, Calendar, Bell, Shield, Zap } from 'lucide-react';
-import bakkarLogo from '@/assets/images/fd66dd28971911b3e85cb93f03d79b4100d045ae.png';
-import bakkarHero from '@/assets/images/84f2509b3e06e25d301aadfd5d145771c85847a6.png';
+import { bakkarLogo, bakkarHero } from '@/assets/images';
 
 const bakkarData = {
   title: 'Bakkar',

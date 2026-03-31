@@ -135,7 +135,7 @@ export function ProjectCard({
       >
         {/* Main Card Container - New Horizontal Layout with Liquid Glass */}
         <motion.div 
-          className="relative min-h-[500px] lg:h-[600px] rounded-[32px] overflow-hidden bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-[0_4px_16px_0_rgba(29,205,159,0.12)]"
+          className="relative min-h-[500px] lg:h-[600px] rounded-[32px] overflow-hidden bg-white/[0.03] backdrop-blur-md border border-white/10 shadow-[0_4px_16px_0_rgba(29,205,159,0.12)]"
           animate={{
             borderColor: isHovered ? 'rgba(29, 205, 159, 0.5)' : 'rgba(255, 255, 255, 0.1)',
           }}
@@ -167,13 +167,15 @@ export function ProjectCard({
                   src={image}
                   alt={title}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
               {/* Status & Platform Badges - Floating on Image */}
               <div className="absolute top-6 left-6 right-6 z-20 flex items-center justify-between">
                 {/* Status Indicator */}
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0A111F]/80 backdrop-blur-xl border border-[#1E293B]/60">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0A111F]/80 backdrop-blur-md border border-[#1E293B]/60">
                   <motion.div
                     animate={
                       currentStatus.shouldPulse
@@ -200,7 +202,7 @@ export function ProjectCard({
                 </div>
 
                 {/* Platform Badge */}
-                <div className="px-3 py-1.5 rounded-full bg-[#0A111F]/80 backdrop-blur-xl border border-[#1E293B]/60">
+                <div className="px-3 py-1.5 rounded-full bg-[#0A111F]/80 backdrop-blur-md border border-[#1E293B]/60">
                   <span className="text-[10px] uppercase tracking-widest text-[#E2E8F0]/80 font-medium">
                     {isMobile ? 'Mobile' : 'Web'}
                   </span>
@@ -227,7 +229,13 @@ export function ProjectCard({
                       }}
                       transition={{ duration: 0.5, ease: "easeOut" }}
                     >
-                      <ImageWithFallback src={logo} alt={`${title} logo`} className="w-full h-full object-contain" />
+                      <ImageWithFallback
+                        src={logo}
+                        alt={`${title} logo`}
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                        decoding="async"
+                      />
                     </motion.div>
                   )}
 

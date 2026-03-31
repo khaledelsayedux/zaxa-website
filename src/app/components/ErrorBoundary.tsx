@@ -1,49 +1,29 @@
 import { useRouteError, Link, isRouteErrorResponse } from 'react-router';
-import { motion } from 'motion/react';
-import { Home, AlertTriangle, ArrowLeft } from 'lucide-react';
-import { Button } from '../components/Button';
+import { Home, AlertTriangle } from 'lucide-react';
+import { Button } from './Button';
 
 export function ErrorBoundary() {
   const error = useRouteError();
   const isNotFound = isRouteErrorResponse(error) && error.status === 404;
 
   if (isNotFound) {
-    // Render the NotFoundPage content directly for 404 errors
     return (
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
-        {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
                            linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
         }} />
 
-        {/* Ambient gradient orbs */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1DCD9F]/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.15, 0.1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+        <div
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1DCD9F]/10 rounded-full blur-3xl shell-error-orb"
         />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            {/* 404 Number */}
-            <motion.div
-              className="mb-8"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+          <div>
+            <div
+              className="mb-8 shell-fade-in-up"
+              style={{ animationDelay: '0.2s', animationFillMode: 'both' }}
             >
               <h1 
                 className="text-[120px] md:text-[180px] lg:text-[240px] font-bold leading-none tracking-tighter"
@@ -53,14 +33,11 @@ export function ErrorBoundary() {
                   404
                 </span>
               </h1>
-            </motion.div>
+            </div>
 
-            {/* Label */}
-            <motion.div
-              className="mb-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+            <div
+              className="mb-6 shell-fade-in-up"
+              style={{ animationDelay: '0.3s', animationFillMode: 'both' }}
             >
               <span 
                 className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-[#1DCD9F]/80 uppercase" 
@@ -68,36 +45,25 @@ export function ErrorBoundary() {
               >
                 [ PAGE NOT FOUND ]
               </span>
-            </motion.div>
+            </div>
 
-            {/* Title */}
-            <motion.h2
-              className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight text-white"
-              style={{ fontFamily: "'Inter Tight', sans-serif" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+            <h2
+              className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight text-white shell-fade-in-up"
+              style={{ fontFamily: "'Inter Tight', sans-serif", animationDelay: '0.4s', animationFillMode: 'both' }}
             >
               Looks like you've ventured into uncharted territory
-            </motion.h2>
+            </h2>
 
-            {/* Description */}
-            <motion.p
-              className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+            <p
+              className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed shell-fade-in-up"
+              style={{ fontFamily: "'Inter', sans-serif", animationDelay: '0.5s', animationFillMode: 'both' }}
             >
               The page you're looking for doesn't exist or may have been moved. Let's get you back on track.
-            </motion.p>
+            </p>
 
-            {/* Action Buttons */}
-            <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+            <div
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 shell-fade-in-up"
+              style={{ animationDelay: '0.6s', animationFillMode: 'both' }}
             >
               <Link to="/">
                 <Button variant="primary" className="group">
@@ -110,17 +76,15 @@ export function ErrorBoundary() {
                   View Projects
                 </Button>
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 
-  // For other errors, show a generic error page
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
-      {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
         backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
                          linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
@@ -128,41 +92,22 @@ export function ErrorBoundary() {
       }} />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Error Icon */}
-          <motion.div
-            className="mb-8 flex justify-center"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+        <div>
+          <div
+            className="mb-8 flex justify-center shell-fade-in-up"
+            style={{ animationDelay: '0.2s', animationFillMode: 'both' }}
           >
             <div className="relative">
-              <motion.div
-                className="absolute inset-0 bg-red-500/20 rounded-full blur-3xl"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+              <div
+                className="absolute inset-0 bg-red-500/20 rounded-full blur-3xl shell-error-icon-glow"
               />
               <AlertTriangle size={80} className="text-red-500 relative z-10" />
             </div>
-          </motion.div>
+          </div>
 
-          {/* Label */}
-          <motion.div
-            className="mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          <div
+            className="mb-6 shell-fade-in-up"
+            style={{ animationDelay: '0.3s', animationFillMode: 'both' }}
           >
             <span 
               className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-red-500/80 uppercase" 
@@ -170,36 +115,25 @@ export function ErrorBoundary() {
             >
               [ ERROR ]
             </span>
-          </motion.div>
+          </div>
 
-          {/* Title */}
-          <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight text-white"
-            style={{ fontFamily: "'Inter Tight', sans-serif" }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+          <h2
+            className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight text-white shell-fade-in-up"
+            style={{ fontFamily: "'Inter Tight', sans-serif", animationDelay: '0.4s', animationFillMode: 'both' }}
           >
             Oops! Something went wrong
-          </motion.h2>
+          </h2>
 
-          {/* Description */}
-          <motion.p
-            className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+          <p
+            className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed shell-fade-in-up"
+            style={{ fontFamily: "'Inter', sans-serif", animationDelay: '0.5s', animationFillMode: 'both' }}
           >
             We encountered an unexpected error. Please try refreshing the page or return to the homepage.
-          </motion.p>
+          </p>
 
-          {/* Action Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+          <div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 shell-fade-in-up"
+            style={{ animationDelay: '0.6s', animationFillMode: 'both' }}
           >
             <Link to="/">
               <Button variant="primary" className="group">
@@ -208,13 +142,14 @@ export function ErrorBoundary() {
               </Button>
             </Link>
             <button
+              type="button"
               onClick={() => window.location.reload()}
               className="px-6 py-3 rounded-lg border border-white/10 text-white hover:bg-white/5 transition-all duration-300"
             >
               Refresh Page
             </button>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );

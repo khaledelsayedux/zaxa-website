@@ -40,7 +40,7 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
       >
         {/* Card Container - Enhanced with premium styling */}
         <div 
-          className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-transparent backdrop-blur-xl group-hover:border-[#1DCD9F]/40 transition-all duration-250"
+          className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-transparent backdrop-blur-md group-hover:border-[#1DCD9F]/40 transition-all duration-250"
         >
           {/* L-bracket corners - Premium detail */}
           <div className="absolute -top-2 -left-2 w-8 h-8 opacity-0 group-hover:opacity-100 transition-all duration-200">
@@ -206,7 +206,7 @@ function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps) {
     >
       {/* Backdrop */}
       <motion.div
-        className="absolute inset-0 bg-black/95 backdrop-blur-xl"
+        className="absolute inset-0 bg-black/95"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}

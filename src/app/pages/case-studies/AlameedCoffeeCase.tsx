@@ -1,7 +1,6 @@
 import { CaseStudyTemplate } from '../CaseStudyTemplate';
 import { Coffee, Globe, ShoppingCart, Package, Star, TrendingUp } from 'lucide-react';
-import alameedLogo from '@/assets/images/80dc81d774432062c407dfc3f766ed3469e783b8.png';
-import alameedHero from '@/assets/images/11ff710d0f40fddb3e5ca1ea9c75fd8271156070.png';
+import { alameedCoffeeLogo as alameedLogo, alameedCoffeeHero as alameedHero } from '@/assets/images';
 
 const alameedData = {
   title: 'Alameed Coffee',

@@ -1,7 +1,6 @@
 import { CaseStudyTemplate } from '../CaseStudyTemplate';
 import { Eye, Camera, Zap, Shield, TrendingUp, Cpu } from 'lucide-react';
-import effvisionLogo from '@/assets/images/75aea109dc2dfbe0eb7023b0276c8c165681716f.png';
-import effvisionHero from '@/assets/images/fc2a657b897027bb7760835e04875f62c6071317.png';
+import { efficientVisionLogo as effvisionLogo, efficientVisionHero as effvisionHero } from '@/assets/images';
 
 const efficientVisionData = {
   title: 'Efficient Vision',

@@ -115,7 +115,7 @@ export function ProjectDetailLayout({
         >
           <Link to="/projects">
             <motion.button
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A111F]/80 backdrop-blur-md border border-[#1E293B]/50 text-[#E2E8F0] hover:border-[#1DCD9F]/50 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A111F]/80 backdrop-blur-sm border border-[#1E293B]/50 text-[#E2E8F0] hover:border-[#1DCD9F]/50 transition-colors"
               whileHover={{ scale: 1.05, x: -4 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -180,7 +180,7 @@ export function ProjectDetailLayout({
                   animate={{ opacity: isReady ? 1 : 0, y: isReady ? 0 : 10 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <div className="w-20 h-20 rounded-2xl bg-[#0A111F]/80 backdrop-blur-md border border-[#1E293B]/50 p-4 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-2xl bg-[#0A111F]/80 backdrop-blur-sm border border-[#1E293B]/50 p-4 flex items-center justify-center">
                     <img src={logo} alt={`${title} logo`} className="w-full h-full object-contain" />
                   </div>
                 </motion.div>

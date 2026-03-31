@@ -31,8 +31,8 @@ export function CareersPage() {
       <ParallaxBackground className="fixed inset-0 z-0" />
       
       {/* Ambient gradient orbs */}
-      <div className="fixed top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-[#1DCD9F]/10 via-[#169976]/5 to-transparent rounded-full blur-3xl opacity-40 animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
-      <div className="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-[#1DCD9F]/8 via-transparent to-transparent rounded-full blur-3xl opacity-30 animate-pulse pointer-events-none" style={{ animationDuration: '12s' }} />
+      <div className="fixed top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-[#1DCD9F]/10 via-[#169976]/5 to-transparent rounded-full blur-2xl opacity-40 animate-pulse pointer-events-none transform-gpu" style={{ animationDuration: '8s' }} />
+      <div className="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-[#1DCD9F]/8 via-transparent to-transparent rounded-full blur-2xl opacity-30 animate-pulse pointer-events-none transform-gpu" style={{ animationDuration: '12s' }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-24">
         {/* Hero Section */}
@@ -134,9 +134,9 @@ export function CareersPage() {
         >
           <div className="relative group/card">
             {/* Ambient glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1DCD9F]/10 via-[#169976]/5 to-transparent rounded-3xl blur-2xl opacity-0 group-hover/card:opacity-40 group-hover/card:scale-110 group-hover/card:rotate-3 transition-all duration-1000 ease-out" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1DCD9F]/10 via-[#169976]/5 to-transparent rounded-3xl blur-xl opacity-0 group-hover/card:opacity-40 group-hover/card:scale-110 group-hover/card:rotate-3 transition-all duration-1000 ease-out transform-gpu" />
 
-            <div className="relative rounded-3xl bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-white/[0.02] border border-white/10 group-hover/card:border-[#1DCD9F]/30 group-hover/card:bg-gradient-to-br group-hover/card:from-white/[0.10] group-hover/card:via-white/[0.06] group-hover/card:to-white/[0.03] p-12 backdrop-blur-sm overflow-hidden transition-all duration-500">
+            <div className="relative rounded-3xl bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-white/[0.02] border border-white/10 group-hover/card:border-[#1DCD9F]/30 group-hover/card:bg-gradient-to-br group-hover/card:from-white/[0.10] group-hover/card:via-white/[0.06] group-hover/card:to-white/[0.03] p-12 overflow-hidden transition-all duration-500">
               {/* Shimmer effect on hover */}
               <div className="absolute inset-0 -translate-x-full group-hover/card:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
               
@@ -205,9 +205,9 @@ export function CareersPage() {
 
           {/* Empty State */}
           <div className="relative group">
-            <div className="relative rounded-2xl bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-white/[0.02] border border-white/10 group-hover:border-[#1DCD9F]/30 group-hover:shadow-[0_0_40px_rgba(29,205,159,0.15)] group-hover:scale-[1.02] p-16 text-center backdrop-blur-sm transition-all duration-500 ease-out overflow-hidden">
+            <div className="relative rounded-2xl bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-white/[0.02] border border-white/10 group-hover:border-[#1DCD9F]/30 group-hover:shadow-[0_0_40px_rgba(29,205,159,0.15)] group-hover:scale-[1.02] p-16 text-center transition-all duration-500 ease-out overflow-hidden">
               {/* Ambient glow on hover */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-[#1DCD9F]/10 via-[#169976]/5 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute -inset-8 bg-gradient-to-br from-[#1DCD9F]/10 via-[#169976]/5 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none transform-gpu" />
               
               {/* Shimmer effect on hover */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none" />

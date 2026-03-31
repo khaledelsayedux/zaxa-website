@@ -15,7 +15,7 @@
   background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
   background-size: 400%;
   border-radius: inherit;
-  filter: blur(20px);
+  filter: blur(12px);
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: -1;

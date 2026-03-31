@@ -8,24 +8,26 @@ import { useTheme } from '@/app/contexts/ThemeContext';
 import { HeroBackground } from '../components/HeroBackground';
 import { services, type Service } from '@/app/data/servicesData';
 import { BlueprintOverlay } from './ServicesPage';
-import dreamCairoLogo from '@/assets/images/29266ea4c20e125f1f55578c5ba3bdb1e1b79448.png';
-import alameedLogo from '@/assets/images/80dc81d774432062c407dfc3f766ed3469e783b8.png';
-import breemLogo from '@/assets/images/7037f5d4a7994f256eb47ce99b499a4495fddca5.png';
-import effvisionLogo from '@/assets/images/75aea109dc2dfbe0eb7023b0276c8c165681716f.png';
-import youmatsLogo from '@/assets/images/e851e9aaeca185caca637134e7c05080d8f43aac.png';
-import myCashLogo from '@/assets/images/abe82cb3312cb701dda55376e9994bb9baf4a000.png';
-import dubaiPoliceLogo from '@/assets/images/04b8fdc105b76cef7962feca82bcc7fd9706325c.png';
-import mazaadyLogo from '@/assets/images/8c71093d76047adb119ae23c21c829e818310a85.png';
-import bakkarLogo from '@/assets/images/fd66dd28971911b3e85cb93f03d79b4100d045ae.png';
-import alameedImage from '@/assets/images/11ff710d0f40fddb3e5ca1ea9c75fd8271156070.png';
-import youmatsImage from '@/assets/images/e2eb848edb3160a3f00b8b3d627683a5c6e839fd.png';
-import dreamCairoImage from '@/assets/images/3aca096c5bcb1f1384ef946ef569e1243ff53833.png';
-import breemImage from '@/assets/images/cb7c18c4fdd4d6aad6452d328fcfd1330a8ad56f.png';
-import effvisionImage from '@/assets/images/fc2a657b897027bb7760835e04875f62c6071317.png';
-import bakkarImage from '@/assets/images/84f2509b3e06e25d301aadfd5d145771c85847a6.png';
-import myCashImage from '@/assets/images/ce07eb69338e693f1a91a378227b96045307a7e0.png';
-import dubaiPoliceImage from '@/assets/images/1c203b023558b623bae0106c138008c313d7d7dd.png';
-import mazaadyImage from '@/assets/images/99e9e207df487879552b7cb8eaf5bdf539aaa1cd.png';
+import {
+  dreamCairoLogo,
+  alameedCoffeeLogo as alameedLogo,
+  breemLogo,
+  efficientVisionLogo as effvisionLogo,
+  youmatsLogo,
+  mycashLogo as myCashLogo,
+  dubaiPoliceLogo,
+  mazaadyLogo,
+  bakkarLogo,
+  alameedCoffeeHero as alameedImage,
+  youmatsHero as youmatsImage,
+  dreamCairoHero as dreamCairoImage,
+  breemHero as breemImage,
+  efficientVisionHero as effvisionImage,
+  bakkarHero as bakkarImage,
+  mycashHero as myCashImage,
+  dubaiPoliceHero as dubaiPoliceImage,
+  mazaadyHero as mazaadyImage,
+} from '@/assets/images';
 
 const realProjects = [
   {
@@ -310,7 +312,7 @@ export function ProjectsPage() {
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ scale: 1.02 }}
-                  className="group relative h-full p-10 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl hover:border-teal-500/50 hover:bg-teal-500/[0.08] transition-all duration-500 overflow-hidden cursor-pointer"
+                  className="group relative h-full p-10 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl hover:border-teal-500/50 hover:bg-teal-500/[0.08] transition-all duration-500 overflow-hidden cursor-pointer"
                 >
                   {/* Glass reflection effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
@@ -353,7 +355,7 @@ export function ProjectsPage() {
 
                   {/* Expand Icon - Top Right */}
                   <motion.div
-                    className="absolute top-4 right-4 z-20 w-10 h-10 border-2 border-white/60 bg-zinc-800 backdrop-blur-sm rounded flex items-center justify-center group-hover:border-white group-hover:scale-110 transition-all duration-300"
+                    className="absolute top-4 right-4 z-20 w-10 h-10 border-2 border-white/60 bg-zinc-800 rounded flex items-center justify-center group-hover:border-white group-hover:scale-110 transition-all duration-300"
                   >
                     <ArrowRight 
                       className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-1" 
@@ -386,11 +388,11 @@ export function ProjectsPage() {
                       transition={{ duration: 0.3 }}
                     >
                       {/* Multi-layer glow effect */}
-                      <div className="absolute inset-0 w-20 h-20 rounded-3xl bg-teal-400/30 blur-3xl animate-pulse" />
-                      <div className="absolute inset-0 w-16 h-16 rounded-2xl bg-teal-300/20 blur-2xl" />
+                      <div className="absolute inset-0 w-20 h-20 rounded-3xl bg-teal-400/30 blur-2xl animate-pulse transform-gpu" />
+                      <div className="absolute inset-0 w-16 h-16 rounded-2xl bg-teal-300/20 blur-xl transform-gpu" />
                       
                       {/* Icon container */}
-                      <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500/20 via-emerald-400/10 to-transparent border border-teal-500/30 flex items-center justify-center overflow-hidden backdrop-blur-sm">
+                      <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500/20 via-emerald-400/10 to-transparent border border-teal-500/30 flex items-center justify-center overflow-hidden">
                         {/* Animated gradient overlay */}
                         <motion.div 
                           className="absolute inset-0 bg-gradient-to-tr from-teal-500/0 via-teal-400/20 to-teal-500/0"
@@ -414,7 +416,7 @@ export function ProjectsPage() {
 
                   {/* Corner accent */}
                   <motion.div
-                    className="absolute top-0 right-0 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="absolute top-0 right-0 w-32 h-32 bg-teal-500/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform-gpu"
                   ></motion.div>
                 </motion.div>
               </Link>
@@ -473,7 +475,7 @@ export function ProjectsPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   whileHover={{ y: -6, scale: 1.05 }}
-                  className="group relative p-6 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-2xl hover:border-teal-500/50 hover:bg-white/[0.05] transition-all duration-300 text-lg cursor-pointer overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)]"
+                  className="group relative p-6 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl hover:border-teal-500/50 hover:bg-white/[0.05] transition-all duration-300 text-lg cursor-pointer overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)]"
                 >
                   {/* Glass reflection effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
@@ -507,7 +509,7 @@ export function ProjectsPage() {
 
             {/* Animated glow orbs */}
             <motion.div
-              className="absolute top-0 right-0 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              className="absolute top-0 right-0 w-64 h-64 bg-teal-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform-gpu"
               animate={{
                 scale: [1, 1.2, 1],
                 rotate: [0, 90, 0],
@@ -519,7 +521,7 @@ export function ProjectsPage() {
               }}
             />
             <motion.div
-              className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform-gpu"
               animate={{
                 scale: [1, 1.3, 1],
                 rotate: [0, -90, 0],

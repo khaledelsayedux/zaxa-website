@@ -1,10 +1,13 @@
-import heroImage from '@/assets/images/bece14f1ba1f5506c95720b35cc60cd5759e3cd2.png';
-import abstractBg from '@/assets/images/29a0d31deef794d7e70acc854993cfed64850624.png';
-import aboutHeroImage from '@/assets/images/3db7b22db9ae2218d7afa5997820aa9c8713bde5.png';
-import projectsHeroImage from '@/assets/images/32d9171a7bda0e445a11a4a48cd7271d6841e54d.png';
-import contactHeroImage from '@/assets/images/bb80af1c19e79013f2abf9f0a274b3c79e999bb3.png';
-import servicesHeroImage from '@/assets/images/5f426a61a7bab5ef5e7bff12e01e000c4b1b8a24.png';
-import Svg from '../../imports/Svg-1425-64';
+import type { CSSProperties } from 'react';
+import { lazy, Suspense } from 'react';
+import {
+  aboutHeroImage,
+  projectsHeroImage,
+  contactHeroImage,
+  servicesHeroImage,
+} from '@/assets/images';
+
+const LazyHomeHeroSvg = lazy(() => import('../../imports/Svg-1425-64'));
 
 interface HeroBackgroundProps {
   className?: string;
@@ -18,16 +21,42 @@ interface HeroBackgroundProps {
  * No animations, transitions, or zoom effects.
  * Maintains responsive behavior and proper cropping for all screen sizes.
  */
+const heroOverlayStyle: CSSProperties = {
+  backgroundImage: [
+    'linear-gradient(to bottom right, rgba(29, 205, 159, 0.05), transparent, transparent)',
+    'linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent, transparent)',
+    'linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6))',
+  ].join(', '),
+};
+
+/** Cheap placeholder while the home hero SVG chunk loads — matches dominant stops from Svg-1425-64 base layer + teal glows. */
+function HomeHeroSvgFallback() {
+  return (
+    <div
+      className="absolute inset-0 w-full min-h-full pointer-events-none"
+      aria-hidden
+      style={{
+        backgroundColor: '#030104',
+        backgroundImage: `
+          linear-gradient(127deg, #0d0d0d 0%, #080609 52%, #030104 100%),
+          radial-gradient(ellipse 100% 85% at 72% 28%, rgba(29, 205, 159, 0.09) 0%, transparent 55%),
+          radial-gradient(ellipse 90% 75% at 18% 72%, rgba(13, 255, 229, 0.045) 0%, transparent 52%),
+          radial-gradient(ellipse 70% 60% at 48% 48%, rgba(8, 125, 114, 0.055) 0%, transparent 58%)
+        `,
+      }}
+    />
+  );
+}
+
 export function HeroBackground({ className = '', variant = 'default' }: HeroBackgroundProps) {
   return (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>
-      {/* Gradient overlay for depth and text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60 z-10" />
-      
-      {/* Static background - SVG for home, images for other pages */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* Static background — home art is code-split; single-vector scene + paint containment. */}
+      <div className="absolute inset-0 w-full min-h-full pointer-events-none">
         {variant === 'default' ? (
-          <Svg />
+          <Suspense fallback={<HomeHeroSvgFallback />}>
+            <LazyHomeHeroSvg />
+          </Suspense>
         ) : (
           <img
             src={variant === 'about' ? aboutHeroImage : variant === 'projects' ? projectsHeroImage : variant === 'contact' ? contactHeroImage : servicesHeroImage}
@@ -41,11 +70,12 @@ export function HeroBackground({ className = '', variant = 'default' }: HeroBack
         )}
       </div>
 
-      {/* Subtle vignette for edge softening */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50 z-10" />
-      
-      {/* Teal accent glow overlay matching brand colors */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1DCD9F]/5 via-transparent to-transparent z-10" />
+      {/* Single stacked overlay (was 3 layers) — same visual recipe, less compositing */}
+      <div
+        className="pointer-events-none absolute inset-0 z-10"
+        style={heroOverlayStyle}
+        aria-hidden
+      />
     </div>
   );
 }

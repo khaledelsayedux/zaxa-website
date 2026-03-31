@@ -1,5 +1,653 @@
 @import './fonts.css';
 @import './tailwind.css';
+
+/* Route shell: CSS-only enter animation (replaces Motion on the critical path). */
+@keyframes route-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.route-page-enter {
+  animation: route-page-enter 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-page-enter {
+    animation: none;
+  }
+}
+
+/* Layout shell: CSS replaces Framer Motion on nav / footer / FAB / error UI. */
+@keyframes shell-nav-enter {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.shell-nav-enter {
+  animation: shell-nav-enter 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes shell-float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.shell-float-y-slow {
+  animation: shell-float-y 3s ease-in-out infinite;
+}
+
+.shell-float-y-medium {
+  animation: shell-float-y 2s ease-in-out infinite;
+}
+
+@keyframes shell-pulse-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.shell-pulse-scale {
+  animation: shell-pulse-scale 2s ease-in-out infinite;
+}
+
+@keyframes shell-fab-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shell-fab-enter {
+  animation: shell-fab-enter 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+}
+
+@keyframes shell-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.shell-spin-60 {
+  animation: shell-spin 60s linear infinite;
+}
+
+.shell-spin-40-rev {
+  animation: shell-spin 40s linear infinite reverse;
+}
+
+@keyframes shell-footer-orb {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+.shell-footer-orb-a {
+  animation: shell-footer-orb 8s ease-in-out infinite;
+}
+
+.shell-footer-orb-b {
+  animation: shell-footer-orb 10s ease-in-out 1s infinite;
+}
+
+.shell-footer-orb-c {
+  animation: shell-footer-orb 12s ease-in-out 2s infinite;
+}
+
+@keyframes shell-line-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.shell-line-grow {
+  transform-origin: left center;
+  animation: shell-line-grow 1.2s ease-out 0.3s both;
+}
+
+.shell-divider-grow {
+  transform-origin: center center;
+  animation: shell-line-grow 1s ease-out both;
+}
+
+@keyframes shell-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shell-fade-in-up {
+  animation: shell-fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.shell-fade-in {
+  animation: shell-fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.shell-stagger-fade-in {
+  opacity: 0;
+  animation: shell-fade-in-up 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* First-visit intro — CSS only (no Motion runtime). */
+@keyframes intro-shell-fade-out {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.intro-shell-exit {
+  animation: intro-shell-fade-out 0.5s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
+}
+
+@keyframes intro-bg-drift {
+  0%,
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: rotateX(2deg) rotateY(-2deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  75% {
+    transform: rotateX(-2deg) rotateY(2deg);
+  }
+}
+
+.intro-bg-drift {
+  transform-style: preserve-3d;
+  animation: intro-bg-drift 20s ease-in-out infinite;
+}
+
+.intro-backdrop-art {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  transform: translateZ(-100px);
+  transform-style: preserve-3d;
+  background-image: linear-gradient(rgba(29, 205, 159, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 205, 159, 0.3) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0L93.3 25v50L50 100 6.7 75V25z' fill='none' stroke='%231DCD9F' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 80px 80px, 80px 80px, 100px 100px;
+  animation: intro-hex-breathe 4s ease-in-out infinite;
+}
+
+@keyframes intro-hex-breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes intro-orb-pulse {
+  0%,
+  100% {
+    transform: translateZ(-200px) scale(1);
+    opacity: 0.08;
+  }
+  50% {
+    transform: translateZ(-200px) scale(1.12);
+    opacity: 0.12;
+  }
+}
+
+.intro-orb-a {
+  animation: intro-orb-pulse 8s ease-in-out infinite;
+}
+
+@keyframes intro-orb-pulse-alt {
+  0%,
+  100% {
+    transform: translateZ(-150px) scale(1);
+    opacity: 0.08;
+  }
+  50% {
+    transform: translateZ(-150px) scale(1.2);
+    opacity: 0.12;
+  }
+}
+
+.intro-orb-b {
+  animation: intro-orb-pulse-alt 10s ease-in-out 1s infinite reverse;
+}
+
+@keyframes intro-particle {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.55;
+    transform: translate3d(0, -28px, 0) scale(1);
+  }
+  70% {
+    opacity: 0;
+    transform: translate3d(0, -56px, 0) scale(0);
+  }
+}
+
+.intro-particle {
+  animation: intro-particle var(--intro-p-dur, 4.5s) ease-in-out infinite;
+  animation-delay: var(--intro-p-delay, 0s);
+  will-change: transform, opacity;
+}
+
+@keyframes intro-content-drift {
+  0%,
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  33% {
+    transform: rotateX(3deg) rotateY(-5deg);
+  }
+  66% {
+    transform: rotateX(-3deg) rotateY(5deg);
+  }
+}
+
+.intro-content-drift {
+  transform-style: preserve-3d;
+  animation: intro-content-drift 15s ease-in-out infinite;
+}
+
+@keyframes intro-logo-reveal {
+  0% {
+    transform: translateZ(50px) scale(0.8) rotateY(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(50px) scale(1) rotateY(360deg);
+    opacity: 1;
+  }
+}
+
+.intro-logo-reveal {
+  transform-style: preserve-3d;
+  animation: intro-logo-reveal 1.2s cubic-bezier(0.43, 0.13, 0.23, 0.96) both;
+}
+
+@keyframes intro-ring-a {
+  0%,
+  100% {
+    transform: translateZ(-30px) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateZ(-30px) scale(1.08);
+    opacity: 0.4;
+  }
+}
+
+.intro-ring-a {
+  animation: intro-ring-a 3s ease-in-out infinite;
+}
+
+@keyframes intro-ring-b {
+  0%,
+  100% {
+    transform: translateZ(-60px) scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateZ(-60px) scale(1.12);
+    opacity: 0.2;
+  }
+}
+
+.intro-ring-b {
+  animation: intro-ring-b 4s ease-in-out infinite;
+}
+
+@keyframes intro-glow-a {
+  0%,
+  100% {
+    transform: translateZ(-20px) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateZ(-20px) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.intro-glow-a {
+  animation: intro-glow-a 3s ease-in-out infinite;
+}
+
+@keyframes intro-glow-b {
+  0%,
+  100% {
+    transform: translateZ(-40px) scale(1.1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateZ(-40px) scale(1);
+    opacity: 0.4;
+  }
+}
+
+.intro-glow-b {
+  animation: intro-glow-b 4s ease-in-out 0.5s infinite;
+}
+
+@keyframes intro-logo-float {
+  0%,
+  100% {
+    transform: translateZ(50px) translateY(0) rotateZ(0deg);
+  }
+  50% {
+    transform: translateZ(50px) translateY(-10px) rotateZ(4deg);
+  }
+}
+
+.intro-logo-float {
+  animation: intro-logo-float 5s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+@keyframes intro-logo-shadow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.intro-logo-shadow-pulse {
+  animation: intro-logo-shadow 3s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+@keyframes intro-brand-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-brand {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: intro-brand-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
+}
+
+@keyframes intro-line-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.intro-brand-line {
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: intro-line-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.9s both;
+}
+
+.intro-brand-tag {
+  opacity: 0;
+  animation: intro-brand-in 0.4s ease 1s both;
+}
+
+.intro-progress-block {
+  opacity: 0;
+  animation: intro-brand-in 0.3s ease 1.2s both;
+}
+
+@keyframes intro-progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.intro-progress-fill {
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: intro-progress-fill 1.15s linear 1.2s both;
+}
+
+@keyframes intro-shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.intro-progress-shimmer {
+  animation: intro-shimmer 1.5s linear infinite;
+  animation-delay: 1.2s;
+}
+
+@keyframes intro-init-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.intro-init-pulse {
+  animation: intro-init-pulse 1.5s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+@keyframes intro-corner-tl {
+  from {
+    opacity: 0;
+    transform: translate(-10px, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes intro-corner-tr {
+  from {
+    opacity: 0;
+    transform: translate(10px, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes intro-corner-bl {
+  from {
+    opacity: 0;
+    transform: translate(-10px, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes intro-corner-br {
+  from {
+    opacity: 0;
+    transform: translate(10px, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.intro-corner-tl {
+  animation: intro-corner-tl 0.5s ease 0.4s both;
+}
+.intro-corner-tr {
+  animation: intro-corner-tr 0.5s ease 0.4s both;
+}
+.intro-corner-bl {
+  animation: intro-corner-bl 0.5s ease 0.4s both;
+}
+.intro-corner-br {
+  animation: intro-corner-br 0.5s ease 0.4s both;
+}
+
+@keyframes shell-error-orb {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.15;
+  }
+}
+
+.shell-error-orb {
+  animation: shell-error-orb 8s ease-in-out infinite;
+}
+
+@keyframes shell-error-icon-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+.shell-error-icon-glow {
+  animation: shell-error-icon-glow 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell-nav-enter,
+  .shell-float-y-slow,
+  .shell-float-y-medium,
+  .shell-pulse-scale,
+  .shell-spin-60,
+  .shell-spin-40-rev,
+  .shell-footer-orb-a,
+  .shell-footer-orb-b,
+  .shell-footer-orb-c,
+  .shell-line-grow,
+  .shell-divider-grow,
+  .shell-fade-in-up,
+  .shell-fade-in,
+  .shell-error-orb,
+  .shell-error-icon-glow,
+  .shell-fab-enter,
+  .shell-stagger-fade-in,
+  .intro-bg-drift,
+  .intro-backdrop-art,
+  .intro-orb-a,
+  .intro-orb-b,
+  .intro-particle,
+  .intro-content-drift,
+  .intro-logo-reveal,
+  .intro-ring-a,
+  .intro-ring-b,
+  .intro-glow-a,
+  .intro-glow-b,
+  .intro-logo-float,
+  .intro-logo-shadow-pulse,
+  .intro-brand,
+  .intro-brand-line,
+  .intro-brand-tag,
+  .intro-progress-block,
+  .intro-progress-fill,
+  .intro-progress-shimmer,
+  .intro-init-pulse,
+  .intro-corner-tl,
+  .intro-corner-tr,
+  .intro-corner-bl,
+  .intro-corner-br {
+    animation: none !important;
+  }
+
+  .shell-stagger-fade-in,
+  .intro-brand,
+  .intro-brand-tag,
+  .intro-progress-block,
+  .intro-init-pulse {
+    opacity: 1 !important;
+  }
+
+  .intro-brand-line,
+  .intro-progress-fill {
+    transform: scaleX(1) !important;
+  }
+
+  .intro-logo-reveal {
+    opacity: 1 !important;
+    transform: translateZ(0) scale(1) !important;
+  }
+
+  .intro-shell.intro-shell-exit {
+    animation: intro-shell-fade-out 0.35s ease-out forwards !important;
+  }
+}
 @import './theme.css';
 @import './glass.css';
 @import './hover-effects.css';

@@ -1,5 +1,4 @@
-import { motion } from 'motion/react';
-import { ReactNode, useState, useRef, useEffect } from 'react';
+import { ReactNode, useRef, useEffect } from 'react';
 import { useTheme } from '@/app/contexts/ThemeContext';
 
 interface ButtonProps {
@@ -63,7 +62,7 @@ export function Button({
   };
 
   return (
-    <motion.button
+    <button
       type={type}
       onClick={handleClick}
       disabled={disabled}
@@ -77,6 +76,9 @@ export function Button({
         disabled:cursor-not-allowed
         disabled:opacity-50
         overflow-hidden
+        motion-safe:transition-transform
+        ${disabled ? '' : 'hover:scale-[1.02] active:scale-[0.98]'}
+        motion-reduce:hover:scale-100 motion-reduce:active:scale-100
         ${pill ? 'rounded-full' : 'rounded-lg'}
         text-[#5FEFBF]
         ${className}
@@ -89,13 +91,10 @@ export function Button({
         background: theme === 'dark'
           ? 'rgba(255, 255, 255, 0.05)'
           : 'rgba(255, 255, 255, 0.08)',
-        backdropFilter: 'blur(28px) saturate(180%)',
-        WebkitBackdropFilter: 'blur(28px) saturate(180%)',
+        backdropFilter: 'blur(14px) saturate(140%)',
+        WebkitBackdropFilter: 'blur(14px) saturate(140%)',
         boxShadow: 'none',
       }}
-      whileHover={!disabled ? { scale: 1.02 } : {}}
-      whileTap={!disabled ? { scale: 0.98 } : {}}
-      transition={{ type: 'spring', stiffness: 700, damping: 20 }}
     >
       {/* Frost diffusion overlay */}
       <div 
@@ -109,7 +108,7 @@ export function Button({
       <div 
         className={`absolute inset-0 opacity-[0.03] pointer-events-none ${pill ? 'rounded-full' : 'rounded-lg'} mix-blend-overlay`}
         style={{
-          backgroundImage: `url(\\\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E\\\")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E")`,
         }}
       />
       
@@ -130,7 +129,7 @@ export function Button({
       />
       
       {/* Hover brightness effect with teal tint */}
-      <motion.div
+      <div
         className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none ${pill ? 'rounded-full' : 'rounded-lg'}`}
         style={{
           border: '1px solid rgba(29, 205, 159, 0.5)',
@@ -139,6 +138,6 @@ export function Button({
       />
       
       <span className="relative z-10 flex items-center gap-2">{children}</span>
-    </motion.button>
+    </button>
   );
 }
