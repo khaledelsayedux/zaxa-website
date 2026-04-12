@@ -235,10 +235,14 @@ export function Footer() {
               
               <form>
                 <div className="relative group">
-                  {/* Input field with enhanced styling */}
+                  <label htmlFor="footer-email" className="sr-only">
+                    Email address
+                  </label>
                   <input
+                    id="footer-email"
                     type="email"
                     placeholder="Your email address"
+                    autoComplete="email"
                     className="w-full px-5 py-3.5 pr-14 bg-zinc-900/90 border border-zinc-800/60 rounded-2xl focus:outline-none focus:border-[#1DCD9F]/50 focus:bg-zinc-900 text-white placeholder-zinc-500 transition-all duration-300 group-hover:border-[#1DCD9F]/30 text-sm shadow-lg shadow-black/20"
                     style={{ fontFamily: "'Cairo', sans-serif" }}
                   />

@@ -654,6 +654,7 @@
 @import './parallax.css';
 @import './gsap-effects.css';
 
+
 /* Global styles */
 * {
   scroll-behavior: smooth;

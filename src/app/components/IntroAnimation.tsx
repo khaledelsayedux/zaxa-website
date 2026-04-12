@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { brandLogoMint as newLogo } from '@/assets/images';
 
 interface IntroAnimationProps {
@@ -14,6 +14,8 @@ const PARTICLES: { left: string; top: string; dur: number; delay: number }[] = [
 
 export function IntroAnimation({ onComplete }: IntroAnimationProps) {
   const [exiting, setExiting] = useState(false);
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
 
   useEffect(() => {
     const reduce =
@@ -23,13 +25,15 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
     const doneMs = reduce ? 800 : 2900;
 
     const tExit = window.setTimeout(() => setExiting(true), exitMs);
-    const tDone = window.setTimeout(() => onComplete(), doneMs);
+    const tDone = window.setTimeout(() => {
+      onCompleteRef.current();
+    }, doneMs);
 
     return () => {
       window.clearTimeout(tExit);
       window.clearTimeout(tDone);
     };
-  }, [onComplete]);
+  }, []);
 
   return (
     <div
@@ -75,23 +79,23 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
         <div className="intro-logo-reveal relative mb-12" style={{ transformStyle: 'preserve-3d' }}>
           <div
             className="intro-ring-a absolute -inset-12 rounded-full border border-[#1DCD9F]/20"
-            style={{ transformStyle: 'preserve-3d', transform: 'translateZ(-30px)' }}
+            style={{ transformStyle: 'preserve-3d' }}
           />
           <div
             className="intro-ring-b absolute -inset-16 rounded-full border border-[#1DCD9F]/10"
-            style={{ transformStyle: 'preserve-3d', transform: 'translateZ(-60px)' }}
+            style={{ transformStyle: 'preserve-3d' }}
           />
 
           <div
             className="intro-glow-a absolute -inset-8 bg-gradient-to-r from-[#1DCD9F]/20 via-emerald-400/20 to-[#169976]/20 rounded-full opacity-40 blur-2xl transform-gpu"
-            style={{ transformStyle: 'preserve-3d', transform: 'translateZ(-20px)' }}
+            style={{ transformStyle: 'preserve-3d' }}
           />
           <div
             className="intro-glow-b absolute -inset-10 bg-gradient-to-r from-emerald-400/15 via-[#1DCD9F]/15 to-teal-400/15 rounded-full opacity-30 blur-xl transform-gpu"
-            style={{ transformStyle: 'preserve-3d', transform: 'translateZ(-40px)' }}
+            style={{ transformStyle: 'preserve-3d' }}
           />
 
-          <div className="intro-logo-float relative" style={{ transformStyle: 'preserve-3d', transform: 'translateZ(50px)' }}>
+          <div className="intro-logo-float relative" style={{ transformStyle: 'preserve-3d' }}>
             <div
               className="intro-logo-shadow-pulse absolute inset-0"
               style={{

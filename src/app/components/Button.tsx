@@ -1,5 +1,6 @@
-import { ReactNode, useRef, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { useTheme } from '@/app/contexts/ThemeContext';
+import { usePlayTabSound } from '@/app/hooks/usePlayTabSound';
 
 interface ButtonProps {
   children: ReactNode;
@@ -21,41 +22,9 @@ export function Button({
   pill = false,
 }: ButtonProps) {
   const { theme } = useTheme();
-  
-  // Audio Context for tab sound
-  const audioContextRef = useRef<AudioContext | null>(null);
+  const playTabSound = usePlayTabSound();
 
-  useEffect(() => {
-    // Initialize Web Audio API
-    if (typeof window !== 'undefined' && !audioContextRef.current) {
-      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
-    }
-  }, []);
-
-  // Simple glass tap sound (same as HOME tab)
-  const playTabSound = () => {
-    if (!audioContextRef.current || disabled) return;
-    
-    const ctx = audioContextRef.current;
-    const now = ctx.currentTime;
-    
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    
-    osc.frequency.value = 1800;
-    osc.type = 'sine';
-    
-    gain.gain.setValueAtTime(0.06, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
-    
-    osc.start(now);
-    osc.stop(now + 0.04);
-  };
-
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (_e: React.MouseEvent<HTMLButtonElement>) => {
     if (disabled) return;
     playTabSound();
     if (onClick) onClick();

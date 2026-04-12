@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { Menu, X } from 'lucide-react';
 import { Button } from './Button';
 import { useTheme } from '@/app/contexts/ThemeContext';
+import { usePlayTabSound } from '@/app/hooks/usePlayTabSound';
 import { logoTeal } from '@/assets/images';
 
 type PillMetrics = { left: number; top: number; width: number; height: number; visible: boolean };
@@ -21,7 +22,7 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const { theme } = useTheme();
   const location = useLocation();
-  const audioContextRef = useRef<AudioContext | null>(null);
+  const playTabSound = usePlayTabSound();
   const navTrackRef = useRef<HTMLDivElement>(null);
   const linkRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
   const [pill, setPill] = useState<PillMetrics>({
@@ -37,35 +38,8 @@ export function Navigation() {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
-
-    if (typeof window !== 'undefined' && !audioContextRef.current) {
-      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
-    }
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const playTabSound = () => {
-    if (!audioContextRef.current) return;
-
-    const ctx = audioContextRef.current;
-    const now = ctx.currentTime;
-
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-
-    osc.frequency.value = 1800;
-    osc.type = 'sine';
-
-    gain.gain.setValueAtTime(0.06, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
-
-    osc.start(now);
-    osc.stop(now + 0.04);
-  };
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -217,13 +191,14 @@ export function Navigation() {
                 >
                   <span
                     className={`relative z-10 transition-all duration-300 text-base ${
-                      isActive(link.path) ? 'font-medium' : 'text-white font-light'
+                      isActive(link.path)
+                        ? 'font-medium text-white'
+                        : `font-light ${theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'}`
                     }`}
                     style={{
                       fontFamily: "'Cairo', sans-serif",
                       textRendering: 'optimizeLegibility',
                       WebkitFontSmoothing: 'antialiased',
-                      color: isActive(link.path) ? '#FFFFFF' : undefined,
                     }}
                   >
                     {link.label}
