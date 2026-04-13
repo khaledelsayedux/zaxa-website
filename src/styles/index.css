@@ -1,5 +1,6 @@
 @import './fonts.css';
 @import './tailwind.css';
+@import './tokens.css';
 
 /* Route shell: CSS-only enter animation (replaces Motion on the critical path). */
 @keyframes route-page-enter {
@@ -170,58 +171,33 @@
 
 /* First-visit intro — CSS only (no Motion runtime). */
 @keyframes intro-shell-fade-out {
-  to {
+  0% {
+    opacity: 1;
+  }
+  100% {
     opacity: 0;
     pointer-events: none;
   }
 }
 
+@keyframes intro-content-fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.97);
+  }
+}
+
 .intro-shell-exit {
-  animation: intro-shell-fade-out 0.5s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
+  animation: intro-shell-fade-out 0.75s cubic-bezier(0.4, 0, 0.2, 1) 0.25s forwards;
+  pointer-events: none;
 }
 
-@keyframes intro-bg-drift {
-  0%,
-  100% {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  25% {
-    transform: rotateX(2deg) rotateY(-2deg);
-  }
-  50% {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  75% {
-    transform: rotateX(-2deg) rotateY(2deg);
-  }
-}
-
-.intro-bg-drift {
-  transform-style: preserve-3d;
-  animation: intro-bg-drift 20s ease-in-out infinite;
-}
-
-.intro-backdrop-art {
-  position: absolute;
-  inset: 0;
-  opacity: 0.35;
-  transform: translateZ(-100px);
-  transform-style: preserve-3d;
-  background-image: linear-gradient(rgba(29, 205, 159, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(29, 205, 159, 0.3) 1px, transparent 1px),
-    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0L93.3 25v50L50 100 6.7 75V25z' fill='none' stroke='%231DCD9F' stroke-width='1'/%3E%3C/svg%3E");
-  background-size: 80px 80px, 80px 80px, 100px 100px;
-  animation: intro-hex-breathe 4s ease-in-out infinite;
-}
-
-@keyframes intro-hex-breathe {
-  0%,
-  100% {
-    opacity: 0.35;
-  }
-  50% {
-    opacity: 0.5;
-  }
+.intro-shell-exit .intro-content-drift {
+  animation: intro-content-fade-out 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes intro-orb-pulse {
@@ -599,8 +575,6 @@
   .shell-error-icon-glow,
   .shell-fab-enter,
   .shell-stagger-fade-in,
-  .intro-bg-drift,
-  .intro-backdrop-art,
   .intro-orb-a,
   .intro-orb-b,
   .intro-particle,
@@ -645,7 +619,10 @@
   }
 
   .intro-shell.intro-shell-exit {
-    animation: intro-shell-fade-out 0.35s ease-out forwards !important;
+    animation: intro-shell-fade-out 0.3s ease-out forwards !important;
+  }
+  .intro-shell.intro-shell-exit .intro-content-drift {
+    animation: none !important;
   }
 }
 @import './theme.css';
@@ -655,13 +632,7 @@
 @import './gsap-effects.css';
 
 
-/* Global styles */
+/* Global scroll behaviour */
 * {
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }

@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
-import { Mail, MapPin, Linkedin, Facebook, Instagram, Send, MessageCircle, Users, Briefcase, HeadphonesIcon, Info, Clock, CheckCircle, Paperclip, X, FileText, Image as ImageIcon } from 'lucide-react';
+import { Mail, MapPin, Send, Users, Briefcase, HeadphonesIcon, Info, CheckCircle, Paperclip, X, FileText, Image as ImageIcon } from 'lucide-react';
 import { Button } from '../components/Button';
+import { SEO } from '../components/SEO';
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/app/contexts/ThemeContext';
 import { HeroBackground } from '../components/HeroBackground';
@@ -111,6 +112,7 @@ export function ContactPage() {
   });
 
   const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
+  const [submitted, setSubmitted] = useState(false);
 
   // Handle scroll to hash on page load
   useEffect(() => {
@@ -128,10 +130,7 @@ export function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    console.log('Attached files:', attachedFiles);
-    alert('Thank you! We\'ll get back to you soon.');
+    setSubmitted(true);
     setFormData({ name: '', email: '', message: '' });
     setAttachedFiles([]);
   };
@@ -172,6 +171,11 @@ export function ContactPage() {
 
   return (
     <div className="relative scroll-container">
+      <SEO
+        title="Contact Us | Zaxa Studio"
+        description="Get in touch with Zaxa Studio. From product engineering to design, branding, and marketing — let's turn your ideas into impact."
+        url="/contact"
+      />
       {/* Hero Section - Improved */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
         {/* Static Hero Background */}
@@ -276,12 +280,16 @@ export function ContactPage() {
 
               {/* Contact Cards - Improved Design */}
               <div className="space-y-5">
-                {contactInfo.map((item, index) => (
-                  <motion.a
+                {contactInfo.map((item, index) => {
+                const MotionEl = item.href ? motion.a : motion.div;
+                return (
+                  <MotionEl
                     key={item.label}
-                    href={item.href || undefined}
-                    target={item.href?.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    {...(item.href ? {
+                      href: item.href,
+                      target: item.href.startsWith('http') ? '_blank' : undefined,
+                      rel: item.href.startsWith('http') ? 'noopener noreferrer' : undefined,
+                    } : {})}
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -318,14 +326,16 @@ export function ContactPage() {
                         className="relative text-zinc-600 group-hover:text-teal-400 transition-colors"
                         animate={{ x: [0, 4, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
+                        aria-hidden="true"
                       >
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </motion.div>
                     )}
-                  </motion.a>
-                ))}
+                  </MotionEl>
+                );
+              })}
               </div>
 
               {/* Social Links - Redesigned */}
@@ -396,6 +406,29 @@ export function ContactPage() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#1DCD9F]/5 rounded-full blur-2xl transform-gpu" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#169976]/5 rounded-full blur-2xl transform-gpu" />
 
+                {submitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative flex flex-col items-center justify-center text-center py-16 space-y-6"
+                  >
+                    <div className="w-20 h-20 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center">
+                      <CheckCircle size={40} className="text-teal-400" />
+                    </div>
+                    <h3 className="text-3xl tracking-tight text-white">Message Sent!</h3>
+                    <p className="text-zinc-400 text-lg max-w-sm">
+                      Thank you for reaching out. We'll get back to you within 24 hours.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitted(false)}
+                      className="text-teal-400 hover:text-teal-300 text-sm transition-colors duration-300 underline underline-offset-4"
+                    >
+                      Send another message
+                    </button>
+                  </motion.div>
+                ) : (
                 <form onSubmit={handleSubmit} className="relative space-y-8">
                   <div>
                     <h3 className="text-3xl mb-3 tracking-tight">Start Your Project</h3>
@@ -457,7 +490,7 @@ export function ContactPage() {
 
                   {/* File Upload Section */}
                   <div>
-                    <label className="block text-base mb-3 text-zinc-400 font-medium">
+                    <label htmlFor="files" className="block text-base mb-3 text-zinc-400 font-medium">
                       Attach Files (Images & Documents)
                     </label>
                     
@@ -549,6 +582,7 @@ export function ContactPage() {
                         <motion.div
                           animate={{ x: [0, 4, 0] }}
                           transition={{ duration: 1.5, repeat: Infinity }}
+                          aria-hidden="true"
                         >
                           <Send size={20} />
                         </motion.div>
@@ -556,6 +590,7 @@ export function ContactPage() {
                     </Button>
                   </motion.div>
                 </form>
+                )}
               </div>
             </motion.div>
           </div>

@@ -3,7 +3,7 @@ import { Mail } from 'lucide-react';
 
 export function FloatingContactButton() {
   return (
-    <Link to="/contact#contact-form">
+    <Link to="/contact#contact-form" aria-label="Contact us">
       <div
         className="shell-fab-enter group fixed bottom-8 right-8 w-14 h-14 bg-white/[0.08] backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center shadow-[0_4px_16px_0_rgba(29,205,159,0.15)] transition-all duration-300 overflow-hidden z-[60] cursor-pointer motion-safe:hover:scale-110 motion-safe:hover:-translate-y-1 active:scale-95"
       >

@@ -1,35 +1,16 @@
 import { motion } from 'motion/react';
-import { Briefcase, Mail, Phone, User, FileText, Upload, Sparkles } from 'lucide-react';
-import { useState } from 'react';
-import { ParallaxBackground } from '../components/ParallaxBackground';
+import { Briefcase, Sparkles } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export function CareersPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    position: '',
-    coverLetter: '',
-    resume: null as File | null,
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFormData({ ...formData, resume: e.target.files[0] });
-    }
-  };
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Parallax Background */}
-      <ParallaxBackground className="fixed inset-0 z-0" />
-      
+      <SEO
+        title="Careers | Zaxa Studio"
+        description="Join Zaxa Studio — a team of product builders, designers, and engineers shaping the future of digital experiences."
+        url="/career"
+      />
       {/* Ambient gradient orbs */}
       <div className="fixed top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-[#1DCD9F]/10 via-[#169976]/5 to-transparent rounded-full blur-2xl opacity-40 animate-pulse pointer-events-none transform-gpu" style={{ animationDuration: '8s' }} />
       <div className="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-[#1DCD9F]/8 via-transparent to-transparent rounded-full blur-2xl opacity-30 animate-pulse pointer-events-none transform-gpu" style={{ animationDuration: '12s' }} />
