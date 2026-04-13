@@ -409,64 +409,54 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
               >
                 with a product designed to perform.
               </p>
-              <Link to="/contact">
-                <button
-                  type="button"
-                  onClick={playTabSound}
-                  className="group relative px-8 md:px-10 py-3 md:py-4 rounded-lg min-h-[48px] md:min-h-[56px] touch-manipulation transition-all duration-300 ease-out overflow-hidden text-[#5FEFBF] hover:scale-[1.02] active:scale-[0.98] motion-safe:transition-transform motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
+              <Link
+                to="/contact"
+                onClick={playTabSound}
+                className="group relative px-8 md:px-10 py-3 md:py-4 rounded-lg min-h-[48px] md:min-h-[56px] touch-manipulation transition-all duration-300 ease-out overflow-hidden text-[#5FEFBF] hover:scale-[1.02] active:scale-[0.98] motion-safe:transition-transform motion-reduce:hover:scale-100 motion-reduce:active:scale-100 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1DCD9F] focus-visible:ring-offset-2"
+                style={{
+                  fontWeight: 600,
+                  fontSize: '16px',
+                  letterSpacing: '-0.02em',
+                  background: theme === 'dark'
+                    ? 'rgba(255, 255, 255, 0.08)'
+                    : 'rgba(255, 255, 255, 0.12)',
+                }}
+              >
+                {/* Noise/grain texture */}
+                <div 
+                  className="absolute inset-0 opacity-[0.03] pointer-events-none rounded-lg mix-blend-overlay"
                   style={{
-                    fontWeight: 600,
-                    fontSize: '16px',
-                    letterSpacing: '-0.02em',
-                    background: theme === 'dark'
-                      ? 'rgba(255, 255, 255, 0.08)'
-                      : 'rgba(255, 255, 255, 0.12)',
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E")`,
                   }}
-                >
-                  {/* Frost diffusion overlay */}
-                  <div 
-                    className="absolute inset-0 rounded-lg pointer-events-none"
-                    style={{
-                      background: 'transparent',
-                    }}
-                  />
-                  
-                  {/* Noise/grain texture */}
-                  <div 
-                    className="absolute inset-0 opacity-[0.03] pointer-events-none rounded-lg mix-blend-overlay"
-                    style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulance type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E")`,
-                    }}
-                  />
-                  
-                  {/* Inner highlight stroke */}
-                  <div 
-                    className="absolute inset-[0.5px] rounded-lg pointer-events-none"
-                    style={{
-                      border: `1px solid ${theme === 'dark' ? 'rgba(255, 255, 255, 0.12)' : 'rgba(255, 255, 255, 0.40)'}`,
-                    }}
-                  />
-                  
-                  {/* Top-edge specular light band */}
-                  <div 
-                    className="absolute top-[2px] left-[15%] right-[15%] h-[0.5px] rounded-lg pointer-events-none"
-                    style={{
-                      background: `linear-gradient(90deg, transparent, ${theme === 'dark' ? 'rgba(255, 255, 255, 0.30)' : 'rgba(255, 255, 255, 0.50)'}, transparent)`,
-                    }}
-                  />
-                  
-                  <div
-                    className="pointer-events-none absolute inset-0 rounded-lg opacity-0 transition-opacity duration-100 group-hover:opacity-100"
-                    style={{
-                      border: '1px solid rgba(29, 205, 159, 0.5)',
-                      background: 'transparent',
-                    }}
-                  />
+                />
+                
+                {/* Inner highlight stroke */}
+                <div 
+                  className="absolute inset-[0.5px] rounded-lg pointer-events-none"
+                  style={{
+                    border: `1px solid ${theme === 'dark' ? 'rgba(255, 255, 255, 0.12)' : 'rgba(255, 255, 255, 0.40)'}`,
+                  }}
+                />
+                
+                {/* Top-edge specular light band */}
+                <div 
+                  className="absolute top-[2px] left-[15%] right-[15%] h-[0.5px] rounded-lg pointer-events-none"
+                  style={{
+                    background: `linear-gradient(90deg, transparent, ${theme === 'dark' ? 'rgba(255, 255, 255, 0.30)' : 'rgba(255, 255, 255, 0.50)'}, transparent)`,
+                  }}
+                />
+                
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 rounded-lg opacity-0 transition-opacity duration-100 group-hover:opacity-100"
+                  style={{
+                    border: '1px solid rgba(29, 205, 159, 0.5)',
+                  }}
+                />
 
-                  <span className="relative z-10">
-                    Start Your Project
-                  </span>
-                </button>
+                <span className="relative z-10">
+                  Start Your Project
+                </span>
               </Link>
             </div>
             </div>

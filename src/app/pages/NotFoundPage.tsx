@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
-import { Home, ArrowLeft, Search } from 'lucide-react';
+import { Home, ArrowRight, Search } from 'lucide-react';
 import { Button } from '../components/Button';
 
 export function NotFoundPage() {
@@ -137,21 +137,21 @@ export function NotFoundPage() {
                 className="text-[#1DCD9F] hover:text-[#5FEFBF] transition-colors duration-300 flex items-center gap-2"
               >
                 Our Services
-                <ArrowLeft size={14} className="rotate-180" />
+                <ArrowRight size={14} />
               </Link>
               <Link 
                 to="/about" 
                 className="text-[#1DCD9F] hover:text-[#5FEFBF] transition-colors duration-300 flex items-center gap-2"
               >
                 About Us
-                <ArrowLeft size={14} className="rotate-180" />
+                <ArrowRight size={14} />
               </Link>
               <Link 
                 to="/contact" 
                 className="text-[#1DCD9F] hover:text-[#5FEFBF] transition-colors duration-300 flex items-center gap-2"
               >
                 Contact Us
-                <ArrowLeft size={14} className="rotate-180" />
+                <ArrowRight size={14} />
               </Link>
             </div>
           </motion.div>

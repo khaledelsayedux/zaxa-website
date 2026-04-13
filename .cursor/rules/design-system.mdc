@@ -1,0 +1,211 @@
+---
+description: Zaxa Studio design system rules. Applies when working on any UI, styling, or component file. Enforces token usage, dark-first approach, and brand conventions.
+globs: ["src/**/*.{tsx,ts,css}", "src/styles/**"]
+alwaysApply: true
+---
+
+# Zaxa Studio — Design System Rules
+
+## Core Principles
+
+- **Dark only.** The site forces `class="dark"` on `<html>`. Never implement or consider light-mode variants in new work.
+- **Minimal and premium.** Prefer restraint over decoration. Every visual choice should feel intentional.
+- **Green is an accent, not a base color.** Use `var(--green-400)` / `#1DCD9F` sparingly — for interactive highlights, focus states, key labels, and brand moments. Body text is never green.
+
+---
+
+## Token Files
+
+| File | Purpose |
+|------|---------|
+| `src/styles/tokens.css` | **Single source of truth.** All primitives: color palette, spacing, radius, shadows, typography scale, transitions, z-index. |
+| `src/styles/theme.css` | Maps tokens → component semantic variables (`:root` / `.dark`) and exposes them to Tailwind via `@theme inline`. |
+| `src/styles/glass.css` | Glassmorphism utility classes, all referencing token variables. |
+
+---
+
+## Color Rules
+
+### IMPORTANT: Never hardcode color values
+
+- NEVER use raw hex (`#1DCD9F`, `#000000`, `#141414`) in component files.
+- NEVER use raw `rgba(29, 205, 159, ...)` — use the token variables instead.
+- Use CSS custom properties: `var(--green-400)`, `var(--color-border-accent)`, `var(--color-text-secondary)`, etc.
+- In Tailwind classes, prefer semantic utilities: `text-foreground`, `bg-background`, `border-border`, `text-muted-foreground`.
+
+### Color Token Reference
+
+```
+Background hierarchy (darkest → lightest):
+  --color-bg-base           #000000  (page canvas)
+  --color-bg-surface        #080808  (slightly elevated)
+  --color-bg-surface-raised #141414  (cards, panels)
+  --color-bg-surface-overlay#1C1C1C  (modals, dropdowns)
+
+Text hierarchy:
+  --color-text-primary      #EDEDED  (main body text)
+  --color-text-secondary    #8A8A8A  (supporting / metadata)
+  --color-text-tertiary     #525252  (placeholders, disabled)
+  --color-text-accent       #1DCD9F  (green accent — use sparingly)
+  --color-text-on-accent    #000000  (text on green backgrounds)
+
+Borders:
+  --color-border-subtle          rgba(255,255,255, 0.05)
+  --color-border-default         rgba(255,255,255, 0.09)
+  --color-border-strong          rgba(255,255,255, 0.15)
+  --color-border-accent          rgba(29,205,159,  0.25)
+  --color-border-accent-strong   rgba(29,205,159,  0.50)
+
+Accent fills (tinted backgrounds):
+  --color-accent-fill-xs   rgba(29,205,159, 0.04)
+  --color-accent-fill-sm   rgba(29,205,159, 0.08)
+  --color-accent-fill-md   rgba(29,205,159, 0.12)
+  --color-accent-fill-lg   rgba(29,205,159, 0.18)
+
+Brand greens:
+  --green-400  #1DCD9F  (primary)
+  --green-500  #169976  (secondary / hover)
+  --green-600  #0D7C5E  (pressed / deep)
+```
+
+---
+
+## Typography Rules
+
+### Font families
+
+```
+--font-display  'Space Grotesk'  → H1, hero, display text
+--font-heading  'Outfit'         → H2–H6, section titles
+--font-body     'Inter'          → body copy, UI labels, buttons
+--font-mono     'JetBrains Mono' → code, technical content
+```
+
+In Tailwind: `font-display`, `font-heading`, `font-body`, `font-mono`.
+
+### Type scale
+
+Use `--font-size-*` token variables in custom CSS, or Tailwind's `text-*` utilities (which map to the same tokens via `@theme inline`):
+
+```
+text-2xs  → 10px    text-4xl → 36px
+text-xs   → 12px    text-5xl → 48px
+text-sm   → 14px    text-6xl → 60px
+text-base → 16px    text-7xl → 72px
+text-lg   → 18px    text-8xl → 96px
+text-xl   → 20px
+text-2xl  → 24px
+text-3xl  → 30px
+```
+
+### IMPORTANT: Never hardcode font sizes in px or rem directly. Use the scale.
+
+---
+
+## Spacing Rules
+
+Use the 4px base spacing scale. In Tailwind, use standard `p-*`, `m-*`, `gap-*` utilities. In custom CSS, use `var(--space-*)`:
+
+```
+--space-1  = 4px    --space-8  = 32px   --space-24 = 96px
+--space-2  = 8px    --space-10 = 40px   --space-32 = 128px
+--space-3  = 12px   --space-12 = 48px   --space-40 = 160px
+--space-4  = 16px   --space-16 = 64px
+--space-6  = 24px   --space-20 = 80px
+```
+
+Named semantic spacers: `--section-y` (96px), `--section-x` (24px).
+
+---
+
+## Border Radius Rules
+
+```
+--radius-sm   4px    (tags, badges)
+--radius-md   8px    (buttons, inputs)
+--radius-lg   12px   (small cards)
+--radius-xl   16px   (cards, panels)
+--radius-2xl  24px   (large panels)
+--radius-full 9999px (pills, avatars)
+```
+
+Component aliases: `--radius-btn`, `--radius-card`, `--radius-input`, `--radius-badge`.
+In Tailwind: `rounded-sm`, `rounded-md`, `rounded-lg`, `rounded-xl`, `rounded-2xl`, `rounded-full`.
+
+---
+
+## Shadow & Glow Rules
+
+Use token variables — never hardcode `box-shadow` values:
+
+```
+Depth:   --shadow-xs  --shadow-sm  --shadow-md  --shadow-lg  --shadow-xl  --shadow-2xl
+Glow:    --glow-xs    --glow-sm    --glow-md    --glow-lg    --glow-xl
+Text:    --glow-text-sm  --glow-text-md  --glow-text-lg
+Cards:   --shadow-card  --shadow-card-hover  --shadow-card-accent
+```
+
+Tailwind utility classes: `.glow-xs`, `.glow-sm`, `.glow-md`, `.glow-lg`, `.glow-text-sm`, `.glow-text-md`.
+
+---
+
+## Transition Rules
+
+```css
+transition: opacity var(--duration-normal) var(--ease-default);
+transition: transform var(--duration-slow) var(--ease-spring);
+```
+
+```
+Durations: --duration-fast (150ms)  --duration-normal (250ms)
+           --duration-slow (400ms)  --duration-slower (600ms)
+
+Easings:   --ease-default  cubic-bezier(0.22, 1, 0.36, 1)
+           --ease-in-out   cubic-bezier(0.4, 0, 0.2, 1)
+           --ease-spring   cubic-bezier(0.34, 1.56, 0.64, 1)
+```
+
+---
+
+## Component & File Conventions
+
+- UI components: `src/app/components/ui/`
+- Page sections: `src/app/pages/`
+- Feature components: `src/app/components/`
+- Styles: `src/styles/` (add to existing files; avoid new CSS files unless necessary)
+
+### Component patterns
+
+- All components accept a `className` prop for composition.
+- Prefer Tailwind utility classes for layout and spacing.
+- For complex or stateful styles, use CSS custom properties from the design system.
+- Use `clsx` + `tailwind-merge` (`cn()`) for conditional class composition.
+- IMPORTANT: Use Radix UI primitives from `src/app/components/ui/` before creating new ones.
+
+---
+
+## Glass Morphism
+
+Use the utility classes from `src/styles/glass.css`:
+
+```
+.glass-ios        Basic dark glass (cards, surfaces)
+.glass-premium    Stronger glass (featured sections)
+.glass-card       Card glass with depth shadow
+.glass-subtle     Minimal, nearly invisible glass
+.glass-teal       Green-tinted glass (accent areas)
+.glass-nav        Navigation bar glass
+.glass-modal      Modal/overlay glass
+.glass-input      Form input glass
+```
+
+IMPORTANT: Do not create new glass effects with hardcoded `rgba` values. Extend `glass.css` using token variables.
+
+---
+
+## Asset Rules
+
+- Icons: use `lucide-react` (already installed). Do not install new icon packages.
+- Images: use `.webp` format in `public/` or `src/assets/images/`.
+- Videos: store in `public/videos/`.
+- If Figma MCP returns a localhost source for an asset, use that source directly.
