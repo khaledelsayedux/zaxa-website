@@ -109,7 +109,7 @@ export function Navigation() {
         <link rel="preload" as="image" href={logoTeal} />
       </Helmet>
       <div
-        className={`absolute top-0 left-0 right-0 h-[2px] origin-left bg-gradient-to-r from-transparent via-[#1DCD9F] to-transparent transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+        className={`absolute top-0 left-0 right-0 h-[2px] origin-left bg-gradient-to-r from-transparent via-green-400 to-transparent transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
           scrolled ? 'scale-x-100' : 'scale-x-0'
         }`}
       />
@@ -122,7 +122,7 @@ export function Navigation() {
         >
           <Link to="/" className="relative flex items-center space-x-4 group">
             <div className="relative motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out hover:scale-110 active:scale-[0.92]">
-              <div className="absolute -inset-2 bg-gradient-to-r from-[#1DCD9F] via-[#169976] to-[#1DCD9F] rounded-2xl blur-lg opacity-0 group-hover:opacity-[0.01] transform-gpu shell-spin-60" />
+              <div className="absolute -inset-2 bg-gradient-to-r from-green-400 via-green-500 to-green-400 rounded-2xl blur-lg opacity-0 group-hover:opacity-[0.01] transform-gpu shell-spin-60" />
 
               <div className="relative p-2 rounded-2xl">
                 <img
@@ -158,7 +158,7 @@ export function Navigation() {
                     width: pill.width,
                     height: pill.height,
                     background:
-                      theme === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.08)',
+                      theme === 'dark' ? 'var(--color-border-subtle)' : 'rgba(255, 255, 255, 0.08)',
                     backdropFilter: 'blur(28px) saturate(180%)',
                     WebkitBackdropFilter: 'blur(28px) saturate(180%)',
                   }}
@@ -229,7 +229,7 @@ export function Navigation() {
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] border-[#1DCD9F]/20 glass-premium ${
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] border-green-400/20 glass-premium ${
           isOpen ? 'max-h-[min(90vh,720px)] opacity-100 border-t' : 'max-h-0 opacity-0 border-t border-transparent pointer-events-none'
         }`}
       >
@@ -241,14 +241,14 @@ export function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className={`block px-6 py-4 rounded-2xl transition-all duration-300 text-base relative overflow-hidden group ${
                   isActive(link.path)
-                    ? 'glass-card text-[#5FEFBF] font-medium'
+                    ? 'glass-card text-green-300 font-medium'
                     : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white glass font-light'
                 }`}
                 style={{ fontFamily: "'Cairo', sans-serif" }}
               >
                 <span className="relative z-10">{link.label}</span>
                 {!isActive(link.path) && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#1DCD9F]/10 to-[#169976]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 )}
               </Link>
             </div>

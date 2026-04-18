@@ -413,7 +413,7 @@ export function AdvancedGSAPCursor() {
       {/* Main cursor dot */}
       <div
         ref={cursorRef}
-        className="fixed top-0 left-0 w-3 h-3 bg-[#1DCD9F] rounded-full pointer-events-none z-[10000] mix-blend-screen hidden lg:block opacity-0 shadow-[0_0_20px_rgba(29,205,159,0.6)]"
+        className="fixed top-0 left-0 w-3 h-3 bg-green-400 rounded-full pointer-events-none z-[10000] mix-blend-screen hidden lg:block opacity-0 shadow-[0_0_20px_rgba(29,205,159,0.6)]"
         style={{ willChange: 'transform' }}
       />
       

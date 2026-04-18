@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react';
 import { lazy, Suspense } from 'react';
 import {
   aboutHeroImage,
@@ -14,44 +13,45 @@ interface HeroBackgroundProps {
   variant?: 'default' | 'about' | 'projects' | 'contact' | 'services';
 }
 
-/**
- * HeroBackground Component
- * 
- * Provides a fully static hero background across all pages.
- * No animations, transitions, or zoom effects.
- * Maintains responsive behavior and proper cropping for all screen sizes.
- */
-const heroOverlayStyle: CSSProperties = {
-  backgroundImage: [
-    'linear-gradient(to bottom right, rgba(29, 205, 159, 0.05), transparent, transparent)',
-    'linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent, transparent)',
-    'linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6))',
-  ].join(', '),
+const IMAGE_MAP: Partial<Record<NonNullable<HeroBackgroundProps['variant']>, string>> = {
+  about:    aboutHeroImage,
+  projects: projectsHeroImage,
+  contact:  contactHeroImage,
+  services: servicesHeroImage,
 };
 
-/** Cheap placeholder while the home hero SVG chunk loads — matches dominant stops from Svg-1425-64 base layer + teal glows. */
+/** Glow anchor varies per page for subtle tonal accent on top of the photo. */
+const GLOW_POSITIONS: Record<NonNullable<HeroBackgroundProps['variant']>, string> = {
+  default:  '65% 30%',
+  about:    '28% 38%',
+  projects: '72% 26%',
+  contact:  '50% 42%',
+  services: '60% 32%',
+};
+
+/** Cheap placeholder while the home SVG chunk loads. */
 function HomeHeroSvgFallback() {
   return (
     <div
       className="absolute inset-0 w-full min-h-full pointer-events-none"
       aria-hidden
-      style={{
-        backgroundColor: '#030104',
-        backgroundImage: `
-          linear-gradient(127deg, #0d0d0d 0%, #080609 52%, #030104 100%),
-          radial-gradient(ellipse 100% 85% at 72% 28%, rgba(29, 205, 159, 0.09) 0%, transparent 55%),
-          radial-gradient(ellipse 90% 75% at 18% 72%, rgba(13, 255, 229, 0.045) 0%, transparent 52%),
-          radial-gradient(ellipse 70% 60% at 48% 48%, rgba(8, 125, 114, 0.055) 0%, transparent 58%)
-        `,
-      }}
+      style={{ backgroundColor: 'var(--color-bg-base)' }}
     />
   );
 }
 
+/**
+ * Per-page hero background.
+ * Uses actual hero images for all non-default variants.
+ * Overlays are minimal — just enough for text readability.
+ */
 export function HeroBackground({ className = '', variant = 'default' }: HeroBackgroundProps) {
+  const imageSrc = IMAGE_MAP[variant];
+  const glowPos  = GLOW_POSITIONS[variant];
+
   return (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>
-      {/* Static background — home art is code-split; single-vector scene + paint containment. */}
+      {/* Image layer (or SVG for home) */}
       <div className="absolute inset-0 w-full min-h-full pointer-events-none">
         {variant === 'default' ? (
           <Suspense fallback={<HomeHeroSvgFallback />}>
@@ -59,22 +59,44 @@ export function HeroBackground({ className = '', variant = 'default' }: HeroBack
           </Suspense>
         ) : (
           <img
-            src={variant === 'about' ? aboutHeroImage : variant === 'projects' ? projectsHeroImage : variant === 'contact' ? contactHeroImage : servicesHeroImage}
+            src={imageSrc}
             alt=""
             className="w-full h-full object-cover"
-            style={{
-              imageRendering: 'high-quality',
-            }}
             loading="eager"
+            aria-hidden
           />
         )}
       </div>
 
-      {/* Single stacked overlay (was 3 layers) — same visual recipe, less compositing */}
+      {/* Minimal dark overlay — preserves image, ensures text contrast */}
       <div
         className="pointer-events-none absolute inset-0 z-10"
-        style={heroOverlayStyle}
         aria-hidden
+        style={{
+          background: [
+            'linear-gradient(to bottom, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.10) 40%, rgba(0,0,0,0.50) 100%)',
+            `radial-gradient(ellipse 80% 60% at ${glowPos}, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%)`,
+          ].join(', '),
+        }}
+      />
+
+      {/* Bottom fade — clean transition into page content */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-10"
+        aria-hidden
+        style={{
+          height: '30%',
+          background: 'linear-gradient(to bottom, transparent, var(--color-bg-base))',
+        }}
+      />
+
+      {/* Subtle teal accent glow over the image — very low opacity */}
+      <div
+        className="pointer-events-none absolute inset-0 z-10"
+        aria-hidden
+        style={{
+          background: `radial-gradient(ellipse 65% 50% at ${glowPos}, var(--color-accent-fill-xs) 0%, transparent 70%)`,
+        }}
       />
     </div>
   );

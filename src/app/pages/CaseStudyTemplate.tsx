@@ -63,20 +63,11 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
       <section 
         className="min-h-screen flex items-center justify-center overflow-hidden relative py-20"
       >
-        {/* Professional Pattern Background */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-br from-[#0A111F] via-[#1E293B] to-[#0A111F]"
-          style={{
-            backgroundImage: `
-              radial-gradient(circle at 20% 50%, rgba(30, 41, 59, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
-              linear-gradient(to right, rgba(226, 232, 240, 0.03) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(226, 232, 240, 0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: '100% 100%, 100% 100%, 50px 50px, 50px 50px'
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80"></div>
+        {/* Hero Background */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(155deg, var(--color-bg-surface) 0%, var(--color-bg-base) 55%, var(--color-bg-surface-inset) 100%)' }}>
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 75% 60% at 65% 30%, var(--color-accent-fill-sm) 0%, transparent 65%)' }} />
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 120% 100% at 50% 50%, transparent 40%, rgba(0,0,0,0.35) 100%)' }} />
+          <div className="absolute bottom-0 left-0 right-0" style={{ height: '35%', background: 'linear-gradient(to bottom, transparent, var(--color-bg-base))' }} />
         </div>
         
         <div 
@@ -224,7 +215,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <Target size={32} className="text-[#1DCD9F]" />
+                <Target size={32} className="text-green-400" />
                 <h2 className="text-4xl md:text-5xl tracking-tight">
                   The <span className={`bg-gradient-to-r ${data.gradient} bg-clip-text text-transparent`}>Challenge</span>
                 </h2>
@@ -242,7 +233,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-start gap-3"
                   >
-                    <Check size={20} className="text-[#1DCD9F] flex-shrink-0 mt-1" />
+                    <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
                     <span className="text-lg text-zinc-300">{point}</span>
                   </motion.li>
                 ))}
@@ -256,19 +247,15 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
               transition={{ duration: 0.8 }}
               className="relative rounded-3xl overflow-hidden h-[500px]"
             >
-              <div 
-                className="absolute inset-0 bg-gradient-to-br from-zinc-900/90 to-zinc-800/90"
+              <div
+                className="absolute inset-0"
                 style={{
-                  backgroundImage: `
-                    radial-gradient(circle at 10% 20%, rgba(29, 205, 159, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 90% 80%, rgba(22, 153, 118, 0.1) 0%, transparent 50%),
-                    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(226, 232, 240, 0.02) 10px, rgba(226, 232, 240, 0.02) 20px)
-                  `,
-                  backgroundSize: '100% 100%, 100% 100%, 100% 100%'
+                  background: 'linear-gradient(135deg, var(--color-bg-surface-raised) 0%, var(--color-bg-surface) 100%)',
                 }}
               >
+                <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 60% at 10% 20%, var(--color-accent-fill-sm) 0%, transparent 60%)' }} />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Target size={120} className="text-[#1DCD9F]/20" />
+                  <Target size={120} className="text-green-400/20" />
                 </div>
               </div>
             </motion.div>
@@ -287,17 +274,13 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
               transition={{ duration: 0.8 }}
               className="relative rounded-3xl overflow-hidden lg:order-1 h-[500px]"
             >
-              <div 
-                className="absolute inset-0 bg-gradient-to-br from-violet-900/40 to-zinc-900/90"
+              <div
+                className="absolute inset-0"
                 style={{
-                  backgroundImage: `
-                    radial-gradient(circle at 90% 20%, rgba(29, 205, 159, 0.15) 0%, transparent 50%),
-                    radial-gradient(circle at 10% 80%, rgba(22, 153, 118, 0.1) 0%, transparent 50%),
-                    repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(226, 232, 240, 0.02) 10px, rgba(226, 232, 240, 0.02) 20px)
-                  `,
-                  backgroundSize: '100% 100%, 100% 100%, 100% 100%'
+                  background: 'linear-gradient(135deg, var(--color-bg-surface-raised) 0%, var(--color-bg-surface) 100%)',
                 }}
               >
+                <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 60% at 90% 20%, var(--color-accent-fill-sm) 0%, transparent 60%)' }} />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Zap size={120} className="text-violet-400/20" />
                 </div>
@@ -367,14 +350,14 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="group p-8 bg-zinc-900/50 border border-zinc-800/50 rounded-3xl hover:border-[#1DCD9F]/30 transition-all duration-300"
+                className="group p-8 bg-zinc-900/50 border border-zinc-800/50 rounded-3xl hover:border-green-400/30 transition-all duration-300"
               >
                 {feature.icon && (
-                  <div className="mb-6 w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1DCD9F]/10 to-[#169976]/10 flex items-center justify-center">
-                    <feature.icon size={28} className="text-[#1DCD9F]" />
+                  <div className="mb-6 w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400/10 to-green-500/10 flex items-center justify-center">
+                    <feature.icon size={28} className="text-green-400" />
                   </div>
                 )}
-                <h3 className="text-2xl mb-3 group-hover:text-[#E2E8F0] transition-colors">{feature.title}</h3>
+                <h3 className="text-2xl mb-3 group-hover:text-foreground transition-colors">{feature.title}</h3>
                 <p className="text-zinc-400 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
@@ -435,18 +418,13 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
             transition={{ duration: 0.8 }}
             className="rounded-3xl overflow-hidden h-[600px] relative"
           >
-            <div 
-              className="absolute inset-0 bg-gradient-to-br from-green-900/30 to-zinc-900/90"
+            <div
+              className="absolute inset-0"
               style={{
-                backgroundImage: `
-                  radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 20% 80%, rgba(29, 205, 159, 0.08) 0%, transparent 50%),
-                  linear-gradient(to right, rgba(226, 232, 240, 0.02) 1px, transparent 1px),
-                  linear-gradient(to bottom, rgba(226, 232, 240, 0.02) 1px, transparent 1px)
-                `,
-                backgroundSize: '100% 100%, 100% 100%, 40px 40px, 40px 40px'
+                background: 'linear-gradient(135deg, var(--color-bg-surface-raised) 0%, var(--color-bg-surface) 100%)',
               }}
             >
+              <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, var(--color-accent-fill-sm) 0%, transparent 60%)' }} />
               <div className="absolute inset-0 flex items-center justify-center">
                 <TrendingUp size={140} className="text-green-400/15" />
               </div>
@@ -479,7 +457,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ scale: 1.1, y: -4 }}
-                className="px-8 py-4 bg-zinc-900/50 border border-zinc-800/50 rounded-2xl hover:border-[#1DCD9F]/30 transition-all duration-300 text-lg"
+                className="px-8 py-4 bg-zinc-900/50 border border-zinc-800/50 rounded-2xl hover:border-green-400/30 transition-all duration-300 text-lg"
               >
                 {tech}
               </motion.div>

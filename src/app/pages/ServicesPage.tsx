@@ -40,24 +40,24 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
       >
         {/* Card Container - Enhanced with premium styling */}
         <div 
-          className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-transparent backdrop-blur-md group-hover:border-[#1DCD9F]/40 transition-all duration-250"
+          className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-transparent backdrop-blur-md group-hover:border-green-400/40 transition-all duration-250"
         >
           {/* L-bracket corners - Premium detail */}
           <div className="absolute -top-2 -left-2 w-8 h-8 opacity-0 group-hover:opacity-100 transition-all duration-200">
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#1DCD9F] to-transparent" />
-            <div className="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-[#1DCD9F] to-transparent" />
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-green-400 to-transparent" />
+            <div className="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-green-400 to-transparent" />
           </div>
           <div className="absolute -top-2 -right-2 w-8 h-8 opacity-0 group-hover:opacity-100 transition-all duration-200">
-            <div className="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-[#1DCD9F] to-transparent" />
-            <div className="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-[#1DCD9F] to-transparent" />
+            <div className="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-green-400 to-transparent" />
+            <div className="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-green-400 to-transparent" />
           </div>
           <div className="absolute -bottom-2 -left-2 w-8 h-8 opacity-0 group-hover:opacity-100 transition-all duration-200">
-            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#1DCD9F] to-transparent" />
-            <div className="absolute bottom-0 left-0 w-[2px] h-full bg-gradient-to-t from-[#1DCD9F] to-transparent" />
+            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-green-400 to-transparent" />
+            <div className="absolute bottom-0 left-0 w-[2px] h-full bg-gradient-to-t from-green-400 to-transparent" />
           </div>
           <div className="absolute -bottom-2 -right-2 w-8 h-8 opacity-0 group-hover:opacity-100 transition-all duration-200">
-            <div className="absolute bottom-0 right-0 w-full h-[2px] bg-gradient-to-l from-[#1DCD9F] to-transparent" />
-            <div className="absolute bottom-0 right-0 w-[2px] h-full bg-gradient-to-t from-[#1DCD9F] to-transparent" />
+            <div className="absolute bottom-0 right-0 w-full h-[2px] bg-gradient-to-l from-green-400 to-transparent" />
+            <div className="absolute bottom-0 right-0 w-[2px] h-full bg-gradient-to-t from-green-400 to-transparent" />
           </div>
 
           {/* Ambient glow on hover */}
@@ -78,22 +78,22 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
               <div className="lg:w-[400px] flex-shrink-0">
                 {/* Icon with enhanced glow */}
                 <motion.div 
-                  className="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-[#1DCD9F]/10 border border-[#1DCD9F]/20 mb-6 group-hover:scale-110 group-hover:bg-[#1DCD9F]/20 transition-all duration-200"
+                  className="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-green-400/10 border border-green-400/20 mb-6 group-hover:scale-110 group-hover:bg-green-400/20 transition-all duration-200"
                   whileHover={{ rotate: 5 }}
                   transition={{ type: 'spring', stiffness: 600, damping: 18 }}
                 >
                   {/* Icon glow layers */}
-                  <div className="absolute inset-0 w-20 h-20 rounded-2xl bg-[#1DCD9F]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 w-20 h-20 rounded-2xl bg-[#5FEFBF]/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 w-20 h-20 rounded-2xl bg-green-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 w-20 h-20 rounded-2xl bg-green-300/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   {React.createElement(service.icon as any, { 
-                    className: "relative w-10 h-10 text-[#1DCD9F] group-hover:text-[#5FEFBF] transition-colors duration-300",
+                    className: "relative w-10 h-10 text-green-400 group-hover:text-green-300 transition-colors duration-300",
                     strokeWidth: 1.5 
                   })}
                 </motion.div>
 
                 {/* Title */}
                 <h3 
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white group-hover:text-[#5FEFBF] transition-colors duration-300 leading-tight"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white group-hover:text-green-300 transition-colors duration-300 leading-tight"
                   style={{ fontFamily: "'Inter Tight', sans-serif" }}
                 >
                   {service.title}
@@ -109,7 +109,7 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
 
                 {/* View Details Button with arrow animation */}
                 <motion.div 
-                  className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#1DCD9F]/10 border border-[#1DCD9F]/30 text-[#1DCD9F] group-hover:bg-[#1DCD9F]/20 group-hover:border-[#1DCD9F]/50 transition-all duration-300"
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-green-400/10 border border-green-400/30 text-green-400 group-hover:bg-green-400/20 group-hover:border-green-400/50 transition-all duration-300"
                   whileHover={{ x: 4 }}
                 >
                   <span className="text-sm font-bold uppercase tracking-wider" style={{ fontFamily: "'Inter Tight', sans-serif" }}>
@@ -129,7 +129,7 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
                 <div className="mb-6">
                   <div className="flex items-center gap-3 mb-6">
                     <h4 
-                      className="text-xs text-[#1DCD9F] uppercase tracking-[0.2em] font-bold"
+                      className="text-xs text-green-400 uppercase tracking-[0.2em] font-bold"
                       style={{ fontFamily: "'Inter Tight', sans-serif" }}
                     >
                       Core Capabilities
@@ -142,15 +142,15 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
                   {service.chips.map((chip, idx) => (
                     <motion.div
                       key={idx}
-                      className="group/item relative flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/[0.08] hover:border-[#1DCD9F]/30 transition-all duration-300"
+                      className="group/item relative flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/[0.08] hover:border-green-400/30 transition-all duration-300"
                       initial={{ opacity: 0, x: -10 }}
                       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                       transition={{ delay: 0.3 + (idx * 0.05) }}
                     >
                       {/* Capability indicator dot */}
                       <div className="relative flex items-center justify-center flex-shrink-0">
-                        <div className="w-2 h-2 rounded-full bg-[#1DCD9F]/60 group-hover/item:bg-[#1DCD9F] group-hover/item:scale-125 transition-all duration-300" />
-                        <div className="absolute w-2 h-2 rounded-full bg-[#1DCD9F]/20 animate-ping" />
+                        <div className="w-2 h-2 rounded-full bg-green-400/60 group-hover/item:bg-green-400 group-hover/item:scale-125 transition-all duration-300" />
+                        <div className="absolute w-2 h-2 rounded-full bg-green-400/20 animate-ping" />
                       </div>
                       
                       {/* Capability text */}
@@ -162,7 +162,7 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
                       </span>
 
                       {/* Hover accent line */}
-                      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1DCD9F] to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-green-400 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
                     </motion.div>
                   ))}
                 </div>
@@ -172,7 +172,7 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
 
           {/* Bottom accent line */}
           <motion.div
-            className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#1DCD9F] to-transparent"
+            className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-green-400 to-transparent"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: isHovered ? 1 : 0 }}
             transition={{ duration: 0.5 }}
@@ -236,9 +236,9 @@ function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps) {
         <div className="p-8 md:p-12">
           {/* Header */}
           <div className="mb-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-[#1DCD9F]/10 border border-[#1DCD9F]/20 mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-green-400/10 border border-green-400/20 mb-6">
               {React.createElement(service.icon as any, { 
-                className: "w-10 h-10 text-[#1DCD9F]",
+                className: "w-10 h-10 text-green-400",
                 strokeWidth: 1.5 
               })}
             </div>
@@ -260,7 +260,7 @@ function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps) {
           {(service.blueprint.pathwayA || service.blueprint.pathwayB) && (
             <div className="mb-8 space-y-4">
               <h3 
-                className="text-sm font-bold text-[#1DCD9F] uppercase tracking-wider mb-4"
+                className="text-sm font-bold text-green-400 uppercase tracking-wider mb-4"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 How We Work
@@ -305,7 +305,7 @@ function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps) {
           {/* Deliverables */}
           <div className="mb-8">
             <h3 
-              className="text-sm font-bold text-[#1DCD9F] uppercase tracking-wider mb-4"
+              className="text-sm font-bold text-green-400 uppercase tracking-wider mb-4"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
               Deliverables
@@ -316,7 +316,7 @@ function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps) {
                   key={idx}
                   className="flex items-center gap-3 p-4 rounded-lg bg-white/5 border border-white/10"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#1DCD9F] flex-shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0" />
                   <span 
                     className="text-sm text-white/80"
                     style={{ fontFamily: "'Inter', sans-serif" }}
@@ -331,7 +331,7 @@ function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps) {
           {/* All Services */}
           <div className="mb-8">
             <h3 
-              className="text-sm font-bold text-[#1DCD9F] uppercase tracking-wider mb-4"
+              className="text-sm font-bold text-green-400 uppercase tracking-wider mb-4"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
               Services Included
@@ -342,7 +342,7 @@ function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps) {
                   key={idx}
                   className="flex items-center gap-3 p-3 rounded-lg bg-white/5"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#1DCD9F]/60 flex-shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-400/60 flex-shrink-0" />
                   <span 
                     className="text-sm text-white/70"
                     style={{ fontFamily: "'Inter', sans-serif" }}
@@ -440,7 +440,7 @@ export default function ServicesPage() {
 
       <div className="relative">
         {/* Hero Section */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
+        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
           {/* Hero Background */}
           <HeroBackground variant="services" />
           
@@ -451,7 +451,7 @@ export default function ServicesPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50 z-[1]" />
           
           {/* Teal accent glow overlay matching brand colors */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1DCD9F]/5 via-transparent to-transparent z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 via-transparent to-transparent z-[1]" />
 
           <div className="relative max-w-7xl mx-auto text-center px-6 z-10">
             <motion.div
@@ -475,7 +475,7 @@ export default function ServicesPage() {
                 }}
               >
                 <span 
-                  className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-[#1DCD9F]/80 uppercase" 
+                  className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-green-400/80 uppercase" 
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   [ OUR SERVICES ]
@@ -483,7 +483,7 @@ export default function ServicesPage() {
               </motion.div>
               
               <motion.h1 
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight leading-tight text-[#FFFFFF]"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight leading-tight text-foreground"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -494,8 +494,8 @@ export default function ServicesPage() {
                 }}
               >
                 YOUR PRODUCT. <span className="relative inline-block">
-                  <span className="text-[#1DCD9F]">FULLY COVERED.</span>
-                  <div className="absolute -bottom-2 left-0 right-0 h-[2px] bg-[#1DCD9F]" />
+                  <span className="text-green-400">FULLY COVERED.</span>
+                  <div className="absolute -bottom-2 left-0 right-0 h-[2px] bg-green-400" />
                 </span>
               </motion.h1>
               
@@ -524,12 +524,12 @@ export default function ServicesPage() {
                 }}
               >
                 <span 
-                  className="text-[10px] md:text-xs tracking-widest text-[#1DCD9F]/60 uppercase" 
+                  className="text-[10px] md:text-xs tracking-widest text-green-400/60 uppercase" 
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   Explore our services
                 </span>
-                <div className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-[#1DCD9F]/60 to-transparent" />
+                <div className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-green-400/60 to-transparent" />
               </motion.div>
             </motion.div>
           </div>
@@ -550,7 +550,7 @@ export default function ServicesPage() {
                 {/* Label with decorative line */}
                 <div className="flex items-center gap-4">
                   <span 
-                    className="text-[10px] md:text-xs text-[#1DCD9F]/80 uppercase tracking-[0.2em] font-medium" 
+                    className="text-[10px] md:text-xs text-green-400/80 uppercase tracking-[0.2em] font-medium" 
                     style={{ fontFamily: "'JetBrains Mono', monospace" }}
                   >
                     What We Offer
@@ -583,13 +583,6 @@ export default function ServicesPage() {
 
         {/* CTA Section */}
         <section className="py-40 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
-          {/* Subtle Grid Pattern */}
-          <div className="absolute inset-0 opacity-[0.02]" style={{
-            backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
-                             linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
-          }} />
-          
           <div className="w-full relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -639,13 +632,13 @@ export default function ServicesPage() {
                   <Rocket size={40} className="sm:w-12 sm:h-12 md:w-14 md:h-14 mx-auto mb-6 sm:mb-8 text-teal-400 group-hover:text-teal-300 transition-colors duration-300" />
                 </motion.div>
                 <span 
-                  className="text-sm text-[#1DCD9F] uppercase tracking-wider mb-4 block" 
+                  className="text-sm text-green-400 uppercase tracking-wider mb-4 block" 
                   style={{ fontFamily: "'Inter Tight', sans-serif" }}
                 >
                   READY TO BUILD WHAT'S NEXT?
                 </span>
                 <h2 
-                  className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight group-hover:text-[#E2E8F0] transition-colors duration-300"
+                  className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight group-hover:text-foreground transition-colors duration-300"
                   style={{ fontFamily: "'Inter Tight', sans-serif" }}
                 >
                   Launch faster. Scale smarter. Deliver with confidence.
@@ -673,7 +666,7 @@ export default function ServicesPage() {
                       backdropFilter: 'blur(28px) saturate(180%)',
                       WebkitBackdropFilter: 'blur(28px) saturate(180%)',
                       boxShadow: theme === 'dark'
-                        ? '0 4px 12px rgba(29, 205, 159, 0.12), 0 2px 6px rgba(29, 205, 159, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
+                        ? '0 4px 12px var(--color-accent-fill-md), 0 2px 6px var(--color-accent-fill-sm), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
                         : '0 4px 12px rgba(29, 205, 159, 0.10), 0 2px 6px rgba(29, 205, 159, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.40)',
                     }}
                   >

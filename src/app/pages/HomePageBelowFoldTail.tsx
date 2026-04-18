@@ -68,7 +68,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
           <SectionReveal>
             <div className="text-center mb-20">
               <div className="mb-4 md:mb-6">
-                <span className={`text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase ${theme === 'dark' ? 'text-[#1DCD9F]/80' : 'text-[#1DCD9F]'}`} style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                <span className={`text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase ${theme === 'dark' ? 'text-green-400/80' : 'text-green-400'}`} style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                   [ WHY CHOOSE ZAXA STUDIO ]
                 </span>
               </div>
@@ -98,7 +98,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                   style={{
                     background: theme === 'dark' 
                       ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 50%)' 
-                      : 'linear-gradient(135deg, rgba(29, 205, 159, 0.08) 0%, transparent 50%)',
+                      : 'linear-gradient(135deg, var(--color-accent-fill-sm) 0%, transparent 50%)',
                     borderRadius: '28px',
                   }}
                 />
@@ -136,7 +136,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                     className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 motion-reduce:group-hover:scale-100 motion-reduce:group-hover:rotate-0"
                     style={{
                       background: theme === 'dark' 
-                        ? 'rgba(29, 205, 159, 0.12)' 
+                        ? 'var(--color-accent-fill-md)' 
                         : 'rgba(29, 205, 159, 0.16)',
                       border: `1.5px solid rgba(29, 205, 159, ${theme === 'dark' ? '0.2' : '0.3'})`,
                     }}
@@ -192,7 +192,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
         <SectionReveal className="w-full relative z-10" duration={0.45}>
           <div className="mb-24 text-center">
             <div className="mb-4 md:mb-6">
-              <span className={`text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase ${theme === 'dark' ? 'text-[#1DCD9F]/80' : 'text-[#1DCD9F]'}`} style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <span className={`text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase ${theme === 'dark' ? 'text-green-400/80' : 'text-green-400'}`} style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 [ HOW WE WORK ]
               </span>
             </div>
@@ -243,7 +243,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                   style={{
                     background: theme === 'dark' 
                       ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 50%)' 
-                      : 'linear-gradient(135deg, rgba(29, 205, 159, 0.08) 0%, transparent 50%)',
+                      : 'linear-gradient(135deg, var(--color-accent-fill-sm) 0%, transparent 50%)',
                     borderRadius: '28px',
                   }}
                 />
@@ -293,7 +293,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                   
                   {/* Content */}
                   <div className="space-y-3">
-                    <h3 className="text-3xl font-semibold text-[#1DCD9F] transition-colors duration-300">
+                    <h3 className="text-3xl font-semibold text-green-400 transition-colors duration-300">
                       {step.title}
                     </h3>
                     <p className={`text-base leading-relaxed ${theme === 'dark' ? 'text-zinc-300 group-hover:text-zinc-200' : 'text-zinc-700 group-hover:text-zinc-800'}`}>
@@ -312,7 +312,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
         <SectionReveal className="w-full relative" duration={0.45}>
           <div className="mb-24 text-center">
             <div className="mb-4 md:mb-6">
-              <span className={`text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase ${theme === 'dark' ? 'text-[#1DCD9F]/80' : 'text-[#1DCD9F]'}`} style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <span className={`text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase ${theme === 'dark' ? 'text-green-400/80' : 'text-green-400'}`} style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 [ WHAT YOU CAN EXPECT ]
               </span>
             </div>
@@ -392,13 +392,13 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                 <Rocket size={40} className="sm:h-12 sm:w-12 md:h-14 md:w-14 mx-auto text-teal-400 transition-colors duration-300 group-hover:text-teal-300" />
               </div>
               <span 
-                className="text-sm text-[#1DCD9F] uppercase tracking-wider mb-4 block" 
+                className="text-sm text-green-400 uppercase tracking-wider mb-4 block" 
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 READY TO BUILD WHAT'S NEXT?
               </span>
               <h2 
-                className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight group-hover:text-[#E2E8F0] transition-colors duration-300"
+                className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight group-hover:text-foreground transition-colors duration-300"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 Launch faster. Scale smarter. Deliver with confidence.
@@ -412,7 +412,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
               <Link
                 to="/contact"
                 onClick={playTabSound}
-                className="group relative px-8 md:px-10 py-3 md:py-4 rounded-lg min-h-[48px] md:min-h-[56px] touch-manipulation transition-all duration-300 ease-out overflow-hidden text-[#5FEFBF] hover:scale-[1.02] active:scale-[0.98] motion-safe:transition-transform motion-reduce:hover:scale-100 motion-reduce:active:scale-100 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1DCD9F] focus-visible:ring-offset-2"
+                className="group relative px-8 md:px-10 py-3 md:py-4 rounded-lg min-h-[48px] md:min-h-[56px] touch-manipulation transition-all duration-300 ease-out overflow-hidden text-green-300 hover:scale-[1.02] active:scale-[0.98] motion-safe:transition-transform motion-reduce:hover:scale-100 motion-reduce:active:scale-100 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2"
                 style={{
                   fontWeight: 600,
                   fontSize: '16px',

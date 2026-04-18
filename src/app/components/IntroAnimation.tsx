@@ -34,7 +34,7 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
 
   return (
     <div
-      className={`intro-shell fixed inset-0 z-[100] flex items-center justify-center bg-[#000000] overflow-hidden ${exiting ? 'intro-shell-exit' : ''}`}
+      className={`intro-shell fixed inset-0 z-[100] flex items-center justify-center bg-background overflow-hidden ${exiting ? 'intro-shell-exit' : ''}`}
       style={{
         perspective: '2000px',
         perspectiveOrigin: '50% 50%',
@@ -51,7 +51,7 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
         {PARTICLES.map((p, i) => (
           <div
             key={i}
-            className="intro-particle absolute w-0.5 h-0.5 bg-[#1DCD9F]/30 rounded-full"
+            className="intro-particle absolute w-0.5 h-0.5 bg-green-400/30 rounded-full"
             style={{
               left: p.left,
               top: p.top,
@@ -69,20 +69,20 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
       >
         <div className="intro-logo-reveal relative mb-12" style={{ transformStyle: 'preserve-3d' }}>
           <div
-            className="intro-ring-a absolute -inset-12 rounded-full border border-[#1DCD9F]/20"
+            className="intro-ring-a absolute -inset-12 rounded-full border border-green-400/20"
             style={{ transformStyle: 'preserve-3d', transform: 'translateZ(-30px)' }}
           />
           <div
-            className="intro-ring-b absolute -inset-16 rounded-full border border-[#1DCD9F]/10"
+            className="intro-ring-b absolute -inset-16 rounded-full border border-green-400/10"
             style={{ transformStyle: 'preserve-3d', transform: 'translateZ(-60px)' }}
           />
 
           <div
-            className="intro-glow-a absolute -inset-8 bg-gradient-to-r from-[#1DCD9F]/20 via-emerald-400/20 to-[#169976]/20 rounded-full opacity-40 blur-2xl transform-gpu"
+            className="intro-glow-a absolute -inset-8 bg-gradient-to-r from-green-400/20 via-emerald-400/20 to-green-500/20 rounded-full opacity-40 blur-2xl transform-gpu"
             style={{ transformStyle: 'preserve-3d', transform: 'translateZ(-20px)' }}
           />
           <div
-            className="intro-glow-b absolute -inset-10 bg-gradient-to-r from-emerald-400/15 via-[#1DCD9F]/15 to-teal-400/15 rounded-full opacity-30 blur-xl transform-gpu"
+            className="intro-glow-b absolute -inset-10 bg-gradient-to-r from-emerald-400/15 via-green-400/15 to-teal-400/15 rounded-full opacity-30 blur-xl transform-gpu"
             style={{ transformStyle: 'preserve-3d', transform: 'translateZ(-40px)' }}
           />
 
@@ -113,7 +113,7 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
               Zaxa
             </span>
           </h1>
-          <div className="intro-brand-line h-px w-32 mx-auto bg-gradient-to-r from-transparent via-[#1DCD9F]/50 to-transparent mb-4" />
+          <div className="intro-brand-line h-px w-32 mx-auto bg-gradient-to-r from-transparent via-green-400/50 to-transparent mb-4" />
           <p
             className="intro-brand-tag text-zinc-400 text-sm tracking-[0.4em] uppercase font-light"
             style={{ fontFamily: "'Cairo', sans-serif" }}

@@ -94,7 +94,7 @@ export function ProjectCard({
       shouldPulse: true,
     },
     'in-progress': {
-      color: 'fill-[#1DCD9F] text-[#1DCD9F]',
+      color: 'fill-green-400 text-green-400',
       label: 'In Progress',
       shouldPulse: true,
     },
@@ -145,7 +145,7 @@ export function ProjectCard({
           <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
           
           {/* Background Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A]/30 via-[#0A111F]/20 to-[#020617]/30" />
+          <div className="absolute inset-0 bg-gradient-to-br from-surface-raised/30 via-surface-raised/20 to-background/30" />
           
           {/* Ambient Gradient Orb */}
           <motion.div
@@ -175,7 +175,7 @@ export function ProjectCard({
               {/* Status & Platform Badges - Floating on Image */}
               <div className="absolute top-6 left-6 right-6 z-20 flex items-center justify-between">
                 {/* Status Indicator */}
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0A111F]/80 backdrop-blur-md border border-[#1E293B]/60">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-raised/80 backdrop-blur-md border border-surface-overlay/60">
                   <motion.div
                     animate={
                       currentStatus.shouldPulse
@@ -196,14 +196,14 @@ export function ProjectCard({
                       className={currentStatus.color}
                     />
                   </motion.div>
-                  <span className="text-[10px] uppercase tracking-widest text-[#E2E8F0]/80 font-medium">
+                  <span className="text-[10px] uppercase tracking-widest text-foreground/80 font-medium">
                     {currentStatus.label}
                   </span>
                 </div>
 
                 {/* Platform Badge */}
-                <div className="px-3 py-1.5 rounded-full bg-[#0A111F]/80 backdrop-blur-md border border-[#1E293B]/60">
-                  <span className="text-[10px] uppercase tracking-widest text-[#E2E8F0]/80 font-medium">
+                <div className="px-3 py-1.5 rounded-full bg-surface-raised/80 backdrop-blur-md border border-surface-overlay/60">
+                  <span className="text-[10px] uppercase tracking-widest text-foreground/80 font-medium">
                     {isMobile ? 'Mobile' : 'Web'}
                   </span>
                 </div>
@@ -240,21 +240,21 @@ export function ProjectCard({
                   )}
 
                   {/* Category Badge */}
-                  <span className="text-[10px] uppercase tracking-[0.15em] text-[#E2E8F0]/40 font-medium">
+                  <span className="text-[10px] uppercase tracking-[0.15em] text-foreground/40 font-medium">
                     {category}
                   </span>
                 </div>
 
                 {/* Title */}
                 <motion.h3
-                  className="text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight text-[#FFFFFF]"
+                  className="text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight text-foreground"
                   layoutId={`project-title-${title}`}
                 >
                   {title}
                 </motion.h3>
 
                 {/* Description */}
-                <p className="text-sm lg:text-base text-[#E2E8F0]/70 leading-relaxed">
+                <p className="text-sm lg:text-base text-foreground/70 leading-relaxed">
                   {description}
                 </p>
               </div>
@@ -266,13 +266,13 @@ export function ProjectCard({
                   {tags.slice(0, 4).map((tag) => (
                     <span
                       key={tag}
-                      className="text-[11px] px-3 py-1.5 rounded-lg bg-[#1E293B]/40 border border-[#1E293B]/60 text-[#E2E8F0]/80"
+                      className="text-[11px] px-3 py-1.5 rounded-lg bg-surface-overlay/40 border border-surface-overlay/60 text-foreground/80"
                     >
                       {tag}
                     </span>
                   ))}
                   {tags.length > 4 && (
-                    <span className="text-[11px] px-3 py-1.5 rounded-lg bg-[#1E293B]/40 border border-[#1E293B]/60 text-[#E2E8F0]/60">
+                    <span className="text-[11px] px-3 py-1.5 rounded-lg bg-surface-overlay/40 border border-surface-overlay/60 text-foreground/60">
                       +{tags.length - 4}
                     </span>
                   )}
@@ -280,7 +280,7 @@ export function ProjectCard({
 
                 {/* View Project CTA */}
                 <motion.div
-                  className="flex items-center gap-2 text-[#1DCD9F]"
+                  className="flex items-center gap-2 text-green-400"
                   animate={{
                     x: isHovered ? 4 : 0,
                   }}

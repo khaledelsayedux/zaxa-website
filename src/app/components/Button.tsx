@@ -49,7 +49,7 @@ export function Button({
         ${disabled ? '' : 'hover:scale-[1.02] active:scale-[0.98]'}
         motion-reduce:hover:scale-100 motion-reduce:active:scale-100
         ${pill ? 'rounded-full' : 'rounded-lg'}
-        text-[#5FEFBF]
+        text-green-300
         ${className}
       `}
       style={{
@@ -58,7 +58,7 @@ export function Button({
         letterSpacing: '-0.02em',
         // Subtle glass effect matching Explore Services button
         background: theme === 'dark'
-          ? 'rgba(255, 255, 255, 0.05)'
+          ? 'var(--color-border-subtle)'
           : 'rgba(255, 255, 255, 0.08)',
         backdropFilter: 'blur(14px) saturate(140%)',
         WebkitBackdropFilter: 'blur(14px) saturate(140%)',

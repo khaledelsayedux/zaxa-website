@@ -75,7 +75,7 @@ export function ProcessStep({ step, index, isLast }: ProcessStepProps) {
               backgroundOrigin: 'border-box',
               backgroundClip: 'padding-box, border-box',
               boxShadow: theme === 'dark'
-                ? `0 20px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1)`
+                ? `0 20px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--color-border-subtle), inset 0 1px 0 rgba(255, 255, 255, 0.1)`
                 : `0 20px 50px rgba(29, 205, 159, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.8)`,
             }}
           >
@@ -119,7 +119,7 @@ export function ProcessStep({ step, index, isLast }: ProcessStepProps) {
               borderRadius: '32px',
               boxShadow: theme === 'dark'
                 ? '0 24px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08)'
-                : '0 24px 60px rgba(29, 205, 159, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1)',
+                : '0 24px 60px var(--color-accent-fill-sm), inset 0 1px 0 rgba(255, 255, 255, 1)',
             }}
           >
             {/* Decorative Corner Accent */}

@@ -87,7 +87,7 @@ function RootLayout() {
 
   return (
     <NavigationProvider>
-      <div className="relative min-h-screen bg-white dark:bg-[#000000] text-zinc-900 dark:text-white overflow-hidden transition-colors duration-500">
+      <div className="relative min-h-screen bg-white dark:bg-background text-zinc-900 dark:text-white overflow-hidden transition-colors duration-500">
         <ParallaxBackground className="fixed inset-0 z-0" />
 
         <div className="relative z-10">

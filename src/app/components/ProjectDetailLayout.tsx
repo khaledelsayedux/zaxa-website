@@ -58,7 +58,7 @@ export function ProjectDetailLayout({
     <div className="relative min-h-screen">
       {/* Hero Section with Shared Element Transition */}
       <motion.section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#020617] py-20"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background py-20"
         initial={
           cardPosition
             ? {
@@ -87,7 +87,7 @@ export function ProjectDetailLayout({
         }}
       >
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A111F] via-[#0F1729] to-[#020617]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-raised via-surface-raised to-background" />
         
         <motion.div
           className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-10 blur-3xl`}
@@ -100,8 +100,8 @@ export function ProjectDetailLayout({
         <div
           className="absolute inset-0 opacity-[0.02]"
           style={{
-            backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
-                             linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(var(--color-border-default) 1px, transparent 1px),
+                             linear-gradient(90deg, var(--color-border-default) 1px, transparent 1px)`,
             backgroundSize: '50px 50px',
           }}
         />
@@ -115,7 +115,7 @@ export function ProjectDetailLayout({
         >
           <Link to="/projects">
             <motion.button
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A111F]/80 backdrop-blur-sm border border-[#1E293B]/50 text-[#E2E8F0] hover:border-[#1DCD9F]/50 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-raised/80 backdrop-blur-sm border border-surface-overlay/50 text-foreground hover:border-green-400/50 transition-colors"
               whileHover={{ scale: 1.05, x: -4 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -160,14 +160,14 @@ export function ProjectDetailLayout({
                       }`}
                     />
                   </motion.div>
-                  <span className="text-xs uppercase tracking-wider text-[#E2E8F0]/60 font-medium">
+                  <span className="text-xs uppercase tracking-wider text-foreground/60 font-medium">
                     {isLive ? 'Live Production' : 'Concept'}
                   </span>
                 </div>
 
-                <div className="h-4 w-px bg-[#1E293B]/50" />
+                <div className="h-4 w-px bg-surface-overlay/50" />
 
-                <span className="text-xs uppercase tracking-wider text-[#E2E8F0]/60 font-medium">
+                <span className="text-xs uppercase tracking-wider text-foreground/60 font-medium">
                   {isMobile ? '📱 Mobile Platform' : '💻 Web Platform'}
                 </span>
               </div>
@@ -180,7 +180,7 @@ export function ProjectDetailLayout({
                   animate={{ opacity: isReady ? 1 : 0, y: isReady ? 0 : 10 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <div className="w-20 h-20 rounded-2xl bg-[#0A111F]/80 backdrop-blur-sm border border-[#1E293B]/50 p-4 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-2xl bg-surface-raised/80 backdrop-blur-sm border border-surface-overlay/50 p-4 flex items-center justify-center">
                     <img src={logo} alt={`${title} logo`} className="w-full h-full object-contain" />
                   </div>
                 </motion.div>
@@ -199,7 +199,7 @@ export function ProjectDetailLayout({
 
               {/* Category */}
               <motion.p
-                className="text-sm uppercase tracking-widest text-[#E2E8F0]/40 mb-6 font-medium"
+                className="text-sm uppercase tracking-widest text-foreground/40 mb-6 font-medium"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isReady ? 1 : 0 }}
                 transition={{ delay: 0.45 }}
@@ -209,7 +209,7 @@ export function ProjectDetailLayout({
 
               {/* Description */}
               <motion.p
-                className="text-xl text-[#E2E8F0]/70 mb-8 leading-relaxed"
+                className="text-xl text-foreground/70 mb-8 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: isReady ? 1 : 0, y: isReady ? 0 : 10 }}
                 transition={{ delay: 0.5 }}
@@ -227,7 +227,7 @@ export function ProjectDetailLayout({
                 {tags.map((tag, i) => (
                   <motion.span
                     key={tag}
-                    className="px-4 py-2 rounded-full bg-[#1E293B]/40 border border-[#1E293B]/50 text-[#E2E8F0]/70 text-sm"
+                    className="px-4 py-2 rounded-full bg-surface-overlay/40 border border-surface-overlay/50 text-foreground/70 text-sm"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.6 + i * 0.05 }}
@@ -246,29 +246,29 @@ export function ProjectDetailLayout({
                   transition={{ delay: 0.65 }}
                 >
                   {metrics.timeline && (
-                    <div className="flex items-start gap-3 p-4 rounded-xl bg-[#0A111F]/50 border border-[#1E293B]/30">
-                      <Calendar size={20} className="text-[#1DCD9F] flex-shrink-0 mt-1" />
+                    <div className="flex items-start gap-3 p-4 rounded-xl bg-surface-raised/50 border border-surface-overlay/30">
+                      <Calendar size={20} className="text-green-400 flex-shrink-0 mt-1" />
                       <div>
-                        <p className="text-xs text-[#E2E8F0]/40 uppercase tracking-wider mb-1">Timeline</p>
-                        <p className="text-sm text-[#E2E8F0]/80">{metrics.timeline}</p>
+                        <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">Timeline</p>
+                        <p className="text-sm text-foreground/80">{metrics.timeline}</p>
                       </div>
                     </div>
                   )}
                   {metrics.team && (
-                    <div className="flex items-start gap-3 p-4 rounded-xl bg-[#0A111F]/50 border border-[#1E293B]/30">
+                    <div className="flex items-start gap-3 p-4 rounded-xl bg-surface-raised/50 border border-surface-overlay/30">
                       <Users size={20} className="text-violet-400 flex-shrink-0 mt-1" />
                       <div>
-                        <p className="text-xs text-[#E2E8F0]/40 uppercase tracking-wider mb-1">Team</p>
-                        <p className="text-sm text-[#E2E8F0]/80">{metrics.team}</p>
+                        <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">Team</p>
+                        <p className="text-sm text-foreground/80">{metrics.team}</p>
                       </div>
                     </div>
                   )}
                   {metrics.objective && (
-                    <div className="flex items-start gap-3 p-4 rounded-xl bg-[#0A111F]/50 border border-[#1E293B]/30">
+                    <div className="flex items-start gap-3 p-4 rounded-xl bg-surface-raised/50 border border-surface-overlay/30">
                       <Target size={20} className="text-emerald-400 flex-shrink-0 mt-1" />
                       <div>
-                        <p className="text-xs text-[#E2E8F0]/40 uppercase tracking-wider mb-1">Objective</p>
-                        <p className="text-sm text-[#E2E8F0]/80">{metrics.objective}</p>
+                        <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">Objective</p>
+                        <p className="text-sm text-foreground/80">{metrics.objective}</p>
                       </div>
                     </div>
                   )}
@@ -281,7 +281,7 @@ export function ProjectDetailLayout({
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1DCD9F]/10 border border-[#1DCD9F]/30 text-[#1DCD9F] hover:bg-[#1DCD9F]/20 hover:border-[#1DCD9F]/50 transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-400/10 border border-green-400/30 text-green-400 hover:bg-green-400/20 hover:border-green-400/50 transition-all"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: isReady ? 1 : 0, y: isReady ? 0 : 10 }}
                   transition={{ delay: 0.7 }}
@@ -313,12 +313,12 @@ export function ProjectDetailLayout({
                   transition={{ duration: 0.4 }}
                 >
                   <img src={image} alt={title} className="w-full h-auto" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/50 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent pointer-events-none" />
                 </motion.div>
 
                 {/* Floating Accent Element */}
                 <motion.div
-                  className="absolute -bottom-8 -left-8 w-64 h-64 bg-gradient-to-br from-[#1DCD9F]/20 to-[#169976]/20 rounded-full blur-3xl"
+                  className="absolute -bottom-8 -left-8 w-64 h-64 bg-gradient-to-br from-green-400/20 to-green-500/20 rounded-full blur-3xl"
                   animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.3, 0.5, 0.3],

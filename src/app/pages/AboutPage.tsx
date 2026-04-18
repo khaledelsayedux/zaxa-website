@@ -521,7 +521,7 @@ export function AboutPage() {
             </div>
           </div>
 
-          <h4 className="text-xl mb-1 group-hover:text-[#E2E8F0] transition-colors">
+          <h4 className="text-xl mb-1 group-hover:text-foreground transition-colors">
             {member.name}
           </h4>
           <p className="text-zinc-400 text-xs mb-2 leading-tight">
@@ -551,7 +551,7 @@ export function AboutPage() {
   return (
     <div className="relative scroll-container">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
         {/* Static Hero Background */}
         <HeroBackground variant="about" />
         
@@ -576,13 +576,13 @@ export function AboutPage() {
                 ease: [0.22, 1, 0.36, 1]
               }}
             >
-              <span className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-[#1DCD9F]/80 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <span className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-green-400/80 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 [ ABOUT US ]
               </span>
             </motion.div>
             
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight leading-tight text-[#FFFFFF]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight leading-tight text-foreground"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -593,8 +593,8 @@ export function AboutPage() {
               }}
             >
               WE ARE <span className="relative inline-block">
-                <span className="text-[#1DCD9F]">ZAXA STUDIO</span>
-                <div className="absolute -bottom-2 left-0 right-0 h-[2px] bg-[#1DCD9F]" />
+                <span className="text-green-400">ZAXA STUDIO</span>
+                <div className="absolute -bottom-2 left-0 right-0 h-[2px] bg-green-400" />
               </span>
             </motion.h1>
             
@@ -622,10 +622,10 @@ export function AboutPage() {
                 ease: [0.22, 1, 0.36, 1]
               }}
             >
-              <span className="text-[10px] md:text-xs tracking-widest text-[#1DCD9F]/60 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <span className="text-[10px] md:text-xs tracking-widest text-green-400/60 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 Explore Our Journey
               </span>
-              <div className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-[#1DCD9F]/60 to-transparent" />
+              <div className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-green-400/60 to-transparent" />
             </motion.div>
           </motion.div>
         </div>
@@ -635,8 +635,8 @@ export function AboutPage() {
       <section className="py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(var(--color-border-default) 1px, transparent 1px),
+                           linear-gradient(90deg, var(--color-border-default) 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
         }} />
         
@@ -688,8 +688,8 @@ export function AboutPage() {
       <section className="py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(var(--color-border-default) 1px, transparent 1px),
+                           linear-gradient(90deg, var(--color-border-default) 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
         }} />
         
@@ -796,8 +796,8 @@ export function AboutPage() {
             className="relative p-12 bg-gradient-to-br from-zinc-900/50 to-zinc-800/30 border border-zinc-800/50 rounded-3xl overflow-hidden"
           >
             <div className="absolute inset-0 opacity-[0.02]" style={{
-              backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
-                               linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
+              backgroundImage: `linear-gradient(var(--color-border-default) 1px, transparent 1px),
+                               linear-gradient(90deg, var(--color-border-default) 1px, transparent 1px)`,
               backgroundSize: '50px 50px'
             }} />
             
@@ -879,7 +879,7 @@ export function AboutPage() {
                       <div className="w-14 h-14 rounded-2xl bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <value.icon size={28} className="text-zinc-400" />
                       </div>
-                      <h4 className="text-2xl mb-4 group-hover:text-[#E2E8F0] transition-colors">{value.title}</h4>
+                      <h4 className="text-2xl mb-4 group-hover:text-foreground transition-colors">{value.title}</h4>
                       <p className="text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors">
                         {value.description}
                       </p>
@@ -896,8 +896,8 @@ export function AboutPage() {
       <section className="py-32 px-6 sm:px-8 lg:px-12 bg-zinc-900/30 relative overflow-hidden">
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(var(--color-border-default) 1px, transparent 1px),
+                           linear-gradient(90deg, var(--color-border-default) 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
         }} />
         
@@ -1073,8 +1073,8 @@ export function AboutPage() {
       <section className="py-40 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(var(--color-border-default) 1px, transparent 1px),
+                           linear-gradient(90deg, var(--color-border-default) 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
         }} />
         
@@ -1127,13 +1127,13 @@ export function AboutPage() {
                 <Rocket size={40} className="sm:w-12 sm:h-12 md:w-14 md:h-14 mx-auto mb-6 sm:mb-8 text-teal-400 group-hover:text-teal-300 transition-colors duration-300" />
               </motion.div>
               <span 
-                className="text-sm text-[#1DCD9F] uppercase tracking-wider mb-4 block" 
+                className="text-sm text-green-400 uppercase tracking-wider mb-4 block" 
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 READY TO BUILD WHAT'S NEXT?
               </span>
               <h2 
-                className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight group-hover:text-[#E2E8F0] transition-colors duration-300"
+                className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight group-hover:text-foreground transition-colors duration-300"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 Launch faster. Scale smarter. Deliver with confidence.
@@ -1161,7 +1161,7 @@ export function AboutPage() {
                     backdropFilter: 'blur(28px) saturate(180%)',
                     WebkitBackdropFilter: 'blur(28px) saturate(180%)',
                     boxShadow: theme === 'dark'
-                      ? '0 4px 12px rgba(29, 205, 159, 0.12), 0 2px 6px rgba(29, 205, 159, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
+                      ? '0 4px 12px var(--color-accent-fill-md), 0 2px 6px var(--color-accent-fill-sm), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
                       : '0 4px 12px rgba(29, 205, 159, 0.10), 0 2px 6px rgba(29, 205, 159, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.40)',
                   }}
                 >
@@ -1239,7 +1239,7 @@ export function AboutPage() {
         
         {/* Hover effect */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-[#1DCD9F]/30 to-[#169976]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute inset-0 bg-gradient-to-br from-green-400/30 to-green-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         />
         
         {/* Icon */}
@@ -1247,11 +1247,11 @@ export function AboutPage() {
         
         {/* Glow ring */}
         <motion.div
-          className="absolute -inset-1 bg-gradient-to-r from-[#1DCD9F] to-[#169976] rounded-2xl blur-md opacity-0 group-hover:opacity-60 -z-10 transform-gpu"
+          className="absolute -inset-1 bg-gradient-to-r from-green-400 to-green-500 rounded-2xl blur-md opacity-0 group-hover:opacity-60 -z-10 transform-gpu"
         />
 
         {/* Tooltip */}
-        <div className="absolute right-full mr-3 px-3 py-1.5 bg-[#0A111F]/90 backdrop-blur-md border border-white/10 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <div className="absolute right-full mr-3 px-3 py-1.5 bg-surface-raised/90 backdrop-blur-md border border-border-subtle rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
           <span className="text-xs text-white/90">Back to Top</span>
         </div>
       </motion.button>

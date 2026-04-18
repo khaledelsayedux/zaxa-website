@@ -65,9 +65,11 @@ export function LiquidCursor() {
       });
 
       // Draw liquid blob
+      // NOTE: Canvas 2D API requires literal color strings; CSS custom properties
+      // cannot be used here. Values correspond to --green-400 / --green-500 at opacity.
       if (pointsRef.current.length > 0) {
-        ctx.fillStyle = 'rgba(29, 205, 159, 0.3)';
-        ctx.strokeStyle = 'rgba(22, 153, 118, 0.6)';
+        ctx.fillStyle = 'rgba(29, 205, 159, 0.3)';   /* --green-400 / 30% */
+        ctx.strokeStyle = 'rgba(22, 153, 118, 0.6)'; /* --green-500 / 60% */
         ctx.lineWidth = 2;
 
         ctx.beginPath();
@@ -89,7 +91,7 @@ export function LiquidCursor() {
 
         // Add glow effect
         ctx.shadowBlur = 20;
-        ctx.shadowColor = 'rgba(29, 205, 159, 0.8)';
+        ctx.shadowColor = 'rgba(29, 205, 159, 0.8)'; /* --green-400 / 80% */
         ctx.fill();
         ctx.shadowBlur = 0;
       }

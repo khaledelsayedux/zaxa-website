@@ -50,11 +50,11 @@ export function Footer() {
       { label: 'Privacy Policy', path: '/privacy', icon: Lock },
     ],
     social: [
-      { icon: linkedinIcon, label: 'LinkedIn', href: 'https://linkedin.com/company/zaxa-studio', color: 'hover:text-[#1DCD9F]', isImage: true },
+      { icon: linkedinIcon, label: 'LinkedIn', href: 'https://linkedin.com/company/zaxa-studio', color: 'hover:text-green-400', isImage: true },
       { icon: instagramIcon, label: 'Instagram', href: 'https://instagram.com/zaxastudio_', color: 'hover:text-pink-500', isImage: true },
-      { icon: facebookIcon, label: 'Facebook', href: 'https://facebook.com/zaxastudio', color: 'hover:text-[#1DCD9F]', isImage: true },
-      { icon: xIcon, label: 'X', href: 'https://x.com/zaxastudio', color: 'hover:text-[#1DCD9F]', isImage: true },
-      { icon: threadsIcon, label: 'Threads', href: 'https://threads.com/@zaxastudio_', color: 'hover:text-[#1DCD9F]', isImage: true },
+      { icon: facebookIcon, label: 'Facebook', href: 'https://facebook.com/zaxastudio', color: 'hover:text-green-400', isImage: true },
+      { icon: xIcon, label: 'X', href: 'https://x.com/zaxastudio', color: 'hover:text-green-400', isImage: true },
+      { icon: threadsIcon, label: 'Threads', href: 'https://threads.com/@zaxastudio_', color: 'hover:text-green-400', isImage: true },
     ],
   };
 
@@ -90,32 +90,32 @@ export function Footer() {
       ref={footerRootRef}
       className="relative overflow-hidden border-t border-white/10"
       style={{
-        background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 100%)',
+        background: 'linear-gradient(180deg, var(--color-bg-base) 0%, var(--color-bg-surface) 100%)',
       }}
     >
       {/* Abstract Patterns Layer */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-70">
         {/* Grid pattern */}
         <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(rgba(29, 205, 159, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(29, 205, 159, 0.04) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(var(--color-accent-fill-xs) 1px, transparent 1px), linear-gradient(90deg, var(--color-accent-fill-xs) 1px, transparent 1px)',
           backgroundSize: '80px 80px',
         }} />
         
         {/* Diagonal lines */}
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-0 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-[#1DCD9F]/20 to-transparent rotate-45 origin-left" />
-          <div className="absolute bottom-1/3 right-0 w-[500px] h-[1px] bg-gradient-to-r from-transparent via-[#1DCD9F]/15 to-transparent -rotate-45 origin-right" />
-          <div className="absolute top-2/3 left-1/4 w-[400px] h-[1px] bg-gradient-to-r from-transparent via-[#169976]/15 to-transparent rotate-12 origin-left" />
+          <div className="absolute top-1/4 left-0 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-green-400/20 to-transparent rotate-45 origin-left" />
+          <div className="absolute bottom-1/3 right-0 w-[500px] h-[1px] bg-gradient-to-r from-transparent via-green-400/15 to-transparent -rotate-45 origin-right" />
+          <div className="absolute top-2/3 left-1/4 w-[400px] h-[1px] bg-gradient-to-r from-transparent via-green-500/15 to-transparent rotate-12 origin-left" />
         </div>
         
         {/* Circular patterns */}
-        <div className="absolute top-20 right-1/4 w-48 h-48 rounded-full border border-[#1DCD9F]/10 shell-spin-60" />
-        <div className="absolute bottom-32 left-1/3 w-32 h-32 rounded-full border border-[#169976]/10 shell-spin-40-rev" />
+        <div className="absolute top-20 right-1/4 w-48 h-48 rounded-full border border-green-400/10 shell-spin-60" />
+        <div className="absolute bottom-32 left-1/3 w-32 h-32 rounded-full border border-green-500/10 shell-spin-40-rev" />
         
         {/* Dot pattern clusters */}
         <div className="absolute bottom-48 right-40">
           {[...Array(9)].map((_, i) => (
-            <div key={`dot-br-${i}`} className="absolute w-1 h-1 rounded-full bg-[#169976]/20" style={{
+            <div key={`dot-br-${i}`} className="absolute w-1 h-1 rounded-full bg-green-500/20" style={{
               left: `${(i % 3) * 20}px`,
               top: `${Math.floor(i / 3) * 20}px`
             }} />
@@ -123,11 +123,11 @@ export function Footer() {
         </div>
         
         {/* Abstract geometric shapes */}
-        <div className="absolute top-1/2 right-1/3 w-24 h-24 border border-[#1DCD9F]/8 rotate-45" />
+        <div className="absolute top-1/2 right-1/3 w-24 h-24 border border-green-400/8 rotate-45" />
         
         {/* Subtle line accents */}
-        <div className="absolute top-12 right-12 w-32 h-[1px] bg-gradient-to-r from-[#1DCD9F]/20 to-transparent" />
-        <div className="absolute bottom-24 left-16 w-40 h-[1px] bg-gradient-to-l from-[#169976]/20 to-transparent" />
+        <div className="absolute top-12 right-12 w-32 h-[1px] bg-gradient-to-r from-green-400/20 to-transparent" />
+        <div className="absolute bottom-24 left-16 w-40 h-[1px] bg-gradient-to-l from-green-500/20 to-transparent" />
       </div>
 
       {/* Ambient Gradient Orbs */}
@@ -154,7 +154,7 @@ export function Footer() {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full shell-footer-orb-c"
           style={{
-            background: 'radial-gradient(circle, rgba(29, 205, 159, 0.08) 0%, rgba(29, 205, 159, 0.02) 50%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--color-accent-fill-sm) 0%, rgba(29, 205, 159, 0.02) 50%, transparent 70%)',
             filter: 'blur(24px)',
           }}
         />
@@ -175,7 +175,7 @@ export function Footer() {
             <Link to="/" className="flex items-center space-x-3 mb-6 group">
               <div className="relative motion-safe:transition-transform motion-safe:duration-300 hover:scale-110 hover:rotate-12">
                 {/* Glow effect */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-[#1DCD9F] via-[#169976] to-[#1DCD9F] rounded-2xl blur-lg opacity-0 group-hover:opacity-[0.01] transform-gpu shell-spin-60" />
+                <div className="absolute -inset-2 bg-gradient-to-r from-green-400 via-green-500 to-green-400 rounded-2xl blur-lg opacity-0 group-hover:opacity-[0.01] transform-gpu shell-spin-60" />
 
                 <div className="relative p-3 rounded-2xl">
                   <img 
@@ -201,11 +201,11 @@ export function Footer() {
             <div className="space-y-3 mb-3">
               <a 
                 href="mailto:contact@zaxastudio.com"
-                className="group flex items-center gap-3 text-zinc-400 hover:text-[#1DCD9F] transition-all duration-300 motion-safe:hover:translate-x-1"
+                className="group flex items-center gap-3 text-zinc-400 hover:text-green-400 transition-all duration-300 motion-safe:hover:translate-x-1"
                 style={{ fontFamily: "'Cairo', sans-serif" }}
               >
                 <div 
-                  className="w-10 h-10 rounded-xl bg-[#1DCD9F]/10 border border-[#1DCD9F]/20 flex items-center justify-center group-hover:bg-[#1DCD9F]/20 group-hover:border-[#1DCD9F]/40 transition-all duration-300 group-hover:scale-110 group-hover:rotate-[5deg]"
+                  className="w-10 h-10 rounded-xl bg-green-400/10 border border-green-400/20 flex items-center justify-center group-hover:bg-green-400/20 group-hover:border-green-400/40 transition-all duration-300 group-hover:scale-110 group-hover:rotate-[5deg]"
                 >
                   <Mail size={18} className="group-hover:scale-110 transition-transform" />
                 </div>
@@ -217,7 +217,7 @@ export function Footer() {
                 style={{ fontFamily: "'Cairo', sans-serif" }}
               >
                 <div 
-                  className="w-10 h-10 rounded-xl bg-[#169976]/10 border border-[#169976]/20 flex items-center justify-center group-hover:bg-[#169976]/20 group-hover:border-[#169976]/40 transition-all duration-300 group-hover:scale-110 group-hover:rotate-[5deg]"
+                  className="w-10 h-10 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center group-hover:bg-green-500/20 group-hover:border-green-500/40 transition-all duration-300 group-hover:scale-110 group-hover:rotate-[5deg]"
                 >
                   <MapPin size={18} className="group-hover:scale-110 transition-transform" />
                 </div>
@@ -243,13 +243,13 @@ export function Footer() {
                     type="email"
                     placeholder="Your email address"
                     autoComplete="email"
-                    className="w-full px-5 py-3.5 pr-14 bg-zinc-900/90 border border-zinc-800/60 rounded-2xl focus:outline-none focus:border-[#1DCD9F]/50 focus:bg-zinc-900 text-white placeholder-zinc-500 transition-all duration-300 group-hover:border-[#1DCD9F]/30 text-sm shadow-lg shadow-black/20"
+                    className="w-full px-5 py-3.5 pr-14 bg-zinc-900/90 border border-zinc-800/60 rounded-2xl focus:outline-none focus:border-green-400/50 focus:bg-zinc-900 text-white placeholder-zinc-500 transition-all duration-300 group-hover:border-green-400/30 text-sm shadow-lg shadow-black/20"
                     style={{ fontFamily: "'Cairo', sans-serif" }}
                   />
                   
                   {/* Subtle glow on hover */}
                   <div
-                    className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#1DCD9F]/0 via-[#1DCD9F]/5 to-[#1DCD9F]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-400/0 via-green-400/5 to-green-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   />
                   
                   {/* Inner shadow for depth */}
@@ -263,7 +263,7 @@ export function Footer() {
                   {/* Arrow CTA Button */}
                   <button
                     type="submit"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-br from-[#1DCD9F] to-[#169976] hover:from-[#1ab890] hover:to-[#137a5f] text-white rounded-xl transition-all duration-300 shadow-lg shadow-[#1DCD9F]/20 motion-safe:hover:scale-105 motion-safe:hover:translate-x-0.5 active:scale-95"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-br from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white rounded-xl transition-all duration-300 shadow-lg shadow-green-400/20 motion-safe:hover:scale-105 motion-safe:hover:translate-x-0.5 active:scale-95"
                   >
                     <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
                   </button>
@@ -283,11 +283,11 @@ export function Footer() {
                 >
                   <Link
                     to={link.path}
-                    className="group flex items-center gap-3 text-zinc-400 hover:text-[#1DCD9F] transition-all duration-300 text-base"
+                    className="group flex items-center gap-3 text-zinc-400 hover:text-green-400 transition-all duration-300 text-base"
                     style={{ fontFamily: "'Cairo', sans-serif" }}
                   >
                     <div className="relative flex-shrink-0 w-6 h-6 flex items-center justify-center">
-                      <link.icon size={14} className="text-zinc-600 group-hover:text-[#1DCD9F] transition-colors duration-300" strokeWidth={2} />
+                      <link.icon size={14} className="text-zinc-600 group-hover:text-green-400 transition-colors duration-300" strokeWidth={2} />
                     </div>
                     {link.label}
                   </Link>
@@ -316,12 +316,12 @@ export function Footer() {
                     <div 
                       className="relative flex-shrink-0 w-6 h-6 flex items-center justify-center"
                     >
-                      <service.icon size={14} className="text-zinc-600 group-hover:text-[#1DCD9F] transition-colors duration-300" strokeWidth={2} />
+                      <service.icon size={14} className="text-zinc-600 group-hover:text-green-400 transition-colors duration-300" strokeWidth={2} />
                     </div>
 
                     {/* Label */}
                     <span 
-                      className="relative text-base text-zinc-400 group-hover:text-[#1DCD9F] transition-colors duration-300"
+                      className="relative text-base text-zinc-400 group-hover:text-green-400 transition-colors duration-300"
                       style={{ fontFamily: "'Cairo', sans-serif" }}
                     >
                       {service.label}
@@ -355,14 +355,14 @@ export function Footer() {
             <span className="text-zinc-700">•</span>
             <Link 
               to="/terms"
-              className="text-zinc-500 hover:text-[#1DCD9F] transition-colors duration-300"
+              className="text-zinc-500 hover:text-green-400 transition-colors duration-300"
             >
               Terms of Partnership
             </Link>
             <span className="text-zinc-700">•</span>
             <Link 
               to="/privacy"
-              className="text-zinc-500 hover:text-[#1DCD9F] transition-colors duration-300"
+              className="text-zinc-500 hover:text-green-400 transition-colors duration-300"
             >
               Privacy Policy
             </Link>
@@ -378,13 +378,13 @@ export function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group relative w-14 h-14 flex items-center justify-center bg-white/[0.05] border border-white/10 rounded-xl hover:border-[#1DCD9F]/40 transition-all duration-300 overflow-hidden motion-safe:hover:scale-110 motion-safe:hover:-translate-y-0.5 active:scale-95 ${
+                className={`group relative w-14 h-14 flex items-center justify-center bg-white/[0.05] border border-white/10 rounded-xl hover:border-green-400/40 transition-all duration-300 overflow-hidden motion-safe:hover:scale-110 motion-safe:hover:-translate-y-0.5 active:scale-95 ${
                   footerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
                 }`}
                 style={{ transitionDelay: footerInView ? `${200 + index * 100}ms` : '0ms' }}
               >
                 {/* Background glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1DCD9F]/10 to-[#169976]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-green-400/10 to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* Icon */}
                 {social.isImage ? (
@@ -404,7 +404,7 @@ export function Footer() {
                     </div>
                   )
                 ) : (
-                  <social.icon size={20} className={`relative z-10 text-zinc-400 group-hover:text-[#1DCD9F] transition-colors`} />
+                  <social.icon size={20} className={`relative z-10 text-zinc-400 group-hover:text-green-400 transition-colors`} />
                 )}
 
                 {/* Glow effect */}

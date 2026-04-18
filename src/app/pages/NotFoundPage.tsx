@@ -5,17 +5,17 @@ import { Button } from '../components/Button';
 
 export function NotFoundPage() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
-                         linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
+        backgroundImage: `linear-gradient(var(--color-border-default) 1px, transparent 1px),
+                         linear-gradient(90deg, var(--color-border-default) 1px, transparent 1px)`,
         backgroundSize: '50px 50px'
       }} />
 
       {/* Ambient gradient orbs */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1DCD9F]/10 rounded-full blur-3xl"
+        className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/10 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.1, 0.15, 0.1],
@@ -57,7 +57,7 @@ export function NotFoundPage() {
               className="text-[120px] md:text-[180px] lg:text-[240px] font-bold leading-none tracking-tighter"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
-              <span className="bg-gradient-to-r from-[#1DCD9F] via-emerald-400 to-[#1DCD9F] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-400 bg-clip-text text-transparent">
                 404
               </span>
             </h1>
@@ -71,7 +71,7 @@ export function NotFoundPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <span 
-              className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-[#1DCD9F]/80 uppercase" 
+              className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-green-400/80 uppercase" 
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               [ PAGE NOT FOUND ]
@@ -134,21 +134,21 @@ export function NotFoundPage() {
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
               <Link 
                 to="/services" 
-                className="text-[#1DCD9F] hover:text-[#5FEFBF] transition-colors duration-300 flex items-center gap-2"
+                className="text-green-400 hover:text-green-300 transition-colors duration-300 flex items-center gap-2"
               >
                 Our Services
                 <ArrowRight size={14} />
               </Link>
               <Link 
                 to="/about" 
-                className="text-[#1DCD9F] hover:text-[#5FEFBF] transition-colors duration-300 flex items-center gap-2"
+                className="text-green-400 hover:text-green-300 transition-colors duration-300 flex items-center gap-2"
               >
                 About Us
                 <ArrowRight size={14} />
               </Link>
               <Link 
                 to="/contact" 
-                className="text-[#1DCD9F] hover:text-[#5FEFBF] transition-colors duration-300 flex items-center gap-2"
+                className="text-green-400 hover:text-green-300 transition-colors duration-300 flex items-center gap-2"
               >
                 Contact Us
                 <ArrowRight size={14} />

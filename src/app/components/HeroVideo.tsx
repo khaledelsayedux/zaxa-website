@@ -24,7 +24,7 @@ export const HeroVideo = memo(function HeroVideo({
       // CSS gradient acts as fallback before video loads or when unavailable
       style={{
         background:
-          'linear-gradient(135deg, #0a0a0a 0%, #0d1210 50%, #080d0b 100%)',
+          'linear-gradient(135deg, var(--color-bg-base) 0%, var(--color-bg-surface) 50%, var(--color-bg-surface) 100%)',
       }}
     >
       {/* Background video — hidden for users who prefer reduced motion */}
@@ -63,7 +63,7 @@ export const HeroVideo = memo(function HeroVideo({
         aria-hidden="true"
         className="absolute bottom-0 left-0 right-0 h-52 pointer-events-none"
         style={{
-          background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.92) 75%, #000000 100%)',
+          background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.92) 75%, var(--color-bg-base) 100%)',
           zIndex: 3,
         }}
       />

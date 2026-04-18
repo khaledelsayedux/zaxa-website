@@ -184,7 +184,7 @@ export function ProjectsPage() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
         {/* Static Hero Background */}
         <HeroBackground variant="projects" />
         
@@ -209,13 +209,13 @@ export function ProjectsPage() {
                 ease: [0.22, 1, 0.36, 1]
               }}
             >
-              <span className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-[#1DCD9F]/80 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <span className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-green-400/80 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 [ PROJECT ARCHIVE ]
               </span>
             </motion.div>
             
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight leading-tight text-[#FFFFFF]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight leading-tight text-foreground"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -226,8 +226,8 @@ export function ProjectsPage() {
               }}
             >
               PROJECT <span className="relative inline-block">
-                <span className="text-[#1DCD9F]">PORTFOLIO</span>
-                <div className="absolute -bottom-2 left-0 right-0 h-[2px] bg-[#1DCD9F]" />
+                <span className="text-green-400">PORTFOLIO</span>
+                <div className="absolute -bottom-2 left-0 right-0 h-[2px] bg-green-400" />
               </span>
             </motion.h1>
             
@@ -242,10 +242,10 @@ export function ProjectsPage() {
                 ease: [0.22, 1, 0.36, 1]
               }}
             >
-              <span className="text-[10px] md:text-xs tracking-widest text-[#1DCD9F]/60 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <span className="text-[10px] md:text-xs tracking-widest text-green-400/60 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 Explore Projects
               </span>
-              <div className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-[#1DCD9F]/60 to-transparent" />
+              <div className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-green-400/60 to-transparent" />
             </motion.div>
           </motion.div>
         </div>
@@ -542,13 +542,13 @@ export function ProjectsPage() {
                 <Rocket size={40} className="sm:w-12 sm:h-12 md:w-14 md:h-14 mx-auto mb-6 sm:mb-8 text-teal-400 group-hover:text-teal-300 transition-colors duration-300" />
               </motion.div>
               <span 
-                className="text-sm text-[#1DCD9F] uppercase tracking-wider mb-4 block" 
+                className="text-sm text-green-400 uppercase tracking-wider mb-4 block" 
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 READY TO BUILD WHAT'S NEXT?
               </span>
               <h2 
-                className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight group-hover:text-[#E2E8F0] transition-colors duration-300"
+                className="text-3xl md:text-4xl lg:text-5xl mb-6 tracking-tight group-hover:text-foreground transition-colors duration-300"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
                 Launch faster. Scale smarter. Deliver with confidence.
@@ -576,7 +576,7 @@ export function ProjectsPage() {
                     backdropFilter: 'blur(28px) saturate(180%)',
                     WebkitBackdropFilter: 'blur(28px) saturate(180%)',
                     boxShadow: theme === 'dark'
-                      ? '0 4px 12px rgba(29, 205, 159, 0.12), 0 2px 6px rgba(29, 205, 159, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
+                      ? '0 4px 12px var(--color-accent-fill-md), 0 2px 6px var(--color-accent-fill-sm), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
                       : '0 4px 12px rgba(29, 205, 159, 0.10), 0 2px 6px rgba(29, 205, 159, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.40)',
                   }}
                 >

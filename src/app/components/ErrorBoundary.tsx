@@ -8,15 +8,15 @@ export function ErrorBoundary() {
 
   if (isNotFound) {
     return (
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
         <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(var(--color-border-default) 1px, transparent 1px),
+                           linear-gradient(90deg, var(--color-border-default) 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
         }} />
 
         <div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1DCD9F]/10 rounded-full blur-3xl shell-error-orb"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/10 rounded-full blur-3xl shell-error-orb"
         />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -29,7 +29,7 @@ export function ErrorBoundary() {
                 className="text-[120px] md:text-[180px] lg:text-[240px] font-bold leading-none tracking-tighter"
                 style={{ fontFamily: "'Inter Tight', sans-serif" }}
               >
-                <span className="bg-gradient-to-r from-[#1DCD9F] via-emerald-400 to-[#1DCD9F] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-400 bg-clip-text text-transparent">
                   404
                 </span>
               </h1>
@@ -40,7 +40,7 @@ export function ErrorBoundary() {
               style={{ animationDelay: '0.3s', animationFillMode: 'both' }}
             >
               <span 
-                className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-[#1DCD9F]/80 uppercase" 
+                className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-green-400/80 uppercase" 
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 [ PAGE NOT FOUND ]
@@ -84,10 +84,10 @@ export function ErrorBoundary() {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
-                         linear-gradient(90deg, rgba(226, 232, 240, 0.1) 1px, transparent 1px)`,
+        backgroundImage: `linear-gradient(var(--color-border-default) 1px, transparent 1px),
+                         linear-gradient(90deg, var(--color-border-default) 1px, transparent 1px)`,
         backgroundSize: '50px 50px'
       }} />
 

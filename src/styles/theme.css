@@ -49,8 +49,8 @@
   --accent-foreground: var(--color-text-primary);
 
   /* Destructive */
-  --destructive:            #7F1D1D;
-  --destructive-foreground: #FCA5A5;
+  --destructive:            var(--color-destructive);
+  --destructive-foreground: var(--color-destructive-foreground);
 
   /* Borders & Inputs */
   --border:            var(--color-border-default);
@@ -61,16 +61,12 @@
   /* Focus ring */
   --ring: var(--green-400);
 
-  /* Font weights */
-  --font-weight-normal: var(--weight-normal);
-  --font-weight-medium: var(--weight-medium);
-
-  /* Charts */
-  --chart-1: var(--green-400);
-  --chart-2: var(--green-500);
-  --chart-3: var(--green-600);
-  --chart-4: var(--green-400);
-  --chart-5: var(--green-500);
+  /* Charts — 5 distinct steps across the green palette */
+  --chart-1: var(--green-300);
+  --chart-2: var(--green-400);
+  --chart-3: var(--green-500);
+  --chart-4: var(--green-600);
+  --chart-5: var(--green-700);
 
   /* Radius — base unit */
   --radius: var(--radius-lg);
@@ -98,12 +94,15 @@
 
   --card:            var(--color-bg-surface-raised);
   --card-foreground: var(--color-text-primary);
+  --card-border:     var(--color-border-accent);
+  --card-shadow:     var(--color-accent-fill-sm);
 
   --popover:            var(--color-bg-surface-overlay);
   --popover-foreground: var(--color-text-primary);
 
   --primary:            var(--green-400);
   --primary-foreground: var(--color-text-on-accent);
+  --primary-muted:      var(--color-accent-fill-sm);
 
   --secondary:            var(--color-bg-surface-raised);
   --secondary-foreground: var(--color-text-primary);
@@ -114,18 +113,22 @@
   --accent:            var(--color-bg-surface-overlay);
   --accent-foreground: var(--color-text-primary);
 
-  --destructive:            #7F1D1D;
-  --destructive-foreground: #FCA5A5;
+  --destructive:            var(--color-destructive);
+  --destructive-foreground: var(--color-destructive-foreground);
 
   --border:            var(--color-border-default);
   --input:             var(--color-bg-surface-raised);
+  --input-background:  var(--color-bg-surface);
+  --switch-background: var(--color-bg-surface-overlay);
   --ring:              var(--green-500);
 
-  --chart-1: var(--green-400);
-  --chart-2: var(--green-500);
-  --chart-3: var(--green-600);
-  --chart-4: var(--green-400);
-  --chart-5: var(--green-500);
+  --radius: var(--radius-lg);
+
+  --chart-1: var(--green-300);
+  --chart-2: var(--green-400);
+  --chart-3: var(--green-500);
+  --chart-4: var(--green-600);
+  --chart-5: var(--green-700);
 
   --sidebar:                   var(--color-bg-surface);
   --sidebar-foreground:        var(--color-text-primary);
@@ -189,6 +192,11 @@
   --color-surface-raised:   var(--color-bg-surface-raised);
   --color-surface-overlay:  var(--color-bg-surface-overlay);
   --color-surface-inset:    var(--color-bg-surface-inset);
+
+  /* Glass surface tints (Tailwind utilities: bg-glass-surface, etc.) */
+  --color-glass-surface-faint: var(--glass-surface-faint);
+  --color-glass-surface:       var(--glass-surface);
+  --color-glass-surface-hover: var(--glass-surface-hover);
 
   /* Semantic text colors (Tailwind utilities: text-primary, text-secondary …) */
   --color-text-primary:   var(--color-text-primary);
@@ -355,72 +363,29 @@
   position: relative !important;
 }
 
-/* Basic glass helpers (see glass.css for full variants) */
+/* Generic glass alias — see glass.css for full variants */
 .glass {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
+  background: var(--glass-surface);
   border: 1px solid var(--color-border-default);
 }
 
 .glass-dark {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
   backdrop-filter: blur(14px) saturate(150%);
   -webkit-backdrop-filter: blur(14px) saturate(150%);
+  background: var(--glass-overlay);
   border: 1px solid var(--color-border-subtle);
 }
 
-.glass-card-hover {
-  background: linear-gradient(135deg, 
-    var(--color-accent-fill-md) 0%, 
-    var(--color-accent-fill-sm) 50%,
-    rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(18px) saturate(150%);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
-  border: 1px solid var(--color-border-accent);
-  box-shadow: var(--glow-sm);
-}
-
-.glass-frosted {
-  background: rgba(20, 20, 20, 0.65);
-  backdrop-filter: blur(18px) saturate(150%);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
-  border: 1px solid var(--color-border-default);
-  box-shadow: var(--glow-xs);
-}
-
-/* Glow utilities — use token shadows */
-.glow-xs  { box-shadow: var(--glow-xs); }
-.glow-sm  { box-shadow: var(--glow-sm); }
-.glow-md  { box-shadow: var(--glow-md); }
-.glow-lg  { box-shadow: var(--glow-lg); }
-.glow-xl  { box-shadow: var(--glow-xl); }
-
-.glow-text-sm { text-shadow: var(--glow-text-sm); }
-.glow-text-md { text-shadow: var(--glow-text-md); }
-.glow-text-lg { text-shadow: var(--glow-text-lg); }
-
-/* Neon aliases (kept for backwards compat — map to glow tokens) */
-.neon-blue,
-.neon-violet,
-.neon-cyan {
-  box-shadow: var(--glow-md);
-}
-
-.neon-text-blue,
-.neon-text-violet {
-  text-shadow: var(--glow-text-md);
-}
-
 .neon-border-glow {
-  position: relative;
   border: 1px solid var(--color-border-accent);
-  box-shadow: var(--glow-xs), inset 0 0 12px var(--color-accent-fill-xs);
+  box-shadow: var(--glow-xs);
 }
 
 .neon-border-glow:hover {
   border-color: var(--color-border-accent-strong);
-  box-shadow: var(--glow-md), inset 0 0 16px var(--color-accent-fill-sm);
+  box-shadow: var(--glow-md);
 }
 
 /* Custom animations */

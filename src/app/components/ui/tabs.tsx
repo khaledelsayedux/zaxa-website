@@ -99,8 +99,8 @@ function TabsTrigger({
             backdropFilter: 'blur(28px) saturate(180%)',
             WebkitBackdropFilter: 'blur(28px) saturate(180%)',
             boxShadow: theme === 'dark'
-              ? '0 6px 18px rgba(29, 205, 159, 0.18), 0 2px 8px rgba(29, 205, 159, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
-              : '0 6px 18px rgba(29, 205, 159, 0.12), 0 2px 8px rgba(29, 205, 159, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.40)',
+              ? '0 6px 18px var(--color-accent-fill-lg), 0 2px 8px rgba(29, 205, 159, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
+              : '0 6px 18px var(--color-accent-fill-md), 0 2px 8px var(--color-accent-fill-sm), inset 0 1px 0 rgba(255, 255, 255, 0.40)',
           }}
         >
           {/* Secondary backing layer (8% opacity for depth) */}
@@ -108,7 +108,7 @@ function TabsTrigger({
             className="absolute inset-0"
             style={{
               background: theme === 'dark'
-                ? 'rgba(29, 205, 159, 0.12)'
+                ? 'var(--color-accent-fill-md)'
                 : 'rgba(29, 205, 159, 0.15)',
               zIndex: -1,
             }}
@@ -154,7 +154,7 @@ function TabsTrigger({
           className="absolute inset-0 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-100"
           style={{
             background: theme === 'dark'
-              ? 'rgba(255, 255, 255, 0.05)'
+              ? 'var(--color-border-subtle)'
               : 'rgba(0, 0, 0, 0.03)',
           }}
         />

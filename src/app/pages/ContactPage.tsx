@@ -177,7 +177,7 @@ export function ContactPage() {
         url="/contact"
       />
       {/* Hero Section - Improved */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
         {/* Static Hero Background */}
         <HeroBackground variant="contact" />
         
@@ -202,13 +202,13 @@ export function ContactPage() {
                 ease: [0.22, 1, 0.36, 1]
               }}
             >
-              <span className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-[#1DCD9F]/80 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <span className="text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-green-400/80 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 [ GET IN TOUCH ]
               </span>
             </motion.div>
             
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-10 tracking-tight leading-tight text-[#FFFFFF]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-10 tracking-tight leading-tight text-foreground"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -219,8 +219,8 @@ export function ContactPage() {
               }}
             >
               LET'S TURN IDEAS INTO <span className="relative inline-block">
-                <span className="text-[#1DCD9F]">IMPACT</span>
-                <div className="absolute -bottom-2 left-0 right-0 h-[2px] bg-[#1DCD9F]" />
+                <span className="text-green-400">IMPACT</span>
+                <div className="absolute -bottom-2 left-0 right-0 h-[2px] bg-green-400" />
               </span>
             </motion.h1>
             
@@ -247,10 +247,10 @@ export function ContactPage() {
                 ease: [0.22, 1, 0.36, 1]
               }}
             >
-              <span className="text-[10px] md:text-xs tracking-widest text-[#1DCD9F]/60 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <span className="text-[10px] md:text-xs tracking-widest text-green-400/60 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 Get Started
               </span>
-              <div className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-[#1DCD9F]/60 to-transparent" />
+              <div className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-green-400/60 to-transparent" />
             </motion.div>
           </motion.div>
         </div>
@@ -403,8 +403,8 @@ export function ContactPage() {
                 />
 
                 {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#1DCD9F]/5 rounded-full blur-2xl transform-gpu" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#169976]/5 rounded-full blur-2xl transform-gpu" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-green-400/5 rounded-full blur-2xl transform-gpu" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-green-500/5 rounded-full blur-2xl transform-gpu" />
 
                 {submitted ? (
                   <motion.div
@@ -678,8 +678,8 @@ export function ContactPage() {
 
       {/* Department Emails Section - Redesigned */}
       <section className="py-24 px-6 sm:px-8 lg:px-12 bg-zinc-950/50 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(29,205,159,0.03),transparent_50%),radial-gradient(circle_at_70%_50%,rgba(16,185,129,0.02),transparent_50%)]" />
+        {/* Background accent */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, var(--color-accent-fill-xs) 0%, transparent 70%)' }} />
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32">
           <motion.div

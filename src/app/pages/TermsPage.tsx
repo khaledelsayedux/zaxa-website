@@ -54,16 +54,16 @@ export function TermsPage() {
       />
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#000000]">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
         {/* Background Image - using solid color for legal pages */}
-        <div className="absolute inset-0 bg-[#000000]" />
+        <div className="absolute inset-0 bg-background" />
         
         {/* Dark Overlay for Better Text Contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
         
         {/* Subtle Gradient Orbs */}
         <motion.div 
-          className="absolute top-20 -left-40 w-96 h-96 bg-[#1DCD9F]/5 rounded-full blur-3xl"
+          className="absolute top-20 -left-40 w-96 h-96 bg-green-400/5 rounded-full blur-3xl"
           animate={{ 
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3]
@@ -71,7 +71,7 @@ export function TermsPage() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute bottom-20 -right-40 w-96 h-96 bg-[#1DCD9F]/5 rounded-full blur-3xl"
+          className="absolute bottom-20 -right-40 w-96 h-96 bg-green-400/5 rounded-full blur-3xl"
           animate={{ 
             scale: [1.2, 1, 1.2],
             opacity: [0.3, 0.5, 0.3]
@@ -83,7 +83,7 @@ export function TermsPage() {
         <motion.div
           className="absolute left-1/2 top-1/2 w-32 h-32 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, rgba(226, 232, 240, 0.15) 0%, rgba(226, 232, 240, 0.08) 30%, transparent 70%)',
+            background: 'radial-gradient(circle, var(--color-border-strong) 0%, var(--color-border-subtle) 30%, transparent 70%)',
             filter: 'blur(30px)',
           }}
           animate={{
@@ -108,7 +108,7 @@ export function TermsPage() {
               transition={{ duration: 0.8 }}
               className="mb-4 md:mb-6"
             >
-              <span className="text-[10px] md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-[#1DCD9F]/80 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <span className="text-[10px] md:text-sm tracking-[0.2em] md:tracking-[0.3em] text-green-400/80 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 [ LEGAL FRAMEWORK ]
               </span>
             </motion.div>
@@ -117,13 +117,13 @@ export function TermsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight leading-tight text-[#FFFFFF]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight leading-tight text-foreground"
               style={{ fontFamily: "'Inter Tight', sans-serif" }}
             >
               TERMS & <span className="relative inline-block">
-                <span className="text-[#1DCD9F]">CONDITIONS</span>
+                <span className="text-green-400">CONDITIONS</span>
                 <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-[2px] bg-[#1DCD9F]"
+                  className="absolute -bottom-2 left-0 right-0 h-[2px] bg-green-400"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.8, duration: 1 }}
@@ -146,11 +146,11 @@ export function TermsPage() {
               animate={{ opacity: 1 }} 
               transition={{ duration: 0.8, delay: 0.9 }}
             >
-              <span className="text-[10px] md:text-xs tracking-widest text-[#1DCD9F]/60 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <span className="text-[10px] md:text-xs tracking-widest text-green-400/60 uppercase" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                 Review Terms
               </span>
               <motion.div 
-                className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-[#1DCD9F]/60 to-transparent" 
+                className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-green-400/60 to-transparent" 
                 animate={{ height: [48, 64, 48] }} 
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} 
               />
