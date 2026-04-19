@@ -40,7 +40,7 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
       >
         {/* Card Container - Enhanced with premium styling */}
         <div 
-          className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-transparent backdrop-blur-md group-hover:border-[#1DCD9F]/40 transition-all duration-250"
+          className="relative overflow-hidden rounded-xl lg:rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-transparent backdrop-blur-md group-hover:border-[#1DCD9F]/40 transition-all duration-250"
         >
           {/* L-bracket corners - Premium detail */}
           <div className="absolute -top-2 -left-2 w-8 h-8 opacity-0 group-hover:opacity-100 transition-all duration-200">
@@ -72,7 +72,7 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-600 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
 
           {/* Content - Redesigned Layout */}
-          <div className="relative p-8 md:p-10 lg:p-12">
+          <div className="relative p-6 md:p-10 lg:p-12">
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
               {/* Left Column - Header Info */}
               <div className="lg:w-[400px] flex-shrink-0">
@@ -93,7 +93,7 @@ function ServiceCard({ service, index, onExpand }: ServiceCardProps) {
 
                 {/* Title */}
                 <h3 
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white group-hover:text-[#5FEFBF] transition-colors duration-300 leading-tight"
+                  className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 text-white group-hover:text-[#5FEFBF] transition-colors duration-300 leading-tight"
                   style={{ fontFamily: "'Inter Tight', sans-serif" }}
                 >
                   {service.title}
@@ -215,7 +215,7 @@ function ServiceDetailModal({ service, onClose }: ServiceDetailModalProps) {
 
       {/* Modal Content */}
       <motion.div
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-black border border-white/10 rounded-3xl"
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-black border border-white/10 rounded-xl lg:rounded-3xl"
         style={{
           backdropFilter: 'blur(40px)',
           WebkitBackdropFilter: 'blur(40px)',
@@ -536,7 +536,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Services Grid */}
-        <section className="relative py-24 md:py-32">
+        <section className="relative py-10 md:py-20 lg:py-32">
           <div className="w-full">
             {/* Section Header */}
             <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mb-16">
@@ -582,7 +582,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-40 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
+        <section className="py-16 md:py-24 lg:py-40 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
           {/* Subtle Grid Pattern */}
           <div className="absolute inset-0 opacity-[0.02]" style={{
             backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
@@ -591,13 +591,13 @@ export default function ServicesPage() {
           }} />
           
           <div className="w-full relative z-10">
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               whileHover={{ y: -6 }}
-              className="group relative p-8 sm:p-12 md:p-16 lg:p-20 bg-gradient-to-br from-teal-500/5 via-emerald-500/5 to-transparent border border-zinc-800/50 rounded-3xl text-center overflow-hidden hover:border-teal-500/30 transition-all duration-500"
+              className="group relative p-8 sm:p-12 md:p-16 lg:p-20 bg-gradient-to-br from-teal-500/5 via-emerald-500/5 to-transparent border border-zinc-800/50 rounded-xl lg:rounded-3xl text-center overflow-hidden hover:border-teal-500/30 transition-all duration-500"
             >
               {/* Background gradient effect */}
               <motion.div

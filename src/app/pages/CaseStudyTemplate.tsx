@@ -61,7 +61,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
     <div className="relative pt-20">
       {/* Hero Section */}
       <section 
-        className="min-h-screen flex items-center justify-center overflow-hidden relative py-20"
+        className="min-h-screen flex items-center justify-center overflow-hidden relative py-8 lg:py-20"
       >
         {/* Professional Pattern Background */}
         <div 
@@ -171,7 +171,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="mt-16 max-w-6xl mx-auto"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-zinc-800/50">
+            <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-zinc-800/50">
                 <img 
                   src={data.heroImage} 
                   alt={`${data.title} preview`}
@@ -184,7 +184,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
       </section>
 
       {/* Overview */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-black">
+      <section className="py-12 lg:py-20 px-6 sm:px-8 lg:px-12 bg-black">
         <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -214,7 +214,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
       </section>
 
       {/* Challenge */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-zinc-900/30">
+      <section className="py-12 lg:py-20 px-6 sm:px-8 lg:px-12 bg-zinc-900/30">
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -254,7 +254,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative rounded-3xl overflow-hidden h-[500px]"
+              className="hidden lg:block relative rounded-3xl overflow-hidden h-[500px]"
             >
               <div 
                 className="absolute inset-0 bg-gradient-to-br from-zinc-900/90 to-zinc-800/90"
@@ -277,7 +277,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
       </section>
 
       {/* Solution */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-black">
+      <section className="py-12 lg:py-20 px-6 sm:px-8 lg:px-12 bg-black">
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -285,7 +285,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative rounded-3xl overflow-hidden lg:order-1 h-[500px]"
+              className="hidden lg:block relative rounded-3xl overflow-hidden lg:order-1 h-[500px]"
             >
               <div 
                 className="absolute inset-0 bg-gradient-to-br from-violet-900/40 to-zinc-900/90"
@@ -341,7 +341,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
       </section>
 
       {/* Key Features */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-zinc-900/30">
+      <section className="py-12 lg:py-20 px-6 sm:px-8 lg:px-12 bg-zinc-900/30">
         <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -367,7 +367,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="group p-8 bg-zinc-900/50 border border-zinc-800/50 rounded-3xl hover:border-[#1DCD9F]/30 transition-all duration-300"
+                className="group p-8 bg-zinc-900/50 border border-zinc-800/50 rounded-2xl lg:rounded-3xl hover:border-[#1DCD9F]/30 transition-all duration-300"
               >
                 {feature.icon && (
                   <div className="mb-6 w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1DCD9F]/10 to-[#169976]/10 flex items-center justify-center">
@@ -383,7 +383,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
       </section>
 
       {/* Results */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-black">
+      <section className="py-12 lg:py-20 px-6 sm:px-8 lg:px-12 bg-black">
         <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -412,7 +412,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="relative p-10 bg-gradient-to-br from-zinc-900/50 to-zinc-900/30 border border-zinc-800/50 rounded-3xl text-center overflow-hidden group"
+                className="relative p-10 bg-gradient-to-br from-zinc-900/50 to-zinc-900/30 border border-zinc-800/50 rounded-2xl lg:rounded-3xl text-center overflow-hidden group"
               >
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${data.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
@@ -433,7 +433,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="rounded-3xl overflow-hidden h-[600px] relative"
+            className="hidden lg:block rounded-3xl overflow-hidden h-[600px] relative"
           >
             <div 
               className="absolute inset-0 bg-gradient-to-br from-green-900/30 to-zinc-900/90"
@@ -456,7 +456,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
       </section>
 
       {/* Technologies */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-zinc-900/30">
+      <section className="py-12 lg:py-20 px-6 sm:px-8 lg:px-12 bg-zinc-900/30">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -497,7 +497,7 @@ export function CaseStudyTemplate({ data }: CaseStudyTemplateProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative p-12 md:p-16 bg-gradient-to-br from-zinc-900/50 to-zinc-900/30 border border-zinc-800/50 rounded-3xl"
+              className="relative p-12 md:p-16 bg-gradient-to-br from-zinc-900/50 to-zinc-900/30 border border-zinc-800/50 rounded-2xl lg:rounded-3xl"
             >
               <div className="text-6xl text-teal-400/20 mb-6">"</div>
               <p className="text-2xl md:text-3xl text-zinc-300 mb-8 leading-relaxed">

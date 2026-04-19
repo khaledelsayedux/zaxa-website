@@ -135,7 +135,7 @@ export function ProjectCard({
       >
         {/* Main Card Container - New Horizontal Layout with Liquid Glass */}
         <motion.div 
-          className="relative min-h-[500px] lg:h-[600px] rounded-[32px] overflow-hidden bg-white/[0.03] backdrop-blur-md border border-white/10 shadow-[0_4px_16px_0_rgba(29,205,159,0.12)]"
+          className="relative min-h-[350px] lg:min-h-[500px] lg:h-[600px] rounded-2xl lg:rounded-[32px] overflow-hidden bg-white/[0.03] backdrop-blur-md border border-white/10 shadow-[0_4px_16px_0_rgba(29,205,159,0.12)]"
           animate={{
             borderColor: isHovered ? 'rgba(29, 205, 159, 0.5)' : 'rgba(255, 255, 255, 0.1)',
           }}
@@ -304,7 +304,7 @@ export function ProjectCard({
 
           {/* Subtle Border Glow on Hover */}
           <motion.div
-            className="absolute inset-0 rounded-[32px] pointer-events-none"
+            className="absolute inset-0 rounded-2xl lg:rounded-[32px] pointer-events-none"
             animate={{
               boxShadow: isHovered
                 ? '0 20px 60px rgba(29, 205, 159, 0.25), inset 0 0 0 1px rgba(29, 205, 159, 0.3)'

@@ -89,7 +89,7 @@ export default function ExperientialSpatialPage() {
         {/* Parallax Background with Animated Cubes */}
         <ParallaxBackground className="fixed inset-0 z-0" />
 
-        <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-32 pb-24">
+        <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-16 md:pt-32 pb-12 md:pb-24">
           {/* Consistent max-width container */}
           <div className="max-w-[1400px] mx-auto">
             {/* Back Button */}
@@ -115,7 +115,7 @@ export default function ExperientialSpatialPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-32 relative"
+              className="mb-16 md:mb-32 relative"
             >
               {/* Large rotating background icon */}
               <motion.div 
@@ -278,7 +278,7 @@ export default function ExperientialSpatialPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
-              className="mb-12"
+              className="mb-8 md:mb-12"
             >
               {/* Section Header with Line */}
               <div className="flex items-center gap-6 mb-12">
@@ -439,7 +439,7 @@ export default function ExperientialSpatialPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-20"
+              className="mt-10 md:mt-20"
             >
               {/* Decorative divider */}
               <div className="flex items-center gap-4 mb-12">
@@ -469,7 +469,7 @@ export default function ExperientialSpatialPage() {
                 </div>
 
                 {/* Main CTA Card */}
-                <div className="relative p-10 md:p-16 rounded-3xl bg-gradient-to-br from-[#1DCD9F]/10 via-[#1DCD9F]/5 to-transparent border border-[#1DCD9F]/20 overflow-hidden group-hover:border-[#1DCD9F]/40 transition-all duration-300">
+                <div className="relative p-6 md:p-16 rounded-3xl bg-gradient-to-br from-[#1DCD9F]/10 via-[#1DCD9F]/5 to-transparent border border-[#1DCD9F]/20 overflow-hidden group-hover:border-[#1DCD9F]/40 transition-all duration-300">
                   {/* Removed background decoration */}
                   
                   {/* Shimmer effect */}

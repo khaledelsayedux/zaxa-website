@@ -27,7 +27,7 @@ const projects = [
 
 export function HomeProjectLogosSlider() {
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
+    <section className="py-10 lg:py-20 px-6 relative overflow-hidden">
       <div className="w-full relative z-10">
         <Slider
           {...{

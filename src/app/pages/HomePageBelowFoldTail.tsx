@@ -53,7 +53,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
   return (
     <>
       {/* Why Choose Zaxa Studio - Redesigned */}
-      <section className="relative overflow-hidden px-[48px] py-[120px]">
+      <section className="relative px-6 lg:px-[48px] py-12 lg:py-[120px]">
         <img
           src={whyChooseBg}
           alt=""
@@ -64,7 +64,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
           sizes="100vw"
         />
         
-        <div className="w-full relative z-10 px-[0px] py-[100px]">
+        <div className="w-full relative z-10 px-[0px] py-8 lg:py-[100px]">
           <SectionReveal>
             <div className="text-center mb-20">
               <div className="mb-4 md:mb-6">
@@ -89,7 +89,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                     border: theme === 'dark' 
                       ? '1.5px solid rgba(255, 255, 255, 0.12)' 
                       : '1.5px solid rgba(29, 205, 159, 0.15)',
-                    borderRadius: '28px',
+                    borderRadius: '16px',
                   }}
                 >
                 {/* Internal gradient for depth */}
@@ -99,7 +99,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                     background: theme === 'dark' 
                       ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 50%)' 
                       : 'linear-gradient(135deg, rgba(29, 205, 159, 0.08) 0%, transparent 50%)',
-                    borderRadius: '28px',
+                    borderRadius: '16px',
                   }}
                 />
                 
@@ -116,7 +116,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100"
                   style={{
                     background: `radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(29, 205, 159, 0.06), transparent 40%)`,
-                    borderRadius: '28px',
+                    borderRadius: '16px',
                   }}
                 />
 
@@ -133,7 +133,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                 <div className="relative flex flex-col gap-6">
                   {/* Icon Container with liquid glass */}
                   <div
-                    className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 motion-reduce:group-hover:scale-100 motion-reduce:group-hover:rotate-0"
+                    className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl lg:rounded-2xl transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 motion-reduce:group-hover:scale-100 motion-reduce:group-hover:rotate-0"
                     style={{
                       background: theme === 'dark' 
                         ? 'rgba(29, 205, 159, 0.12)' 
@@ -182,7 +182,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
       </section>
 
       {/* How We Work Section */}
-      <section className="relative overflow-hidden px-[48px] py-[120px]">
+      <section className="relative px-6 lg:px-[48px] py-12 lg:py-[120px]">
         {/* Ambient Background Orbs */}
         <div className="relative">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-[72px] pointer-events-none transform-gpu" />
@@ -234,7 +234,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                   border: theme === 'dark' 
                     ? '1.5px solid rgba(255, 255, 255, 0.12)' 
                     : '1.5px solid rgba(29, 205, 159, 0.15)',
-                  borderRadius: '28px',
+                  borderRadius: '16px',
                 }}
               >
                 {/* Internal gradient for depth */}
@@ -244,7 +244,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                     background: theme === 'dark' 
                       ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 50%)' 
                       : 'linear-gradient(135deg, rgba(29, 205, 159, 0.08) 0%, transparent 50%)',
-                    borderRadius: '28px',
+                    borderRadius: '16px',
                   }}
                 />
                 
@@ -261,7 +261,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-[400ms] ease-out group-hover:opacity-100"
                   style={{
                     background: `radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(29, 205, 159, 0.06), transparent 40%)`,
-                    borderRadius: '28px',
+                    borderRadius: '16px',
                   }}
                 />
 
@@ -308,7 +308,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
       </section>
 
       {/* What You Can Expect */}
-      <section className="relative px-[48px] py-[120px]">
+      <section className="relative px-6 lg:px-[48px] py-12 lg:py-[120px]">
         <SectionReveal className="w-full relative" duration={0.45}>
           <div className="mb-24 text-center">
             <div className="mb-4 md:mb-6">
@@ -359,7 +359,7 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
             ].map((pillar) => (
               <div
                 key={pillar.title}
-                className="group relative overflow-hidden rounded-3xl border border-zinc-800/50 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 p-8 transition-all duration-400 ease-out hover:-translate-y-2 hover:border-teal-500/30 motion-reduce:hover:translate-y-0"
+                className="group relative overflow-hidden rounded-2xl lg:rounded-3xl border border-zinc-800/50 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 p-8 transition-all duration-400 ease-out hover:-translate-y-2 hover:border-teal-500/30 motion-reduce:hover:translate-y-0"
               >
                 <div className="relative">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500/20 to-emerald-500/20 border border-teal-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -378,10 +378,10 @@ export function HomePageBelowFoldTail({ playTabSound }: HomePageBelowFoldTailPro
       
 
       {/* CTA Section */}
-      <section className="relative px-[48px] py-[120px]">
+      <section className="relative px-6 lg:px-[48px] py-12 lg:py-[120px]">
         <div className="w-full relative">
           <SectionReveal>
-            <div className="group relative overflow-hidden rounded-3xl border border-zinc-800/50 bg-gradient-to-br from-teal-500/5 via-emerald-500/5 to-transparent p-8 text-center transition-all duration-400 ease-out hover:-translate-y-1.5 hover:border-teal-500/30 motion-reduce:hover:translate-y-0 sm:p-12 md:p-16 lg:p-20">
+            <div className="group relative overflow-hidden rounded-2xl lg:rounded-3xl border border-zinc-800/50 bg-gradient-to-br from-teal-500/5 via-emerald-500/5 to-transparent p-8 text-center transition-all duration-400 ease-out hover:-translate-y-1.5 hover:border-teal-500/30 motion-reduce:hover:translate-y-0 sm:p-12 md:p-16 lg:p-20">
             <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-emerald-500/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
             <div className="pointer-events-none absolute top-0 right-0 h-64 w-64 rounded-full bg-teal-500/20 opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100 transform-gpu" />

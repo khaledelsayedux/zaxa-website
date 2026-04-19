@@ -252,7 +252,7 @@ export function ProjectsPage() {
       </section>
 
       {/* Projects Gallery */}
-      <section className="py-20 sm:py-32 md:py-40 px-4 sm:px-6 md:px-8 lg:px-12">
+      <section className="py-12 lg:py-40 px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -282,7 +282,7 @@ export function ProjectsPage() {
       </section>
 
       {/* Services We Offer */}
-      <section className="py-40 px-6 sm:px-8 lg:px-12 bg-zinc-900/30">
+      <section className="py-16 lg:py-40 px-6 sm:px-8 lg:px-12 bg-zinc-900/30">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -452,7 +452,7 @@ export function ProjectsPage() {
       </AnimatePresence>
 
       {/* Industries with Hovers */}
-      <section className="py-40 px-6 sm:px-8 lg:px-12 bg-zinc-900/30">
+      <section className="py-16 lg:py-40 px-6 sm:px-8 lg:px-12 bg-zinc-900/30">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -492,7 +492,7 @@ export function ProjectsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-40 px-6 sm:px-8 lg:px-12">
+      <section className="py-16 lg:py-40 px-6 sm:px-8 lg:px-12">
         <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

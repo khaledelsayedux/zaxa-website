@@ -47,7 +47,7 @@ export default function HomePageBelowFold({ playTabSound }: HomePageBelowFoldPro
       </div>
 
       {/* What We Solve Section */}
-      <section className="py-32 sm:py-40 relative overflow-hidden">
+      <section className="py-10 md:py-20 lg:py-32 relative overflow-hidden">
         {/* Teal glow at top edge — continues the hero's ambient light */}
         {theme === 'dark' && (
           <div
@@ -73,8 +73,8 @@ export default function HomePageBelowFold({ playTabSound }: HomePageBelowFoldPro
 
             {/* Section Title */}
             <h2
-              className="mb-20 tracking-tight leading-[0.95] text-center font-bold"
-              style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: '64px' }}
+              className="mb-10 md:mb-20 tracking-tight leading-[0.95] text-center font-bold"
+              style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 'clamp(2.5rem, 8vw, 4rem)' }}
             >
               <span className="inline-block">
                 What We Help You{' '}
@@ -102,7 +102,7 @@ export default function HomePageBelowFold({ playTabSound }: HomePageBelowFoldPro
                 >
                   {/* Card Container */}
                   <div
-                    className={`relative h-full overflow-hidden rounded-3xl border p-8 cursor-pointer transition-colors duration-[250ms] ${
+                    className={`relative h-full overflow-hidden rounded-xl lg:rounded-3xl border p-8 cursor-pointer transition-colors duration-[250ms] ${
                       theme === 'dark'
                         ? 'border-white/[0.07] group-hover:border-[#1DCD9F]/25'
                         : 'border-[#1DCD9F]/[0.15] group-hover:border-[#1DCD9F]/40'
@@ -123,7 +123,7 @@ export default function HomePageBelowFold({ playTabSound }: HomePageBelowFoldPro
                         background: theme === 'dark'
                           ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 55%)'
                           : 'linear-gradient(135deg, rgba(29, 205, 159, 0.06) 0%, transparent 55%)',
-                        borderRadius: '24px',
+                        borderRadius: '16px',
                       }}
                     />
 
@@ -228,7 +228,7 @@ export default function HomePageBelowFold({ playTabSound }: HomePageBelowFoldPro
       </section>
 
       {/* Services Overview Section */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
+      <section className="py-10 md:py-20 lg:py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
         {/* Ambient Background Effects */}
         <div className="absolute inset-0 pointer-events-none" style={{ position: 'absolute' }}>
           {/* Gradient Orb - Top Left */}
@@ -253,7 +253,7 @@ export default function HomePageBelowFold({ playTabSound }: HomePageBelowFoldPro
               [ OUR SERVICES ]
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] mb-6 tracking-tight leading-[1.1]">
-              Everything Your Product <br />
+              Everything Your Product <br className="hidden md:block" />
               <span className="bg-gradient-to-r from-teal-400 to-emerald-500 bg-clip-text text-transparent">Needs to Succeed</span>
             </h2>
           </div>
@@ -330,7 +330,7 @@ export default function HomePageBelowFold({ playTabSound }: HomePageBelowFoldPro
                   />
                   
                   {/* Card */}
-                  <div className="relative flex items-center gap-4 p-5 rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.03] border border-white/10 hover:border-[#1DCD9F]/40 transition-all duration-200 ease-out group-hover:translate-y-[-4px] overflow-hidden">
+                  <div className="relative flex items-center gap-4 p-5 rounded-xl lg:rounded-3xl bg-gradient-to-br from-white/[0.08] to-white/[0.03] border border-white/10 hover:border-[#1DCD9F]/40 transition-all duration-200 ease-out group-hover:translate-y-[-4px] overflow-hidden">
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-2xl pointer-events-none" />
                   

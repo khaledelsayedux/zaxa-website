@@ -9,7 +9,7 @@ const youmatsData = {
   client: 'YouMats',
   duration: '4 months',
   tags: ['React', 'Node.js', 'Stripe', 'MongoDB', 'AWS'],
-  heroImage: youmatsScreenshot,
+  heroImage: youmatsHero,
   logo: youmatsLogo,
   url: 'https://youmats.com',
   overview: 'YouMats.com is a comprehensive e-commerce platform specializing in premium Islamic prayer mats. We built a modern, user-friendly online store with advanced filtering, secure payment processing, and seamless inventory management to serve the global Muslim community.',

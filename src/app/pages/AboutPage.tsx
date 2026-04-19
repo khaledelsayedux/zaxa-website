@@ -507,14 +507,14 @@ export function AboutPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: Math.min(index * 0.08, 0.5) }}
-        className="group relative p-3 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl hover:border-zinc-700 transition-all duration-300 overflow-hidden will-change-transform"
+        className="group relative p-3 bg-zinc-900/30 border border-zinc-800/50 rounded-xl lg:rounded-2xl hover:border-zinc-700 transition-all duration-300 overflow-hidden will-change-transform"
         style={{ transform: 'translateZ(0)' }}
       >
         <div className="absolute inset-0 bg-zinc-800/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         <div className="relative">
           <div className="mb-2">
-            <div className="w-12 h-12 rounded-xl bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="w-12 h-12 rounded-lg lg:rounded-xl bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <span className="text-lg font-bold text-zinc-400">
                 {member.name.split(' ').map((n: string) => n[0]).join('')}
               </span>
@@ -632,7 +632,7 @@ export function AboutPage() {
       </section>
 
       {/* Story Section with Hover */}
-      <section className="py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
+      <section className="py-10 lg:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
@@ -641,12 +641,12 @@ export function AboutPage() {
         }} />
         
         <div className="w-full relative z-10">
-          <motion.div
+        <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="group relative p-12 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 border border-zinc-800/50 rounded-3xl overflow-hidden hover:border-teal-500/30 transition-all duration-300 will-change-transform"
+            className="group relative p-8 md:p-12 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 border border-zinc-800/50 rounded-xl lg:rounded-3xl overflow-hidden hover:border-teal-500/30 transition-all duration-300 will-change-transform"
           >
             {/* Hover gradient */}
             <div
@@ -673,7 +673,7 @@ export function AboutPage() {
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-5xl md:text-6xl font-semibold bg-gradient-to-r from-teal-400 to-emerald-500 bg-clip-text text-transparent mb-3 tracking-tight">
+                  <div className="text-4xl md:text-6xl font-semibold bg-gradient-to-r from-teal-400 to-emerald-500 bg-clip-text text-transparent mb-3 tracking-tight">
                     {stat.value}
                   </div>
                   <div className="text-zinc-400 text-lg group-hover:text-zinc-300 transition-colors duration-300">{stat.label}</div>
@@ -685,7 +685,7 @@ export function AboutPage() {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
+      <section className="py-10 lg:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),
@@ -719,7 +719,7 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="group relative p-8 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl hover:border-teal-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
+              className="group relative p-8 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl lg:rounded-3xl hover:border-teal-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
             >
               {/* Glass reflection effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
@@ -743,7 +743,7 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="group relative p-8 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl hover:border-emerald-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
+              className="group relative p-8 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl lg:rounded-3xl hover:border-emerald-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
             >
               {/* Glass reflection effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
@@ -767,7 +767,7 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="group relative p-8 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl hover:border-teal-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
+              className="group relative p-8 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl lg:rounded-3xl hover:border-teal-500/50 hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] will-change-transform"
             >
               {/* Glass reflection effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
@@ -793,7 +793,7 @@ export function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative p-12 bg-gradient-to-br from-zinc-900/50 to-zinc-800/30 border border-zinc-800/50 rounded-3xl overflow-hidden"
+            className="relative p-12 bg-gradient-to-br from-zinc-900/50 to-zinc-800/30 border border-zinc-800/50 rounded-2xl lg:rounded-3xl overflow-hidden"
           >
             <div className="absolute inset-0 opacity-[0.02]" style={{
               backgroundImage: `linear-gradient(rgba(226, 232, 240, 0.1) 1px, transparent 1px),

@@ -257,7 +257,7 @@ export function ContactPage() {
       </section>
 
       {/* Main Contact Section - Redesigned */}
-      <section id="contact-form" className="py-32 px-6 sm:px-8 lg:px-12 relative">
+      <section id="contact-form" className="py-10 md:py-20 lg:py-32 px-6 sm:px-8 lg:px-12 relative">
         
         <div className="w-full relative">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
@@ -295,7 +295,7 @@ export function ContactPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ x: 8, scale: 1.02 }}
-                    className={`group relative flex items-center gap-5 p-6 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl ${item.hoverColor} hover:bg-white/[0.05] transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] ${item.href ? 'cursor-pointer' : 'cursor-default'}`}
+                    className={`group relative flex items-center gap-5 p-6 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl lg:rounded-2xl ${item.hoverColor} hover:bg-white/[0.05] transition-all duration-300 overflow-hidden shadow-[0_4px_16px_0_rgba(29,205,159,0.12)] ${item.href ? 'cursor-pointer' : 'cursor-default'}`}
                   >
                     {/* Glass reflection effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
@@ -307,7 +307,7 @@ export function ContactPage() {
 
                     {/* Icon container */}
                     <motion.div 
-                      className={`relative flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} border border-zinc-700/50 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
+                      className={`relative flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-xl lg:rounded-2xl bg-gradient-to-br ${item.color} border border-zinc-700/50 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
                     >
                       <item.icon size={28} className={`${item.iconColor} group-hover:scale-110 transition-transform duration-300`} strokeWidth={2} />
                     </motion.div>
@@ -358,7 +358,7 @@ export function ContactPage() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                       whileHover={{ y: -8, scale: 1.15 }}
-                      className={`group relative flex-1 aspect-square rounded-2xl bg-zinc-900/60 border border-zinc-800/60 ${social.color} flex items-center justify-center transition-all duration-300 overflow-hidden`}
+                      className={`group relative flex-1 aspect-square rounded-lg lg:rounded-2xl bg-zinc-900/60 border border-zinc-800/60 ${social.color} flex items-center justify-center transition-all duration-300 overflow-hidden`}
                       aria-label={social.label}
                     >
                       {/* Glow effect */}
@@ -393,7 +393,7 @@ export function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="group relative p-10 lg:p-12 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden hover:border-teal-500/50 hover:bg-white/[0.05] transition-all duration-500 shadow-[0_4px_16px_0_rgba(29,205,159,0.12)]">
+              <div className="group relative p-6 lg:p-12 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl lg:rounded-3xl overflow-hidden hover:border-teal-500/50 hover:bg-white/[0.05] transition-all duration-500 shadow-[0_4px_16px_0_rgba(29,205,159,0.12)]">
                 {/* Glass reflection effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent opacity-50" />
                 
@@ -448,7 +448,7 @@ export function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-5 py-4 bg-zinc-900/60 border border-zinc-800/60 rounded-xl text-white text-base placeholder-zinc-600 focus:outline-none focus:border-teal-500/60 focus:bg-zinc-900/80 transition-all duration-300"
+                        className="w-full px-4 py-3 md:px-5 md:py-4 bg-zinc-900/60 border border-zinc-800/60 rounded-xl text-white text-base placeholder-zinc-600 focus:outline-none focus:border-teal-500/60 focus:bg-zinc-900/80 transition-all duration-300"
                         placeholder="John Doe"
                       />
                     </div>
@@ -465,7 +465,7 @@ export function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-5 py-4 bg-zinc-900/60 border border-zinc-800/60 rounded-xl text-white text-base placeholder-zinc-600 focus:outline-none focus:border-teal-500/60 focus:bg-zinc-900/80 transition-all duration-300"
+                        className="w-full px-4 py-3 md:px-5 md:py-4 bg-zinc-900/60 border border-zinc-800/60 rounded-xl text-white text-base placeholder-zinc-600 focus:outline-none focus:border-teal-500/60 focus:bg-zinc-900/80 transition-all duration-300"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -483,7 +483,7 @@ export function ContactPage() {
                       onChange={handleChange}
                       required
                       rows={7}
-                      className="w-full px-5 py-4 bg-zinc-900/60 border border-zinc-800/60 rounded-xl text-white text-base placeholder-zinc-600 focus:outline-none focus:border-teal-500/60 focus:bg-zinc-900/80 transition-all duration-300 resize-none"
+                      className="w-full px-4 py-3 md:px-5 md:py-4 bg-zinc-900/60 border border-zinc-800/60 rounded-xl text-white text-base placeholder-zinc-600 focus:outline-none focus:border-teal-500/60 focus:bg-zinc-900/80 transition-all duration-300 resize-none"
                       placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
                     />
                   </div>
@@ -598,7 +598,7 @@ export function ContactPage() {
       </section>
 
       {/* Process Steps - Enhanced */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 relative">
+      <section className="py-10 md:py-20 lg:py-32 px-6 sm:px-8 lg:px-12 relative">
         
         <div className="w-full relative">
           <div className="space-y-10">
@@ -641,7 +641,7 @@ export function ContactPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   whileHover={{ y: -12, scale: 1.05 }}
-                  className="group relative p-10 bg-zinc-900/50 border border-zinc-800/50 rounded-3xl hover:border-teal-500/40 transition-all duration-500 cursor-pointer overflow-hidden"
+                  className="group relative p-8 bg-zinc-900/50 border border-zinc-800/50 rounded-xl lg:rounded-3xl hover:border-teal-500/40 transition-all duration-500 cursor-pointer overflow-hidden"
                 >
                   {/* Animated hover gradient */}
                   <motion.div
@@ -677,11 +677,11 @@ export function ContactPage() {
       </section>
 
       {/* Department Emails Section - Redesigned */}
-      <section className="py-24 px-6 sm:px-8 lg:px-12 bg-zinc-950/50 relative overflow-hidden">
+      <section className="py-10 md:py-20 lg:py-24 px-6 sm:px-8 lg:px-12 bg-zinc-950/50 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(29,205,159,0.03),transparent_50%),radial-gradient(circle_at_70%_50%,rgba(16,185,129,0.02),transparent_50%)]" />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 md:py-24 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -707,7 +707,7 @@ export function ContactPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -8, scale: 1.03 }}
-                className="group relative flex flex-col p-8 bg-zinc-900/60 border border-zinc-800/60 rounded-2xl hover:border-teal-500/40 transition-all duration-300 cursor-pointer overflow-hidden w-full"
+                className="group relative flex flex-col p-8 bg-zinc-900/60 border border-zinc-800/60 rounded-xl lg:rounded-2xl hover:border-teal-500/40 transition-all duration-300 cursor-pointer overflow-hidden w-full"
               >
                 {/* Hover gradient background */}
                 <motion.div

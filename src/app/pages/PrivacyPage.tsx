@@ -156,7 +156,7 @@ export function PrivacyPage() {
       </section>
 
       {/* Content Section */}
-      <section className="py-24 px-6 sm:px-8 lg:px-12">
+      <section className="py-12 lg:py-24 px-6 sm:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
           {/* Last Updated */}
           <motion.div
